@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajvir Parmar</title>
+    <script src="https://kit.fontawesome.com/b42a2cfa4d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class ="logo">
+                <ul id="sidemenu">
+                    <li><a href ="#header">Home</a></li>
+                    <li><a href ="#about">About</a></li>
+                    <li><a href ="#experiences">Experiences</a></li>
+                    <li><a href ="#projects">Projects</a></li>
+                    <li><a href ="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <span>Rajvir</span> <br>Parmar From Canada</h1>
+            </div>
+        </div>
+    </div>
+    <!-------------about---------------->
+    <div id="about">
+        <div class ="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src ="images/user1.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hey! My name is Rajvir Parmar, and I am an enthusiastic software developer who loves creating new things for the internet. I grew up in Toronto, Canada and discovered coding at a remarkably young age. Since then, I have enjoyed working on exciting projects that can help people worldwide. I am studying Computer Science at Western University and constantly pursuing new internship opportunities!</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experiences</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Object Oriented Programming</span><br>Python, Java, LaTeX, Sass, C/C++, Ruby </li>
+                            <li><span>App Development</span><br>Building Android/iOS apps</li>
+                            <li><span>Data Science</span><br>PostgreSQL, MySQL, MS Access, Tableau, SQL</li>
+                            <li><span>Web Development</span><br>HTML, CSS, JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Jan-April 2023</span><br>Data Science Internship at Scotiabank </li>
+                            <li><span>Oct-Dec 2022</span><br>Full Stack Developer Internship at Riipen</li>
+                            <li><span>June-Aug 2021</span><br>IT Analyst Internship at Humber</li>
+                            <li><span>Jan-June 2019</span><br>Web Developer Co-Op at Flora Graphics</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2020-2025</span><br>BCS from Western University</li>
+                            <li><span>2016-2020</span><br>OSSD from Castlebrooke Secondary School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-------------Experiences------------------->
+    <div id="experiences">
+        <div class="container">
+            <h1 class="sub-title">Experiences</h1>
+            <div class="experiences-list">
+                <div>
+                    <h2>Data Science Internship<br> at Scotiabank</h2>
+                    <p>Identified opportunities for growth within the organization by analyzing data on customer preferences and buying habits using
+                        SQL and Python.</p>
+                    <a href="images/Rajvir_Updated_Resume.pdf" class="btn btn2">Learn more</a>
+                </div>
+                <div>
+                    <h2>Full Stack Developer Intern<br> at Riipen</h2>
+                    <p>Created and delivered high-quality code in a fast-paced startup setting to create a cross-platform online application, with a
+                        strong focus on responsive web designs.</p>
+                    <a href="images/Rajvir_Updated_Resume.pdf" class="btn btn2">Learn more</a>
+                </div>
+                <div>
+                    <h2>IT Analyst Internship<br> at Humber</h2>
+                    <p>Supported implementation of upgrades to new Blackboard software and resolved technical issues using exceptional problem solving
+                        skills.</p>
+                    <a href="images/Rajvir_Updated_Resume.pdf" class="btn btn2">Learn more</a>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </div>
+    <!---------------Projects----------------------->
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="project-list">
+                <div class="project">
+                    <img src="images/weather.png">
+                    <div class="layer">
+                        <h3>KeyForecast</h3>
+                        <p>Developed a web application with a Django backend to channel GET/POST requests to the OpenWeatherMap API and receive forecast details for any city location at the instant moment</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/weather.png">
+                    <div class="layer">
+                        <h3>KeyForecast</h3>
+                        <p>Developed a web application with a Django backend to channel GET/POST requests to the OpenWeatherMap API and receive forecast details for any city location at the instant moment</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/weather.png">
+                    <div class="layer">
+                        <h3>KeyForecast</h3>
+                        <p>Developed a web application with a Django backend to channel GET/POST requests to the OpenWeatherMap API and receive forecast details for any city location at the instant moment</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href ="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!----------------Contact---------------------->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> rajvirparmar32@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i> (+1) 647-548-8660</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/rajvirp_/"><i class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://twitter.com/Rajvir_eth"><i class="fa-brands fa-square-twitter"></i></a>
+                        <a href="https://www.facebook.com/rajvirparmar0331"><i class="fa-brands fa-square-facebook"></i></a>
+                    </div>
+                    <a href="images/Rajvir_Updated_Resume.pdf" class="btn btn2" >Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name ="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Rajvir. Made with <i class="fa-solid fa-heart"></i> by Rajvir Parmar</p>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemeu=document.getElementById("sidemenu");
+        function openmenu(){
+            sidemeu.style.right="0";
+        }
+        function closemenu(){
+            sidemeu.style.right="-200px";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbw5VX2ijqS9RohM5anXG3JJirZtOy-g34C6v-b61BaSzxE_qX344bCjjshCIZnqIzBt5A/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg=document.getElementById('msg')
+
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML =""
+                },5000)
+                form.reset()
+
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+
+</body>
+</html>
