@@ -402,3 +402,28 @@ nav .fa-solid{
     margin-top: -10px;
     display: block;
 }
+/* === Hero Ticker === */
+.ticker { width: 100%; overflow: hidden; line-height: 1.2; }
+.ticker__viewport { position: relative; overflow: hidden; }
+.ticker__track { display: flex; align-items: center; gap: 3rem; white-space: nowrap; will-change: transform; }
+.ticker__item { font-size: clamp(1rem, 3vw, 2rem); font-weight: 600; color: #fff; opacity: 0.95; }
+.ticker__item .accent { color: #ff004f; } /* matches your accent */
+
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(var(--ticker-end, -50%)); } }
+.ticker__viewport.animating .ticker__track {
+  animation-name: ticker-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: var(--ticker-duration, 30s);
+}
+
+/* Pause on hover/focus */
+.ticker__viewport:hover .ticker__track,
+.ticker__viewport:focus-within .ticker__track { animation-play-state: paused; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker__viewport.animating .ticker__track { animation: none; }
+}
+
+
