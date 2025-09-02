@@ -218,9 +218,71 @@
             .catch(error => console.error('Error!', error.message))
         })
       </script>
+      <script>
+          // 1) Items to cycle through (edit freely)
+          const tickerItems = [
+            { html: 'Computer Science <span class="accent">@Western University</span>' },
+        
+            // internships / roles (condensed for the ticker)
+            { html: '<span class="accent">Software Engineer Intern</span> · Solink (Sep–Present 2025)' },
+            { html: '<span class="accent">Software Engineer Intern</span> · Riipen (May–Aug 2024)' },
+            { html: '<span class="accent">Data Science Intern</span> · Loblaw Digital (Sep–Dec 2023)' },
+            { html: '<span class="accent">Data Intern</span> · Scotiabank (Jan–Apr 2023)' },
+            { html: '<span class="accent">IT Intern</span> · Humber (Jun–Aug 2021)' },
+            { html: '<span class="accent">Web Dev Co-op</span> · Flora Graphics (Jan–Jun 2019)' },
+          ];
+        
+          // 2) Build the list
+          const track = document.getElementById('ticker-track');
+          function addItems(list) {
+            list.forEach(item => {
+              const li = document.createElement('li');
+              li.className = 'ticker__item';
+              li.innerHTML = item.html;
+              track.appendChild(li);
+            });
+          }
+          addItems(tickerItems);
+          addItems(tickerItems); // clone once for seamless loop
+        
+          // 3) Compute width & duration for smooth, screen-independent speed
+          const viewport = track.parentElement;
+          function startAnimation() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        
+            const children = [...track.children];
+            const half = children.length / 2;
+            const gap = parseFloat(getComputedStyle(track).gap || 0);
+            const firstHalfWidth = children.slice(0, half)
+              .reduce((w, el, i) => w + el.getBoundingClientRect().width + (i ? gap : 0), 0);
+        
+            const pxPerSec = 110; // tweak for faster/slower
+            const duration = Math.max(firstHalfWidth / pxPerSec, 12);
+        
+            track.style.setProperty('--ticker-end', `-${firstHalfWidth}px`);
+            track.style.setProperty('--ticker-duration', `${duration}s`);
+        
+            viewport.classList.add('animating');
+          }
+        
+          // 4) Handle resizes cleanly
+          let resizeTimer;
+          function restart() {
+            viewport.classList.remove('animating');
+            void track.offsetWidth; // reflow to reset animation
+            startAnimation();
+          }
+          window.addEventListener('load', startAnimation);
+          window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(restart, 150);
+          });
+      </script>
+
 
 </body>
 </html>
+
 
 
 
