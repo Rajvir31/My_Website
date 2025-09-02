@@ -55,7 +55,7 @@ nav ul li a:hover::after{
     width: 100%;
 }
 .header-text{
-    margin-top: 20%;
+    margin-top: 30%;
     font-size: 30px;
 }
 .header-text h1{
@@ -425,5 +425,6 @@ nav .fa-solid{
 @media (prefers-reduced-motion: reduce) {
   .ticker__viewport.animating .ticker__track { animation: none; }
 }
+
 
 
