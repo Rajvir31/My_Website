@@ -60,7 +60,7 @@ nav ul li a:hover::after{
 }
 .header-text h1{
     font-size: 60px;
-    margin-top: 40px;
+    margin-top: 60px;
 }
 .header-text h1 span{
     color: #ff004f;
@@ -425,6 +425,7 @@ nav .fa-solid{
 @media (prefers-reduced-motion: reduce) {
   .ticker__viewport.animating .ticker__track { animation: none; }
 }
+
 
 
 
