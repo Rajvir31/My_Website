@@ -122,7 +122,7 @@
                     <div class="layer">
                         <h3>Predicting Financial Markets Using ML & Big Data</h3>
                         <p>Designed and implemented a full ML pipeline in Python using XGBoost</p>
-                        <a href="https://github.com/Rajvir31/Capstone-Project-Thesis"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Rajvir31/Capstone-Project-Thesis" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="project">
@@ -130,7 +130,7 @@
                     <div class="layer">
                         <h3>SMASHTHEMOLE</h3>
                         <p>SmashTheMole is a Whac-A-Mole style game built in C++ using SFML 2</p>
-                        <a href="https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
                 <div class="project">
@@ -138,11 +138,51 @@
                     <div class="layer">
                         <h3>PETHAVEN</h3>
                         <p>A virtual pet game built with JavaFX where you can adopt and care for digital pets. Features include feeding, playing, exercising, and monitoring your pet's vital stats.</p>
-                        <a href="https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/microservice-app.png" alt="Microservice-App">
+                    <div class="layer">
+                        <h3>Microservice-App</h3>
+                        <p>Microservice lab with observability stack (Postgres, OTel, Prometheus, Grafana, Tempo, Loki). Gateway REST API, orders, payments, notifications, and k6 load testing.</p>
+                        <a href="https://github.com/Rajvir31/Microservice-App" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/pong2.png" alt="AIPINGPONG">
+                    <div class="layer">
+                        <h3>AIPINGPONG</h3>
+                        <p>Using the NEAT algorithm and pygame to train an AI to play Ping-pong in Python. Play against an AI bot that learns to return the ball.</p>
+                        <a href="https://github.com/Rajvir31/AIPINGPONG" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/insta.png" alt="INSTACLONE">
+                    <div class="layer">
+                        <h3>INSTACLONE</h3>
+                        <p>Instagram-style app built from scratch with React, Sanity (CMS), and Express. Social feed, posts, and content management.</p>
+                        <a href="https://github.com/Rajvir31/INSTACLONE" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/website.jpg" alt="My Website">
+                    <div class="layer">
+                        <h3>My Website</h3>
+                        <p>Portfolio website built with HTML and CSS. Live at rajvirparmar.ca.</p>
+                        <a href="https://github.com/Rajvir31/My_Website" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="images/deezed-icon.png" alt="Deezed - AI workout app">
+                    <div class="layer">
+                        <h3>Deezed</h3>
+                        <p>AI workout app that shows your potential look and lets you adjust focus—e.g. bigger biceps vs bigger back. In development.</p>
+                        <a href="https://github.com/Rajvir31/deezed" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
             </div>
-            <a href ="#" class="btn">See more</a>
+            <a href="https://github.com/Rajvir31?tab=repositories" class="btn" target="_blank" rel="noopener">See more on GitHub</a>
         </div>
     </div>
     <!----------------Contact---------------------->
@@ -246,19 +286,29 @@
           const viewport = track.parentElement;
           function startAnimation() {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        
+
             const children = [...track.children];
             const half = children.length / 2;
-            const gap = parseFloat(getComputedStyle(track).gap || 0);
-            const firstHalfWidth = children.slice(0, half)
-              .reduce((w, el, i) => w + el.getBoundingClientRect().width + (i ? gap : 0), 0);
-        
+            if (half < 1) return;
+
+            // Measure exact pixel distance from start of first item to start of duplicated set (reliable across fonts/gap units)
+            const firstRect = children[0].getBoundingClientRect();
+            const afterHalfRect = children[half].getBoundingClientRect();
+            let firstHalfWidth = afterHalfRect.left - firstRect.left;
+
+            // If measurement is 0 (e.g. fonts not loaded yet), retry once after a short delay
+            if (firstHalfWidth <= 0 && !viewport.dataset.tickerRetried) {
+              viewport.dataset.tickerRetried = '1';
+              setTimeout(startAnimation, 150);
+              return;
+            }
+
             const pxPerSec = 110; // tweak for faster/slower
             const duration = Math.max(firstHalfWidth / pxPerSec, 12);
-        
+
             track.style.setProperty('--ticker-end', `-${firstHalfWidth}px`);
             track.style.setProperty('--ticker-duration', `${duration}s`);
-        
+
             viewport.classList.add('animating');
           }
         
@@ -266,10 +316,14 @@
           let resizeTimer;
           function restart() {
             viewport.classList.remove('animating');
+            delete viewport.dataset.tickerRetried;
             void track.offsetWidth; // reflow to reset animation
             startAnimation();
           }
-          window.addEventListener('load', startAnimation);
+          // Run after layout (and fonts) are ready so width measurement is accurate
+          window.addEventListener('load', () => {
+            requestAnimationFrame(() => requestAnimationFrame(startAnimation));
+          });
           window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(restart, 150);
