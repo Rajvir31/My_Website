@@ -246,19 +246,29 @@
           const viewport = track.parentElement;
           function startAnimation() {
             if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        
+
             const children = [...track.children];
             const half = children.length / 2;
-            const gap = parseFloat(getComputedStyle(track).gap || 0);
-            const firstHalfWidth = children.slice(0, half)
-              .reduce((w, el, i) => w + el.getBoundingClientRect().width + (i ? gap : 0), 0);
-        
+            if (half < 1) return;
+
+            // Measure exact pixel distance from start of first item to start of duplicated set (reliable across fonts/gap units)
+            const firstRect = children[0].getBoundingClientRect();
+            const afterHalfRect = children[half].getBoundingClientRect();
+            let firstHalfWidth = afterHalfRect.left - firstRect.left;
+
+            // If measurement is 0 (e.g. fonts not loaded yet), retry once after a short delay
+            if (firstHalfWidth <= 0 && !viewport.dataset.tickerRetried) {
+              viewport.dataset.tickerRetried = '1';
+              setTimeout(startAnimation, 150);
+              return;
+            }
+
             const pxPerSec = 110; // tweak for faster/slower
             const duration = Math.max(firstHalfWidth / pxPerSec, 12);
-        
+
             track.style.setProperty('--ticker-end', `-${firstHalfWidth}px`);
             track.style.setProperty('--ticker-duration', `${duration}s`);
-        
+
             viewport.classList.add('animating');
           }
         
@@ -266,10 +276,14 @@
           let resizeTimer;
           function restart() {
             viewport.classList.remove('animating');
+            delete viewport.dataset.tickerRetried;
             void track.offsetWidth; // reflow to reset animation
             startAnimation();
           }
-          window.addEventListener('load', startAnimation);
+          // Run after layout (and fonts) are ready so width measurement is accurate
+          window.addEventListener('load', () => {
+            requestAnimationFrame(() => requestAnimationFrame(startAnimation));
+          });
           window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(restart, 150);
