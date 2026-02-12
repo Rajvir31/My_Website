@@ -1,351 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajvir Parmar</title>
-    <script src="https://kit.fontawesome.com/b42a2cfa4d.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajvir Parmar — Software Engineer</title>
+  <meta name="description" content="Software Engineer specializing in full-stack development, distributed systems, and AI/ML. Currently building device monitoring infrastructure at Solink.">
+  <meta name="theme-color" content="#f5f5f4">
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/b42a2cfa4d.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" class ="logo">
-                <ul id="sidemenu">
-                    <li><a href ="#header">Home</a></li>
-                    <li><a href ="#about">About</a></li>
-                    <li><a href ="#experiences">Experiences</a></li>
-                    <li><a href ="#projects">Projects</a></li>
-                    <li><a href ="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <h1>Hi, I'm <span>Rajvir </span>Parmar </h1>
 
-                <!-- Ticker -->
-                <div class="ticker" aria-label="Highlights">
-                  <div class="ticker__viewport">
-                    <ul class="ticker__track" id="ticker-track"></ul>
-                  </div>
-                </div>
+<!-- ========== MOBILE HEADER (visible ≤700px) ========== -->
+<header class="mobile-header" id="mobile-header">
+  <a href="#" class="mobile-header__name">Rajvir Parmar</a>
+  <button class="mobile-header__toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
-            </div>
-        </div>
+<!-- ========== LAYOUT ========== -->
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <img
+      class="sidebar__photo"
+      src="images/hero-photo.png"
+      alt="Rajvir Parmar"
+      width="160"
+      height="160"
+    >
+
+    <h1 class="sidebar__greeting">
+      <span>Hi, I'm</span>
+      Rajvir Parmar
+    </h1>
+    <p class="sidebar__subtitle">Welcome to my portfolio</p>
+
+    <p class="sidebar__section-title">About Me</p>
+    <div class="sidebar__roles">
+      <div class="sidebar__role">
+        <span class="sidebar__role-num">01</span>
+        <span class="sidebar__role-sep">/</span>
+        <span class="sidebar__role-label">Software Engineer</span>
+      </div>
+      <div class="sidebar__role">
+        <span class="sidebar__role-num">02</span>
+        <span class="sidebar__role-sep">/</span>
+        <span class="sidebar__role-label">Full-Stack Developer</span>
+      </div>
+      <div class="sidebar__role">
+        <span class="sidebar__role-num">03</span>
+        <span class="sidebar__role-sep">/</span>
+        <span class="sidebar__role-label">Systems & Cloud</span>
+      </div>
+      <div class="sidebar__role">
+        <span class="sidebar__role-num">04</span>
+        <span class="sidebar__role-sep">/</span>
+        <span class="sidebar__role-label">AI / ML</span>
+      </div>
     </div>
-    <!-------------about---------------->
-    <div id="about">
-        <div class ="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src ="images/user3.jpg">
-                </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>Hey! My name is Rajvir Parmar, and I am an enthusiastic Software Engineer who loves creating new things. I grew up in Toronto, Canada and discovered coding at a remarkably young age. Since then, I have enjoyed working on exciting projects that can help people worldwide. I am studying Computer Science at Western University and constantly pursuing new grad opportunities!</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experiences</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>Programming Languages</span><br>Python, Java, Go, C/C++, Ruby, TypeScript, JavaScript, Swift, GraphQL, SQL, HTML/CSS, R </li>
-                            <li><span>Frameworks/Tools</span><br>React, Node.js, Rails, AWS, Git, GCP, MongoDB, PostgreSQL, Kubernetes, Docker, Jenkins, Kafka, Redis</li>
-                            <li><span>Concepts/Interests</span><br>AI/ML, Systems Engineering, Distributed Systems, Cloud Computing, Full-Stack, Security, Microservices Architecture</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>Sep-Present 2025</span><br>Software Engineer Intern at Solink</li>
-                            <li><span>May-Aug 2024</span><br>Software Engineer Intern at Riipen</li>
-                            <li><span>Sep-Dec 2023</span><br>Software Developer Internship at Loblaw Digital</li>
-                            <li><span>Jan-Apr 2023</span><br>Software Developer Internship at Scotiabank </li>
-                            <li><span>Jun-Aug 2021</span><br>Information Technology Intern at Humber</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>Graduation April 2026</span><br>Bachelor of Science (BSc), Honours Specialization in Computer Science</li>
-                            <li>OSSD from Castlebrooke Secondary School</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+
+    <div class="sidebar__socials">
+      <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
     </div>
-    <!-------------Experiences------------------->
-    <div id="experiences">
-        <div class="container">
-            <h1 class="sub-title">Experiences</h1>
-            <div class="experiences-list">
-                <div>
-                    <h2>Software Engineer Intern<br> at Solink</h2>
-                    <p>Developing an internal Device Health Dashboard using React (TypeScript) and Go to monitor QNAPs, enabling operators to track 
-                        uptime, CPU/memory utilization, and error trends across 10K+ devices, backed by AWS, Kafka, Kubernetes, and PostgreSQL</p>
-                    <a href="images/RajvirParmar_SWE.pdf" class="btn btn2">Learn more</a>
-                </div>
-                <div>
-                    <h2>Software Engineer Intern<br> at Riipen</h2>
-                    <p>Created and delivered high-quality code in a fast-paced startup setting to create a cross-platform online application, with a
-                        strong focus on responsive web designs.</p>
-                    <a href="images/RajvirParmar_SWE.pdf" class="btn btn2">Learn more</a>
-                </div>
-                <div>
-                    <h2>Software Developer Intern<br> at Loblaw</h2>
-                    <p>Architected a financial reporting automation tool using a Go-based ETL GCP pipeline</p>
-                    <a href="images/RajvirParmar_Data.pdf" class="btn btn2">Learn more</a>
-                </div>
-                
-                
-            </div>
-            
-        </div>
 
+    <a href="images/RajvirParmar_SWE.pdf" class="sidebar__resume-btn" target="_blank" rel="noopener">View My Resume</a>
+
+    <div class="sidebar__spacer"></div>
+    <p class="sidebar__footer">Updated February 2026</p>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main">
+
+    <!-- Filters -->
+    <div class="entries__filters" id="entry-filters">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="experience">Experience</button>
+      <button class="filter-chip" data-filter="project">Projects</button>
     </div>
-    <!---------------Projects----------------------->
-    <div id="projects">
-        <div class="container">
-            <h1 class="sub-title">Projects</h1>
-            <div class="project-list">
-                 <div class="project">
-                    <img src="images/finance.png">
-                    <div class="layer">
-                        <h3>Predicting Financial Markets Using ML & Big Data</h3>
-                        <p>Designed and implemented a full ML pipeline in Python using XGBoost</p>
-                        <a href="https://github.com/Rajvir31/Capstone-Project-Thesis" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/whacker.png">
-                    <div class="layer">
-                        <h3>SMASHTHEMOLE</h3>
-                        <p>SmashTheMole is a Whac-A-Mole style game built in C++ using SFML 2</p>
-                        <a href="https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/cat.png">
-                    <div class="layer">
-                        <h3>PETHAVEN</h3>
-                        <p>A virtual pet game built with JavaFX where you can adopt and care for digital pets. Features include feeding, playing, exercising, and monitoring your pet's vital stats.</p>
-                        <a href="https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/microservice-app.png" alt="Microservice-App">
-                    <div class="layer">
-                        <h3>Microservice-App</h3>
-                        <p>Microservice lab with observability stack (Postgres, OTel, Prometheus, Grafana, Tempo, Loki). Gateway REST API, orders, payments, notifications, and k6 load testing.</p>
-                        <a href="https://github.com/Rajvir31/Microservice-App" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/pong2.png" alt="AIPINGPONG">
-                    <div class="layer">
-                        <h3>AIPINGPONG</h3>
-                        <p>Using the NEAT algorithm and pygame to train an AI to play Ping-pong in Python. Play against an AI bot that learns to return the ball.</p>
-                        <a href="https://github.com/Rajvir31/AIPINGPONG" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/insta.png" alt="INSTACLONE">
-                    <div class="layer">
-                        <h3>INSTACLONE</h3>
-                        <p>Instagram-style app built from scratch with React, Sanity (CMS), and Express. Social feed, posts, and content management.</p>
-                        <a href="https://github.com/Rajvir31/INSTACLONE" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/website.jpg" alt="My Website">
-                    <div class="layer">
-                        <h3>My Website</h3>
-                        <p>Portfolio website built with HTML and CSS. Live at rajvirparmar.ca.</p>
-                        <a href="https://github.com/Rajvir31/My_Website" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="project">
-                    <img src="images/deezed-icon.png" alt="Deezed - AI workout app">
-                    <div class="layer">
-                        <h3>Deezed</h3>
-                        <p>AI workout app that shows your potential look and lets you adjust focus—e.g. bigger biceps vs bigger back. In development.</p>
-                        <a href="https://github.com/Rajvir31/deezed" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            </div>
-            <a href="https://github.com/Rajvir31?tab=repositories" class="btn" target="_blank" rel="noopener">See more on GitHub</a>
-        </div>
+
+    <!-- Entry cards (rendered by JS) -->
+    <div class="entries__list" id="entries-list"></div>
+
+    <!-- Contact -->
+    <section class="main__contact">
+      <h2 class="contact__title">Get in Touch</h2>
+      <form class="contact__form" name="submit-to-google-sheet">
+        <input type="text" name="Name" placeholder="Your Name" required>
+        <input type="email" name="Email" placeholder="Your Email" required>
+        <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn--primary">Send Message</button>
+        <span id="msg"></span>
+      </form>
+    </section>
+
+    <footer class="main__footer">© 2026 Rajvir Parmar</footer>
+  </main>
+
+</div>
+
+<!-- ========== MODAL ========== -->
+<div class="modal" id="entry-modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="modal__overlay" id="modal-overlay"></div>
+  <div class="modal__panel" role="document" id="modal-panel">
+    <button class="modal__close" id="modal-close" aria-label="Close">&times;</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+/* ---------------------------------------------------------
+   ENTRIES DATA
+   --------------------------------------------------------- */
+const ENTRIES = [
+  {
+    id: 'solink',
+    type: 'experience',
+    featured: true,
+    title: 'Software Engineer Intern',
+    org: 'Solink',
+    timeframe: 'Sep 2025 — Present',
+    sortOrder: 1,
+    summary: 'Building a real-time Device Health Dashboard to monitor uptime, CPU/memory utilization, and error trends across 10,000+ QNAP devices.',
+    details: 'Developing an internal Device Health Dashboard using React (TypeScript) and Go to monitor QNAPs, enabling operators to track uptime, CPU/memory utilization, and error trends across 10K+ devices. The system is backed by event-driven architecture with Kafka for telemetry ingestion, Kubernetes for container orchestration, and PostgreSQL for persistent storage — all running on AWS.',
+    impact: [
+      'Designed and implemented a monitoring dashboard tracking health of 10,000+ network devices in real time',
+      'Built event-driven data pipeline using Kafka for high-throughput device telemetry ingestion',
+      'Deployed on Kubernetes with auto-scaling to handle variable device reporting loads',
+      'Reduced manual device health checks by providing a single-pane-of-glass view for operators'
+    ],
+    tags: ['React', 'TypeScript', 'Go', 'AWS', 'Kafka', 'Kubernetes', 'PostgreSQL'],
+    image: 'images/Solink-Logo.jpg',
+    links: [{ label: 'Resume', url: 'images/RajvirParmar_SWE.pdf', icon: 'fa-solid fa-file-lines' }]
+  },
+  {
+    id: 'financial-markets',
+    type: 'project',
+    featured: true,
+    title: 'Predicting Financial Markets Using ML & Big Data',
+    org: 'Capstone Thesis',
+    timeframe: '2025',
+    sortOrder: 2,
+    summary: 'Designed a full ML pipeline for financial market prediction using XGBoost, from data ingestion through model evaluation and backtesting.',
+    details: 'Designed and implemented a complete machine learning pipeline in Python using XGBoost for financial market prediction. The project involved data ingestion from financial APIs, feature engineering with technical indicators, model training with hyperparameter tuning, and backtesting evaluation against historical data.',
+    impact: [
+      'Built end-to-end ML pipeline: data ingestion → feature engineering → training → backtesting',
+      'Implemented XGBoost-based prediction model with cross-validation and hyperparameter optimization',
+      'Evaluated model performance using walk-forward backtesting on historical financial data'
+    ],
+    tags: ['Python', 'XGBoost', 'Pandas', 'scikit-learn', 'Machine Learning'],
+    image: 'images/finance.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/Capstone-Project-Thesis', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'deezed',
+    type: 'project',
+    featured: false,
+    title: 'Deezed',
+    org: 'AI Workout App',
+    timeframe: '2025',
+    sortOrder: 3,
+    summary: 'AI-powered workout visualization app that shows your potential physique and lets you adjust training focus areas. Currently in development.',
+    details: 'Building an AI-powered workout application that generates visualizations of the user\'s potential physique based on their training goals. Users can adjust focus areas (e.g., emphasize back vs. biceps) and the app adapts recommendations accordingly.',
+    impact: [
+      'Designing AI model for physique visualization based on user input and training preferences',
+      'Building native mobile experience for real-time workout tracking and goal adjustment'
+    ],
+    tags: ['Swift', 'AI/ML', 'Mobile'],
+    image: 'images/deezed-icon.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/deezed', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'riipen',
+    type: 'experience',
+    featured: false,
+    title: 'Software Engineer Intern',
+    org: 'Riipen',
+    timeframe: 'May — Aug 2024',
+    sortOrder: 4,
+    summary: 'Shipped production features for a cross-platform education marketplace, delivering high-quality code with a focus on responsive design in a fast-paced startup.',
+    details: 'Created and delivered production-ready code in a fast-paced startup environment for a cross-platform online education marketplace. Focused on building responsive, accessible interfaces and collaborating closely with product and design to ship features quickly.',
+    impact: [
+      'Shipped production features for a cross-platform education marketplace serving thousands of users',
+      'Built responsive web interfaces optimized for mobile and desktop experiences',
+      'Delivered in a fast-paced startup environment with rapid iteration cycles'
+    ],
+    tags: ['Full-Stack', 'Responsive Design', 'Startup'],
+    image: 'images/riipen_networks_inc_logo.jpg',
+    links: [{ label: 'Resume', url: 'images/RajvirParmar_SWE.pdf', icon: 'fa-solid fa-file-lines' }]
+  },
+  {
+    id: 'microservice-app',
+    type: 'project',
+    featured: true,
+    title: 'Microservice-App',
+    org: 'Distributed Systems Lab',
+    timeframe: '2024',
+    sortOrder: 5,
+    summary: 'Microservice architecture with full observability stack — gateway API, orders, payments, notifications — instrumented with OTel, Prometheus, Grafana, and load-tested with k6.',
+    details: 'Built a microservice lab with a full observability stack. The architecture includes a Gateway REST API that routes to dedicated orders, payments, and notification services. Instrumented with OpenTelemetry for distributed tracing, Prometheus for metrics, Grafana for dashboards, Tempo for trace storage, and Loki for log aggregation. Load tested with k6.',
+    impact: [
+      'Designed and built gateway API pattern routing requests to 4 downstream microservices',
+      'Implemented full observability: OpenTelemetry tracing, Prometheus metrics, Grafana dashboards',
+      'Set up Tempo for distributed trace storage and Loki for centralized log aggregation',
+      'Load-tested with k6 to validate service performance and identify bottlenecks'
+    ],
+    tags: ['Go', 'PostgreSQL', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Docker', 'k6'],
+    image: 'images/microservice-app.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/Microservice-App', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'smashthemole',
+    type: 'project',
+    featured: false,
+    title: 'SmashTheMole',
+    org: 'Game Development',
+    timeframe: '2024',
+    sortOrder: 6,
+    summary: 'Whac-A-Mole arcade game built from scratch in C++ using the SFML graphics library with custom game loop, sprite animation, and scoring.',
+    details: 'A Whac-A-Mole style arcade game built in C++ using the SFML 2 graphics library. Features a custom game loop, real-time sprite animation, mouse-based input handling, difficulty scaling, and a scoring system.',
+    impact: [
+      'Implemented custom game loop with frame-independent timing for smooth animations',
+      'Built sprite animation system and mouse-based mole-whacking mechanics',
+      'Added progressive difficulty scaling and persistent high-score tracking'
+    ],
+    tags: ['C++', 'SFML', 'Game Dev'],
+    image: 'images/whacker.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'loblaw',
+    type: 'experience',
+    featured: false,
+    title: 'Software Developer Intern',
+    org: 'Loblaw Digital',
+    timeframe: 'Sep — Dec 2023',
+    sortOrder: 7,
+    summary: 'Architected a financial reporting automation tool using a Go-based ETL pipeline on Google Cloud Platform, reducing manual reporting overhead.',
+    details: 'Architected and implemented a financial reporting automation tool using a Go-based ETL (Extract, Transform, Load) pipeline running on Google Cloud Platform. The tool automated previously manual reporting workflows, improving accuracy and reducing turnaround time for financial reports.',
+    impact: [
+      'Designed and built a Go-based ETL pipeline for automated financial report generation',
+      'Deployed on GCP with scheduled execution for recurring reporting cycles',
+      'Reduced manual reporting overhead and improved data accuracy for finance teams'
+    ],
+    tags: ['Go', 'GCP', 'ETL', 'Data Pipeline'],
+    image: 'images/loblaw_digital_logo.jpg',
+    links: [{ label: 'Resume', url: 'images/RajvirParmar_SWE.pdf', icon: 'fa-solid fa-file-lines' }]
+  },
+  {
+    id: 'pethaven',
+    type: 'project',
+    featured: false,
+    title: 'PetHaven',
+    org: 'Virtual Pet Game',
+    timeframe: '2023',
+    sortOrder: 8,
+    summary: 'Virtual pet simulation built with JavaFX featuring real-time stat tracking for feeding, playing, exercising, and monitoring pet vitals.',
+    details: 'A virtual pet game built with JavaFX where users can adopt and care for digital pets. Features include feeding, playing, exercising, and monitoring vital stats in real time. The application uses event-driven architecture for responsive UI updates.',
+    impact: [
+      'Built real-time stat tracking system for pet health, hunger, happiness, and energy',
+      'Implemented event-driven UI updates using JavaFX property bindings',
+      'Designed pet care mechanics with feeding, playing, and exercising interactions'
+    ],
+    tags: ['Java', 'JavaFX', 'OOP'],
+    image: 'images/cat.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'scotiabank',
+    type: 'experience',
+    featured: false,
+    title: 'Software Developer Intern',
+    org: 'Scotiabank',
+    timeframe: 'Jan — Apr 2023',
+    sortOrder: 9,
+    summary: 'Contributed to enterprise software development at one of Canada\'s largest financial institutions, working on internal tooling and banking systems.',
+    details: 'Contributed to enterprise software development at Scotiabank, one of Canada\'s largest banks. Worked on internal tooling and banking systems in a highly regulated environment with strict code quality and security standards.',
+    impact: [
+      'Developed and maintained internal software in a large-scale enterprise environment',
+      'Followed rigorous code review and security compliance processes in financial services',
+      'Collaborated with cross-functional teams on production banking systems'
+    ],
+    tags: ['Enterprise', 'Banking', 'Software Development'],
+    image: 'images/scotiabank_gbm_logo.jpg',
+    links: [{ label: 'Resume', url: 'images/RajvirParmar_SWE.pdf', icon: 'fa-solid fa-file-lines' }]
+  },
+  {
+    id: 'aipingpong',
+    type: 'project',
+    featured: false,
+    title: 'AIPingPong',
+    org: 'AI Game Agent',
+    timeframe: '2023',
+    sortOrder: 10,
+    summary: 'Trained an AI agent using the NEAT neuroevolution algorithm to play Pong autonomously. The bot learns paddle control through evolutionary optimization.',
+    details: 'Used the NEAT (NeuroEvolution of Augmenting Topologies) algorithm to train a neural network that plays Pong autonomously. Built with Python and Pygame, the project evolves a population of neural networks over generations. Users can play against the trained AI bot.',
+    impact: [
+      'Implemented NEAT algorithm for evolving neural network topology and weights',
+      'Trained AI agent through evolutionary optimization over multiple generations',
+      'Built interactive Pygame interface for human-vs-AI gameplay'
+    ],
+    tags: ['Python', 'NEAT', 'Pygame', 'AI/ML'],
+    image: 'images/pong2.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/AIPINGPONG', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'instaclone',
+    type: 'project',
+    featured: false,
+    title: 'InstaClone',
+    org: 'Full-Stack Social App',
+    timeframe: '2023',
+    sortOrder: 11,
+    summary: 'Full-stack Instagram clone with social feed, post creation, and content management — built with React, Express, and Sanity headless CMS.',
+    details: 'A full-stack Instagram-style social media application built from scratch. Features a social feed, post creation and management, and user interactions. The frontend is built with React, the API layer uses Express, and content is managed through Sanity headless CMS.',
+    impact: [
+      'Built full-stack social media application with feed, posts, and content management',
+      'Integrated Sanity headless CMS for flexible content modeling and delivery',
+      'Implemented RESTful API with Express for client-server communication'
+    ],
+    tags: ['React', 'Express', 'Sanity CMS', 'Node.js'],
+    image: 'images/insta.png',
+    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/INSTACLONE', icon: 'fa-brands fa-github' }]
+  },
+  {
+    id: 'humber',
+    type: 'experience',
+    featured: false,
+    title: 'Information Technology Intern',
+    org: 'Humber College',
+    timeframe: 'Jun — Aug 2021',
+    sortOrder: 12,
+    summary: 'Supported IT infrastructure and gained early hands-on experience with enterprise technology systems and operations.',
+    details: 'Supported IT infrastructure at Humber College, gaining early exposure to enterprise technology systems, troubleshooting, and operations. This was a formative experience that reinforced my interest in building and maintaining reliable systems.',
+    impact: [
+      'Provided IT support and troubleshooting for institutional technology infrastructure',
+      'Gained early exposure to enterprise systems operations and maintenance'
+    ],
+    tags: ['IT', 'Infrastructure', 'Support'],
+    image: 'images/humber.jpg',
+    links: [{ label: 'Resume', url: 'images/RajvirParmar_SWE.pdf', icon: 'fa-solid fa-file-lines' }]
+  }
+];
+
+/* ---------------------------------------------------------
+   RENDER ENTRY CARDS
+   --------------------------------------------------------- */
+const entriesList = document.getElementById('entries-list');
+
+function renderEntryCard(entry) {
+  const card = document.createElement('article');
+  card.className = 'entry-card';
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
+  card.setAttribute('aria-label', 'View details: ' + entry.title + (entry.org ? ' — ' + entry.org : ''));
+  card.dataset.type = entry.type;
+  card.dataset.id = entry.id;
+
+  // Image or placeholder
+  let imageHTML;
+  if (entry.image) {
+    imageHTML = `<div class="entry-card__image-wrapper"><img src="${entry.image}" alt="${entry.title}" loading="lazy"></div>`;
+  } else {
+    const initial = entry.org ? entry.org.charAt(0) : entry.title.charAt(0);
+    imageHTML = `<div class="entry-card__image-wrapper"><div class="entry-card__placeholder">${initial}</div></div>`;
+  }
+
+  card.innerHTML = `
+    ${imageHTML}
+    <div class="entry-card__body">
+      <div class="entry-card__title">${entry.title}</div>
+      ${entry.org ? '<div class="entry-card__org">' + entry.org + '</div>' : ''}
+      <div class="entry-card__timeframe">${entry.timeframe}</div>
+      <p class="entry-card__summary">${entry.summary}</p>
+      <span class="entry-card__cta">View Entry <span class="entry-card__cta-arrow">⟶</span></span>
     </div>
-    <!----------------Contact---------------------->
-    <div id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-envelope"></i> rajvirparmar32@gmail.com</p>
-                    <p><i class="fa-solid fa-square-phone"></i> (+1) 647-548-8660</p>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com/Rajvir31"><i class="fa-brands fa-github"></i></a>
-                    </div>
-                    <a href="images/RajvirParmar_SWE.pdf" class="btn btn2" >Download Resume</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name ="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>Copyright © Rajvir. Made with <i class="fa-solid fa-heart"></i> by Rajvir Parmar</p>
-        </div>
-    </div>
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-    <script>
-        var sidemeu=document.getElementById("sidemenu");
-        function openmenu(){
-            sidemeu.style.right="0";
-        }
-        function closemenu(){
-            sidemeu.style.right="-200px";
-        }
-    </script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbw5VX2ijqS9RohM5anXG3JJirZtOy-g34C6v-b61BaSzxE_qX344bCjjshCIZnqIzBt5A/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg=document.getElementById('msg')
+  `;
 
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully!"
-                setTimeout(function(){
-                    msg.innerHTML =""
-                },5000)
-                form.reset()
+  card.addEventListener('click', () => openModal(entry.id));
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(entry.id); }
+  });
+  return card;
+}
 
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
-      <script>
-          // 1) Items to cycle through (edit freely)
-          const tickerItems = [
-            { html: 'Computer Science <span class="accent">@Western University</span>' },
-        
-            // internships / roles (condensed for the ticker)
-            { html: '<span class="accent">Im a SWE @</span> · Solink' },
-            { html: '<span class="accent">Prev SWE @</span> · Riipen' },
-            { html: '<span class="accent">Prev SWE @</span> · Loblaw Digital' },
-            { html: '<span class="accent">Prev SWE @</span> · Scotiabank' },
-          ];
-        
-          // 2) Build the list
-          const track = document.getElementById('ticker-track');
-          function addItems(list) {
-            list.forEach(item => {
-              const li = document.createElement('li');
-              li.className = 'ticker__item';
-              li.innerHTML = item.html;
-              track.appendChild(li);
-            });
-          }
-          addItems(tickerItems);
-          addItems(tickerItems); // clone once for seamless loop
-        
-          // 3) Compute width & duration for smooth, screen-independent speed
-          const viewport = track.parentElement;
-          function startAnimation() {
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+function renderEntries(filter) {
+  entriesList.innerHTML = '';
+  const sorted = [...ENTRIES].sort((a, b) => a.sortOrder - b.sortOrder);
+  const filtered = filter === 'all' ? sorted : sorted.filter(e => e.type === filter);
+  filtered.forEach(entry => entriesList.appendChild(renderEntryCard(entry)));
+}
 
-            const children = [...track.children];
-            const half = children.length / 2;
-            if (half < 1) return;
+renderEntries('all');
 
-            // Measure exact pixel distance from start of first item to start of duplicated set (reliable across fonts/gap units)
-            const firstRect = children[0].getBoundingClientRect();
-            const afterHalfRect = children[half].getBoundingClientRect();
-            let firstHalfWidth = afterHalfRect.left - firstRect.left;
+/* ---------------------------------------------------------
+   FILTER CHIPS
+   --------------------------------------------------------- */
+document.getElementById('entry-filters').addEventListener('click', (e) => {
+  const chip = e.target.closest('.filter-chip');
+  if (!chip) return;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  renderEntries(chip.dataset.filter);
+});
 
-            // If measurement is 0 (e.g. fonts not loaded yet), retry once after a short delay
-            if (firstHalfWidth <= 0 && !viewport.dataset.tickerRetried) {
-              viewport.dataset.tickerRetried = '1';
-              setTimeout(startAnimation, 150);
-              return;
-            }
+/* ---------------------------------------------------------
+   MODAL
+   --------------------------------------------------------- */
+const modal        = document.getElementById('entry-modal');
+const modalBody    = document.getElementById('modal-body');
+const modalClose   = document.getElementById('modal-close');
+const modalOverlay = document.getElementById('modal-overlay');
+let previousFocus  = null;
 
-            const pxPerSec = 110; // tweak for faster/slower
-            const duration = Math.max(firstHalfWidth / pxPerSec, 12);
+function openModal(entryId) {
+  const entry = ENTRIES.find(e => e.id === entryId);
+  if (!entry) return;
+  previousFocus = document.activeElement;
 
-            track.style.setProperty('--ticker-end', `-${firstHalfWidth}px`);
-            track.style.setProperty('--ticker-duration', `${duration}s`);
+  const typeClass = entry.type === 'experience' ? 'modal__type--experience' : 'modal__type--project';
 
-            viewport.classList.add('animating');
-          }
-        
-          // 4) Handle resizes cleanly
-          let resizeTimer;
-          function restart() {
-            viewport.classList.remove('animating');
-            delete viewport.dataset.tickerRetried;
-            void track.offsetWidth; // reflow to reset animation
-            startAnimation();
-          }
-          // Run after layout (and fonts) are ready so width measurement is accurate
-          window.addEventListener('load', () => {
-            requestAnimationFrame(() => requestAnimationFrame(startAnimation));
-          });
-          window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(restart, 150);
-          });
-      </script>
+  modalBody.innerHTML = `
+    <div class="modal__type ${typeClass}">${entry.type === 'experience' ? 'Experience' : 'Project'}</div>
+    <h2 class="modal__title">${entry.title}</h2>
+    ${entry.org ? '<p class="modal__org">' + entry.org + '</p>' : ''}
+    <p class="modal__timeframe">${entry.timeframe}</p>
+    ${entry.image ? '<img class="modal__image" src="' + entry.image + '" alt="' + entry.title + '" loading="lazy">' : ''}
+    <p class="modal__description">${entry.details}</p>
+    ${entry.impact && entry.impact.length ? `
+      <p class="modal__impact-title">Key Contributions</p>
+      <ul class="modal__impact-list">${entry.impact.map(i => '<li>' + i + '</li>').join('')}</ul>
+    ` : ''}
+    <div class="modal__tags">${entry.tags.map(t => '<span class="tag">' + t + '</span>').join('')}</div>
+    ${entry.links && entry.links.length ? `
+      <div class="modal__links">${entry.links.map(l => '<a href="' + l.url + '" class="modal__link" target="_blank" rel="noopener"><i class="' + l.icon + '"></i> ' + l.label + '</a>').join('')}</div>
+    ` : ''}
+  `;
 
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  requestAnimationFrame(() => modalClose.focus());
+}
+
+function closeModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (previousFocus) { previousFocus.focus(); previousFocus = null; }
+}
+
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+});
+
+// Focus trap
+modal.addEventListener('keydown', (e) => {
+  if (e.key !== 'Tab') return;
+  const els = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+  if (!els.length) return;
+  const first = els[0], last = els[els.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
+
+/* ---------------------------------------------------------
+   MOBILE NAV
+   --------------------------------------------------------- */
+const mobileToggle = document.getElementById('mobile-toggle');
+const sidebar = document.getElementById('sidebar');
+
+mobileToggle.addEventListener('click', () => {
+  const opening = !sidebar.classList.contains('open');
+  sidebar.classList.toggle('open');
+  mobileToggle.classList.toggle('active');
+  mobileToggle.setAttribute('aria-expanded', opening);
+  document.body.style.overflow = opening ? 'hidden' : '';
+});
+
+// Close sidebar when a link inside it is clicked
+sidebar.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+    mobileToggle.classList.remove('active');
+    mobileToggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ---------------------------------------------------------
+   CONTACT FORM (Google Apps Script — preserved)
+   --------------------------------------------------------- */
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw5VX2ijqS9RohM5anXG3JJirZtOy-g34C6v-b61BaSzxE_qX344bCjjshCIZnqIzBt5A/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg  = document.getElementById('msg');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(() => {
+      msg.textContent = 'Message sent successfully!';
+      setTimeout(() => { msg.textContent = ''; }, 5000);
+      form.reset();
+    })
+    .catch(err => console.error('Error!', err.message));
+});
+</script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
