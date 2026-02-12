@@ -74,8 +74,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) transparent;
+  scrollbar-width: none;
 }
 
 /* Photo */
@@ -181,6 +180,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-color: var(--border-light);
   color: var(--text);
 }
+
+/* Hide scrollbar */
+.sidebar::-webkit-scrollbar { display: none; }
 
 /* Push footer down */
 .sidebar__spacer { flex: 1; }
