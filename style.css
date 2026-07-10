@@ -237,13 +237,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .entries__list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 6px;
 }
 
 .entry-card {
+  position: relative;
   display: flex;
-  gap: 28px;
-  padding: 24px;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 40px 12px 12px;
   border-radius: var(--radius-lg);
   cursor: pointer;
   transition: background var(--transition);
@@ -260,11 +262,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--radius-lg);
 }
 
+/* Hover/focus "view" arrow — no layout height cost */
+.entry-card::after {
+  content: '⟶';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translate(6px, -50%);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity var(--transition), transform var(--transition), color var(--transition);
+}
+.entry-card:hover::after,
+.entry-card:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+  color: var(--accent);
+}
+
 /* Image wrapper */
 .entry-card__image-wrapper {
-  width: 260px;
+  width: 92px;
   flex-shrink: 0;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1 / 1;
   border-radius: var(--radius);
   overflow: hidden;
   background: var(--surface);
@@ -284,7 +306,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 1.75rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--text-muted);
   background: linear-gradient(145deg, var(--surface) 0%, var(--border) 100%);
@@ -299,48 +321,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   justify-content: center;
 }
 .entry-card__title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
-  line-height: 1.35;
-  margin-bottom: 3px;
+  line-height: 1.3;
+  margin-bottom: 2px;
 }
 .entry-card__org {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 .entry-card__timeframe {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 .entry-card__summary {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 14px;
-}
-.entry-card__cta {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color var(--transition);
-}
-.entry-card:hover .entry-card__cta {
-  color: var(--accent);
-}
-.entry-card__cta-arrow {
-  transition: transform var(--transition);
-  display: inline-block;
-}
-.entry-card:hover .entry-card__cta-arrow {
-  transform: translateX(4px);
+  line-height: 1.5;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 /* ==========================================================
@@ -628,7 +634,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .sidebar__photo { width: 150px; height: 150px; }
   .sidebar__greeting { font-size: 1.7rem; }
   .main { padding: 36px 28px 36px 28px; }
-  .entry-card__image-wrapper { width: 200px; }
+  .entry-card__image-wrapper { width: 84px; }
 }
 
 /* ==========================================================
@@ -662,14 +668,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   /* Entry cards stack on mobile */
   .entry-card {
     flex-direction: column;
+    align-items: stretch;
     gap: 14px;
     padding: 16px;
+  }
+  .entry-card::after {
+    display: none;
   }
   .entry-card__image-wrapper {
     width: 100%;
     aspect-ratio: 16 / 9;
   }
+  .entry-card__title { font-size: 1.1rem; }
+  .entry-card__org { font-size: 0.9rem; }
+  .entry-card__timeframe { font-size: 0.8rem; }
   .entry-card__summary {
+    font-size: 0.9rem;
     -webkit-line-clamp: 4;
   }
 

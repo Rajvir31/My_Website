@@ -348,8 +348,7 @@ function renderEntryCard(entry) {
       <div class="entry-card__title">${entry.title}</div>
       ${entry.org ? '<div class="entry-card__org">' + entry.org + '</div>' : ''}
       <div class="entry-card__timeframe">${entry.timeframe}</div>
-      <p class="entry-card__summary">${entry.summary}</p>
-      <span class="entry-card__cta">View Entry <span class="entry-card__cta-arrow">⟶</span></span>
+      ${entry.summary ? '<p class="entry-card__summary">' + entry.summary + '</p>' : ''}
     </div>
   `;
 
