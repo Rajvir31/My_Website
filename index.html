@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rajvir Parmar — Software Engineer</title>
-  <meta name="description" content="Software Engineer specializing in full-stack development, distributed systems, and AI/ML. Currently building device monitoring infrastructure at Solink.">
-  <meta name="theme-color" content="#f5f5f4">
+  <meta name="description" content="Software Engineer specializing in full-stack development, distributed systems, and AI/ML. Currently building intelligent software at SOTI.">
+  <meta name="theme-color" content="#0a0a0b">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/b42a2cfa4d.js" crossorigin="anonymous"></script>
@@ -19,471 +19,491 @@
 </head>
 <body>
 
-<!-- ========== MOBILE HEADER (visible ≤700px) ========== -->
-<header class="mobile-header" id="mobile-header">
-  <a href="#" class="mobile-header__name">Rajvir Parmar</a>
-  <button class="mobile-header__toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-
-<!-- ========== LAYOUT ========== -->
-<div class="layout">
-
-  <!-- ===== SIDEBAR ===== -->
-  <aside class="sidebar" id="sidebar">
-    <img
-      class="sidebar__photo"
-      src="images/profile.jpg"
-      alt="Rajvir Parmar"
-      width="160"
-      height="160"
-    >
-
-    <h1 class="sidebar__greeting">
-      <span>Hi, I'm</span>
-      Rajvir Parmar
-    </h1>
-    <p class="sidebar__subtitle">Welcome to my portfolio</p>
-
-    <p class="sidebar__section-title">About Me</p>
-    <div class="sidebar__roles">
-      <div class="sidebar__role">
-        <span class="sidebar__role-num">01</span>
-        <span class="sidebar__role-sep">/</span>
-        <span class="sidebar__role-label">Software Engineer</span>
-      </div>
-      <div class="sidebar__role">
-        <span class="sidebar__role-num">02</span>
-        <span class="sidebar__role-sep">/</span>
-        <span class="sidebar__role-label">Full-Stack Developer</span>
-      </div>
-      <div class="sidebar__role">
-        <span class="sidebar__role-num">03</span>
-        <span class="sidebar__role-sep">/</span>
-        <span class="sidebar__role-label">AI / ML</span>
-      </div>
-      <div class="sidebar__role">
-        <span class="sidebar__role-num">04</span>
-        <span class="sidebar__role-sep">/</span>
-        <span class="sidebar__role-label">Systems & Cloud</span>
-      </div>
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo">RP<span class="nav__logo-dot">.</span></a>
+    <div class="nav__links">
+      <a href="#about" class="nav__link" data-section="about">About</a>
+      <a href="#experience" class="nav__link" data-section="experience">Experience</a>
+      <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+      <a href="#contact" class="nav__link" data-section="contact">Contact</a>
     </div>
-
-    <div class="sidebar__socials">
-      <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-    </div>
-
-    <a href="images/Rajvir_Parmar_Resume1.pdf" class="sidebar__resume-btn" target="_blank" rel="noopener">View My Resume</a>
-
-    <div class="sidebar__spacer"></div>
-    <p class="sidebar__footer">Updated Aug 2026</p>
-  </aside>
-
-  <!-- ===== MAIN CONTENT ===== -->
-  <main class="main">
-
-    <!-- Filters -->
-    <div class="entries__filters" id="entry-filters">
-      <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="experience">Experience</button>
-      <button class="filter-chip" data-filter="project">Projects</button>
-    </div>
-
-    <!-- Entry cards (rendered by JS) -->
-    <div class="entries__list" id="entries-list"></div>
-
-    <!-- Contact -->
-    <section class="main__contact">
-      <h2 class="contact__title">Get in Touch</h2>
-      <form class="contact__form" name="submit-to-google-sheet">
-        <input type="text" name="Name" placeholder="Your Name" required>
-        <input type="email" name="Email" placeholder="Your Email" required>
-        <textarea name="Message" rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn btn--primary">Send Message</button>
-        <span id="msg"></span>
-      </form>
-    </section>
-
-    <footer class="main__footer">© 2026 Rajvir Parmar</footer>
-  </main>
-
-</div>
-
-<!-- ========== MODAL ========== -->
-<div class="modal" id="entry-modal" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal__overlay" id="modal-overlay"></div>
-  <div class="modal__panel" role="document" id="modal-panel">
-    <button class="modal__close" id="modal-close" aria-label="Close">&times;</button>
-    <div id="modal-body"></div>
+    <a href="images/Rajvir_Parmar_Resume.pdf" class="nav__resume-btn" target="_blank" rel="noopener">Resume</a>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="mobile-menu__link">About</a>
+  <a href="#experience" class="mobile-menu__link">Experience</a>
+  <a href="#projects" class="mobile-menu__link">Projects</a>
+  <a href="#contact" class="mobile-menu__link">Contact</a>
+  <a href="images/Rajvir_Parmar_Resume.pdf" class="mobile-menu__resume" target="_blank" rel="noopener">Resume</a>
 </div>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <p class="hero__greeting reveal">Hi, my name is</p>
+      <h1 class="hero__name reveal">Rajvir Parmar.</h1>
+      <h2 class="hero__tagline reveal">I build <span class="typed-text" id="typed-output"></span><span class="typed-cursor">|</span></h2>
+      <p class="hero__description reveal">Software Engineer specializing in full-stack development, distributed systems, and AI/ML. Currently building intelligent software at <strong>SOTI</strong>.</p>
+      <div class="hero__actions reveal">
+        <a href="#projects" class="btn btn--primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+      </div>
+      <div class="hero__socials reveal">
+        <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero__photo reveal">
+      <div class="hero__photo-wrapper">
+        <img src="images/profile.jpg" alt="Rajvir Parmar" width="380" height="380" loading="eager">
+        <div class="hero__photo-ring"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll-hint">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section" id="about">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">01.</span> About Me</h2>
+    <div class="about">
+      <div class="about__text reveal">
+        <p>I'm a software engineer passionate about building products that make an impact. My journey started with curiosity about how things work under the hood, and it led me into the world of full-stack development, distributed systems, and machine learning.</p>
+        <p>I've had the privilege of working across diverse industries — from <strong>enterprise banking</strong> at Scotiabank, to <strong>grocery tech</strong> at Loblaw Digital, <strong>ed-tech</strong> at Riipen, <strong>video intelligence</strong> at Solink, and now <strong>enterprise mobility</strong> at SOTI.</p>
+        <p>Here are some technologies I've been working with recently:</p>
+        <ul class="about__tech-list">
+          <li>React & TypeScript</li>
+          <li>Go</li>
+          <li>Python & ML</li>
+          <li>AWS & GCP</li>
+          <li>Kubernetes & Docker</li>
+          <li>PostgreSQL & Kafka</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section class="section section--dark" id="experience">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">02.</span> Where I've Worked</h2>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section class="section" id="projects">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">03.</span> Things I've Built</h2>
+    <div class="projects" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section section--dark" id="contact">
+  <div class="section__container section__container--narrow">
+    <p class="contact__overline reveal">04. What's Next?</p>
+    <h2 class="contact__title reveal">Get In Touch</h2>
+    <p class="contact__description reveal">I'm currently open to new opportunities and interesting projects. Whether you have a question, a potential collaboration, or just want to say hi — my inbox is always open.</p>
+    <form class="contact__form reveal" name="submit-to-google-sheet">
+      <div class="contact__form-row">
+        <div class="form-group">
+          <input type="text" name="Name" id="contact-name" placeholder=" " required>
+          <label for="contact-name">Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" name="Email" id="contact-email" placeholder=" " required>
+          <label for="contact-email">Your Email</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea name="Message" id="contact-message" rows="5" placeholder=" " required></textarea>
+        <label for="contact-message">Your Message</label>
+      </div>
+      <button type="submit" class="btn btn--primary btn--lg">
+        Send Message <i class="fa-solid fa-paper-plane"></i>
+      </button>
+      <span class="contact__msg" id="msg"></span>
+    </form>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__socials">
+      <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+    <p class="footer__credit">Designed & Built by Rajvir Parmar</p>
+    <p class="footer__copy">&copy; 2026 All rights reserved.</p>
+  </div>
+</footer>
 
 <!-- ========== SCRIPTS ========== -->
 <script>
 /* ---------------------------------------------------------
-   ENTRIES DATA
+   DATA
    --------------------------------------------------------- */
-const ENTRIES = [
+const EXPERIENCES = [
   {
-    id: 'soti',
-    type: 'experience',
-    featured: true,
     title: 'AI Software Developer',
-    org: 'SOTI',
+    company: 'SOTI',
     timeframe: 'June 2026 — Present',
-    sortOrder: 1,
     tags: ['React', 'TypeScript', 'Python', 'Docker', 'Kubernetes', 'PostgreSQL'],
     image: 'images/soti_images.jpg',
-    links: [{ label: 'Resume', url: 'images/Rajvir_Parmar_Resume.pdf', icon: 'fa-solid fa-file-lines' }]
+    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
   },
   {
-    id: 'solink',
-    type: 'experience',
-    featured: true,
     title: 'Software Developer Intern',
-    org: 'Solink',
+    company: 'Solink',
     timeframe: 'Sep 2025 — May 2026',
-    sortOrder: 2,
     tags: ['React', 'TypeScript', 'Go', 'AWS', 'Kafka', 'Kubernetes', 'PostgreSQL'],
     image: 'images/Solink-Logo.jpg',
-    links: [{ label: 'Resume', url: 'images/Rajvir_Parmar_Resume.pdf', icon: 'fa-solid fa-file-lines' }]
+    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
   },
   {
-    id: 'financial-markets',
-    type: 'project',
-    featured: true,
-    title: 'Predicting Financial Markets Using ML & Big Data',
-    org: 'Capstone Thesis',
-    timeframe: '2025',
-    sortOrder: 3,
-    summary: 'Designed a full ML pipeline for financial market prediction using XGBoost, from data ingestion through model evaluation and backtesting.',
-    details: 'Designed and implemented a complete machine learning pipeline in Python using XGBoost for financial market prediction. The project involved data ingestion from financial APIs, feature engineering with technical indicators, model training with hyperparameter tuning, and backtesting evaluation against historical data.',
-    impact: [
-      'Built end-to-end ML pipeline: data ingestion → feature engineering → training → backtesting',
-      'Implemented XGBoost-based prediction model with cross-validation and hyperparameter optimization',
-      'Evaluated model performance using walk-forward backtesting on historical financial data'
-    ],
-    tags: ['Python', 'XGBoost', 'Pandas', 'scikit-learn', 'Machine Learning'],
-    image: 'images/finance.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/Capstone-Project-Thesis', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'deezed',
-    type: 'project',
-    featured: false,
-    title: 'Deezed',
-    org: 'AI Workout App',
-    timeframe: '2025',
-    sortOrder: 4,
-    summary: 'AI-powered workout visualization app that shows your potential physique and lets you adjust training focus areas.',
-    details: 'Built an AI-powered workout application that generates visualizations of the user\'s potential physique based on their training goals. Users can adjust focus areas (e.g., emphasize back vs. biceps) and the app adapts recommendations accordingly.',
-    impact: [
-      'Designed AI model for physique visualization based on user input and training preferences',
-      'Built native mobile experience for real-time workout tracking and goal adjustment'
-    ],
-    tags: ['Swift', 'AI/ML', 'Mobile'],
-    image: 'images/deezed-icon.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/deezed', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'riipen',
-    type: 'experience',
-    featured: false,
     title: 'Software Engineer Intern',
-    org: 'Riipen',
+    company: 'Riipen',
     timeframe: 'May 2024 — Aug 2024',
-    sortOrder: 5,
     tags: ['Full-Stack', 'Responsive Design', 'Startup'],
     image: 'images/riipen_networks_inc_logo.jpg',
-    links: [{ label: 'Resume', url: 'images/Rajvir_Parmar_Resume.pdf', icon: 'fa-solid fa-file-lines' }]
+    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
   },
   {
-    id: 'microservice-app',
-    type: 'project',
-    featured: true,
-    title: 'Microservice-App',
-    org: 'Distributed Systems Lab',
-    timeframe: '2024',
-    sortOrder: 6,
-    tags: ['Go', 'PostgreSQL', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Docker', 'k6'],
-    image: 'images/microservice-app.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/Microservice-App', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'smashthemole',
-    type: 'project',
-    featured: false,
-    title: 'SmashTheMole',
-    org: 'Game Development',
-    timeframe: '2024',
-    sortOrder: 7,
-    summary: 'Whac-A-Mole arcade game built from scratch in C++ using the SFML graphics library with custom game loop, sprite animation, and scoring.',
-    details: 'A Whac-A-Mole style arcade game built in C++ using the SFML 2 graphics library. Features a custom game loop, real-time sprite animation, mouse-based input handling, difficulty scaling, and a scoring system.',
-    impact: [
-      'Implemented custom game loop with frame-independent timing for smooth animations',
-      'Built sprite animation system and mouse-based mole-whacking mechanics',
-      'Added progressive difficulty scaling and persistent high-score tracking'
-    ],
-    tags: ['C++', 'SFML', 'Game Dev'],
-    image: 'images/whacker.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'loblaw',
-    type: 'experience',
-    featured: false,
     title: 'Software Developer Intern',
-    org: 'Loblaw Digital',
+    company: 'Loblaw Digital',
     timeframe: 'Sep 2023 — Dec 2023',
-    sortOrder: 8,
     tags: ['Go', 'GCP', 'ETL', 'Data Pipeline'],
     image: 'images/loblaw_digital_logo.jpg',
-    links: [{ label: 'Resume', url: 'images/Rajvir_Parmar_Resume.pdf', icon: 'fa-solid fa-file-lines' }]
+    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
   },
   {
-    id: 'pethaven',
-    type: 'project',
-    featured: false,
-    title: 'PetHaven',
-    org: 'Virtual Pet Game',
-    timeframe: '2023',
-    sortOrder: 9,
-    summary: 'Virtual pet simulation built with JavaFX featuring real-time stat tracking for feeding, playing, exercising, and monitoring pet vitals.',
-    details: 'A virtual pet game built with JavaFX where users can adopt and care for digital pets. Features include feeding, playing, exercising, and monitoring vital stats in real time. The application uses event-driven architecture for responsive UI updates.',
-    impact: [
-      'Built real-time stat tracking system for pet health, hunger, happiness, and energy',
-      'Implemented event-driven UI updates using JavaFX property bindings',
-      'Designed pet care mechanics with feeding, playing, and exercising interactions'
-    ],
-    tags: ['Java', 'JavaFX', 'OOP'],
-    image: 'images/cat.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'scotiabank',
-    type: 'experience',
-    featured: false,
     title: 'Data Engineer Intern',
-    org: 'Scotiabank',
+    company: 'Scotiabank',
     timeframe: 'Jan 2023 — Apr 2023',
-    sortOrder: 10,
     tags: ['Enterprise', 'Banking', 'Software Development'],
     image: 'images/scotiabank_gbm_logo.jpg',
-    links: [{ label: 'Resume', url: 'images/Rajvir_Parmar_Resume.pdf', icon: 'fa-solid fa-file-lines' }]
+    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
   },
   {
-    id: 'aipingpong',
-    type: 'project',
-    featured: false,
-    title: 'AIPingPong',
-    org: 'AI Game Agent',
-    timeframe: '2023',
-    sortOrder: 11,
-    tags: ['Python', 'NEAT', 'Pygame', 'AI/ML'],
-    image: 'images/pong2.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/AIPINGPONG', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'instaclone',
-    type: 'project',
-    featured: false,
-    title: 'InstaClone',
-    org: 'Full-Stack Social App',
-    timeframe: '2023',
-    sortOrder: 12,
-    summary: 'Full-stack Instagram clone with social feed, post creation, and content management — built with React, Express, and Sanity headless CMS.',
-    details: 'A full-stack Instagram-style social media application built from scratch. Features a social feed, post creation and management, and user interactions. The frontend is built with React, the API layer uses Express, and content is managed through Sanity headless CMS.',
-    impact: [
-      'Built full-stack social media application with feed, posts, and content management',
-      'Integrated Sanity headless CMS for flexible content modeling and delivery',
-      'Implemented RESTful API with Express for client-server communication'
-    ],
-    tags: ['React', 'Express', 'Sanity CMS', 'Node.js'],
-    image: 'images/insta.png',
-    links: [{ label: 'GitHub', url: 'https://github.com/Rajvir31/INSTACLONE', icon: 'fa-brands fa-github' }]
-  },
-  {
-    id: 'humber',
-    type: 'experience',
-    featured: false,
     title: 'Information Technology Intern',
-    org: 'Humber College',
+    company: 'Humber College',
     timeframe: 'May 2021 — Aug 2021',
-    sortOrder: 13,
     tags: ['IT', 'Infrastructure', 'Support'],
     image: 'images/humber.jpg',
-    links: [{ label: 'Resume', url: 'images/Rajvir_Parmar_Resume.pdf', icon: 'fa-solid fa-file-lines' }]
+    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
+  }
+];
+
+const PROJECTS = [
+  {
+    title: 'Predicting Financial Markets Using ML & Big Data',
+    subtitle: 'Capstone Thesis',
+    year: '2025',
+    description: 'Designed a full ML pipeline for financial market prediction using XGBoost, from data ingestion through model evaluation and backtesting.',
+    tags: ['Python', 'XGBoost', 'Pandas', 'scikit-learn', 'ML'],
+    image: 'images/finance.png',
+    github: 'https://github.com/Rajvir31/Capstone-Project-Thesis'
+  },
+  {
+    title: 'Microservice-App',
+    subtitle: 'Distributed Systems Lab',
+    year: '2024',
+    description: 'Full observability microservice application with tracing, metrics, and load testing.',
+    tags: ['Go', 'PostgreSQL', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Docker'],
+    image: 'images/microservice-app.png',
+    github: 'https://github.com/Rajvir31/Microservice-App'
+  },
+  {
+    title: 'Deezed',
+    subtitle: 'AI Workout App',
+    year: '2025',
+    description: 'AI-powered workout visualization app that shows your potential physique and lets you adjust training focus areas.',
+    tags: ['Swift', 'AI/ML', 'Mobile'],
+    image: 'images/deezed-icon.png',
+    github: 'https://github.com/Rajvir31/deezed'
+  },
+  {
+    title: 'SmashTheMole',
+    subtitle: 'Game Development',
+    year: '2024',
+    description: 'Whac-A-Mole arcade game built from scratch in C++ using the SFML graphics library with custom game loop and scoring.',
+    tags: ['C++', 'SFML', 'Game Dev'],
+    image: 'images/whacker.png',
+    github: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game'
+  },
+  {
+    title: 'PetHaven',
+    subtitle: 'Virtual Pet Game',
+    year: '2023',
+    description: 'Virtual pet simulation built with JavaFX featuring real-time stat tracking for feeding, playing, and monitoring pet vitals.',
+    tags: ['Java', 'JavaFX', 'OOP'],
+    image: 'images/cat.png',
+    github: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game'
+  },
+  {
+    title: 'AIPingPong',
+    subtitle: 'AI Game Agent',
+    year: '2023',
+    description: 'Ping pong game with AI opponent trained using NEAT neuroevolution algorithm.',
+    tags: ['Python', 'NEAT', 'Pygame', 'AI/ML'],
+    image: 'images/pong2.png',
+    github: 'https://github.com/Rajvir31/AIPINGPONG'
+  },
+  {
+    title: 'InstaClone',
+    subtitle: 'Full-Stack Social App',
+    year: '2023',
+    description: 'Full-stack Instagram clone with social feed, post creation, and content management using Sanity CMS.',
+    tags: ['React', 'Express', 'Sanity CMS', 'Node.js'],
+    image: 'images/insta.png',
+    github: 'https://github.com/Rajvir31/INSTACLONE'
   }
 ];
 
 /* ---------------------------------------------------------
-   RENDER ENTRY CARDS
+   SCROLL REVEAL (initialized early so project load-more can use it)
    --------------------------------------------------------- */
-const entriesList = document.getElementById('entries-list');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-function renderEntryCard(entry) {
-  const card = document.createElement('article');
-  card.className = 'entry-card';
-  card.setAttribute('role', 'button');
-  card.setAttribute('tabindex', '0');
-  card.setAttribute('aria-label', 'View details: ' + entry.title + (entry.org ? ' — ' + entry.org : ''));
-  card.dataset.type = entry.type;
-  card.dataset.id = entry.id;
+/* ---------------------------------------------------------
+   RENDER EXPERIENCE TIMELINE
+   --------------------------------------------------------- */
+const timeline = document.getElementById('timeline');
 
-  // Image or placeholder
-  let imageHTML;
-  if (entry.image) {
-    imageHTML = `<div class="entry-card__image-wrapper"><img src="${entry.image}" alt="${entry.title}" loading="lazy"></div>`;
-  } else {
-    const initial = entry.org ? entry.org.charAt(0) : entry.title.charAt(0);
-    imageHTML = `<div class="entry-card__image-wrapper"><div class="entry-card__placeholder">${initial}</div></div>`;
-  }
-
-  card.innerHTML = `
-    ${imageHTML}
-    <div class="entry-card__body">
-      <div class="entry-card__title">${entry.title}</div>
-      ${entry.org ? '<div class="entry-card__org">' + entry.org + '</div>' : ''}
-      <div class="entry-card__timeframe">${entry.timeframe}</div>
-      ${entry.summary ? '<p class="entry-card__summary">' + entry.summary + '</p>' : ''}
+EXPERIENCES.forEach((exp, i) => {
+  const item = document.createElement('div');
+  item.className = 'timeline__item reveal';
+  item.style.animationDelay = (i * 100) + 'ms';
+  item.innerHTML = `
+    <div class="timeline__dot"></div>
+    <div class="timeline__card">
+      <div class="timeline__card-header">
+        <img src="${exp.image}" alt="${exp.company}" class="timeline__logo" loading="lazy">
+        <div>
+          <h3 class="timeline__title">${exp.title}</h3>
+          <p class="timeline__company">${exp.company}</p>
+          <p class="timeline__time">${exp.timeframe}</p>
+        </div>
+      </div>
+      <div class="timeline__tags">
+        ${exp.tags.map(t => '<span class="tag">' + t + '</span>').join('')}
+      </div>
     </div>
   `;
+  timeline.appendChild(item);
+});
 
-  card.addEventListener('click', () => openModal(entry.id));
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(entry.id); }
-  });
+/* ---------------------------------------------------------
+   RENDER PROJECT CARDS
+   --------------------------------------------------------- */
+const projectsGrid = document.getElementById('projects-grid');
+const INITIAL_COUNT = 6;
+
+function createProjectCard(proj, i) {
+  const card = document.createElement('article');
+  card.className = 'project-card reveal';
+  card.style.animationDelay = (i * 80) + 'ms';
+  card.innerHTML = `
+    <div class="project-card__image">
+      <img src="${proj.image}" alt="${proj.title}" loading="lazy">
+      <div class="project-card__overlay">
+        <a href="${proj.github}" target="_blank" rel="noopener" class="project-card__icon-link" aria-label="View on GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__meta">
+        <span class="project-card__subtitle">${proj.subtitle}</span>
+        <span class="project-card__year">${proj.year}</span>
+      </div>
+      <h3 class="project-card__title">${proj.title}</h3>
+      <p class="project-card__desc">${proj.description}</p>
+      <div class="project-card__tags">
+        ${proj.tags.map(t => '<span class="tag">' + t + '</span>').join('')}
+      </div>
+    </div>
+  `;
   return card;
 }
 
-function renderEntries(filter) {
-  entriesList.innerHTML = '';
-  const sorted = [...ENTRIES].sort((a, b) => a.sortOrder - b.sortOrder);
-  const filtered = filter === 'all' ? sorted : sorted.filter(e => e.type === filter);
-  filtered.forEach(entry => entriesList.appendChild(renderEntryCard(entry)));
+PROJECTS.slice(0, INITIAL_COUNT).forEach((proj, i) => {
+  projectsGrid.appendChild(createProjectCard(proj, i));
+});
+
+if (PROJECTS.length > INITIAL_COUNT) {
+  const loadMoreWrapper = document.createElement('div');
+  loadMoreWrapper.className = 'projects__load-more reveal';
+  loadMoreWrapper.innerHTML = '<button class="btn btn--ghost btn--load-more">Load More</button>';
+  projectsGrid.parentElement.appendChild(loadMoreWrapper);
+  revealObserver.observe(loadMoreWrapper);
+
+  loadMoreWrapper.querySelector('button').addEventListener('click', () => {
+    PROJECTS.slice(INITIAL_COUNT).forEach((proj, i) => {
+      const card = createProjectCard(proj, i);
+      projectsGrid.appendChild(card);
+      revealObserver.observe(card);
+    });
+    loadMoreWrapper.remove();
+  });
 }
 
-renderEntries('all');
-
 /* ---------------------------------------------------------
-   FILTER CHIPS
+   TYPING ANIMATION
    --------------------------------------------------------- */
-document.getElementById('entry-filters').addEventListener('click', (e) => {
-  const chip = e.target.closest('.filter-chip');
-  if (!chip) return;
-  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
-  chip.classList.add('active');
-  renderEntries(chip.dataset.filter);
-});
+const typedEl = document.getElementById('typed-output');
+const phrases = [
+  'scalable systems.',
+  'full-stack apps.',
+  'ML pipelines.',
+  'cloud infrastructure.',
+  'things that matter.'
+];
+let phraseIdx = 0, charIdx = 0, deleting = false;
 
-/* ---------------------------------------------------------
-   MODAL
-   --------------------------------------------------------- */
-const modal        = document.getElementById('entry-modal');
-const modalBody    = document.getElementById('modal-body');
-const modalClose   = document.getElementById('modal-close');
-const modalOverlay = document.getElementById('modal-overlay');
-let previousFocus  = null;
-
-function openModal(entryId) {
-  const entry = ENTRIES.find(e => e.id === entryId);
-  if (!entry) return;
-  previousFocus = document.activeElement;
-
-  const typeClass = entry.type === 'experience' ? 'modal__type--experience' : 'modal__type--project';
-
-  modalBody.innerHTML = `
-    <div class="modal__type ${typeClass}">${entry.type === 'experience' ? 'Experience' : 'Project'}</div>
-    <h2 class="modal__title">${entry.title}</h2>
-    ${entry.org ? '<p class="modal__org">' + entry.org + '</p>' : ''}
-    <p class="modal__timeframe">${entry.timeframe}</p>
-    ${entry.image ? '<img class="modal__image" src="' + entry.image + '" alt="' + entry.title + '" loading="lazy">' : ''}
-    <p class="modal__description">${entry.details}</p>
-    ${entry.impact && entry.impact.length ? `
-      <p class="modal__impact-title">Key Contributions</p>
-      <ul class="modal__impact-list">${entry.impact.map(i => '<li>' + i + '</li>').join('')}</ul>
-    ` : ''}
-    <div class="modal__tags">${entry.tags.map(t => '<span class="tag">' + t + '</span>').join('')}</div>
-    ${entry.links && entry.links.length ? `
-      <div class="modal__links">${entry.links.map(l => '<a href="' + l.url + '" class="modal__link" target="_blank" rel="noopener"><i class="' + l.icon + '"></i> ' + l.label + '</a>').join('')}</div>
-    ` : ''}
-  `;
-
-  modal.classList.add('open');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  requestAnimationFrame(() => modalClose.focus());
+function typeEffect() {
+  const current = phrases[phraseIdx];
+  if (!deleting) {
+    typedEl.textContent = current.substring(0, charIdx + 1);
+    charIdx++;
+    if (charIdx === current.length) {
+      deleting = true;
+      setTimeout(typeEffect, 2000);
+      return;
+    }
+    setTimeout(typeEffect, 80);
+  } else {
+    typedEl.textContent = current.substring(0, charIdx - 1);
+    charIdx--;
+    if (charIdx === 0) {
+      deleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+    }
+    setTimeout(typeEffect, 40);
+  }
 }
-
-function closeModal() {
-  modal.classList.remove('open');
-  modal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-  if (previousFocus) { previousFocus.focus(); previousFocus = null; }
-}
-
-modalClose.addEventListener('click', closeModal);
-modalOverlay.addEventListener('click', closeModal);
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
-});
-
-// Focus trap
-modal.addEventListener('keydown', (e) => {
-  if (e.key !== 'Tab') return;
-  const els = modal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
-  if (!els.length) return;
-  const first = els[0], last = els[els.length - 1];
-  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-});
+typeEffect();
 
 /* ---------------------------------------------------------
-   MOBILE NAV
+   OBSERVE ALL REVEAL ELEMENTS
    --------------------------------------------------------- */
-const mobileToggle = document.getElementById('mobile-toggle');
-const sidebar = document.getElementById('sidebar');
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-mobileToggle.addEventListener('click', () => {
-  const opening = !sidebar.classList.contains('open');
-  sidebar.classList.toggle('open');
-  mobileToggle.classList.toggle('active');
-  mobileToggle.setAttribute('aria-expanded', opening);
-  document.body.style.overflow = opening ? 'hidden' : '';
+/* ---------------------------------------------------------
+   NAV SCROLL EFFECT & SCROLL SPY
+   --------------------------------------------------------- */
+const nav = document.getElementById('nav');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav__link');
+
+function onScroll() {
+  const scrollY = window.scrollY;
+  nav.classList.toggle('nav--scrolled', scrollY > 50);
+
+  let current = '';
+  sections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (scrollY >= top) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.dataset.section === current);
+  });
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ---------------------------------------------------------
+   MOBILE MENU
+   --------------------------------------------------------- */
+const navToggle = document.getElementById('nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.contains('open');
+  mobileMenu.classList.toggle('open');
+  navToggle.classList.toggle('active');
+  navToggle.setAttribute('aria-expanded', !isOpen);
+  document.body.style.overflow = isOpen ? '' : 'hidden';
 });
 
-// Close sidebar when a link inside it is clicked
-sidebar.querySelectorAll('a').forEach(link => {
+mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-    mobileToggle.classList.remove('active');
-    mobileToggle.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    navToggle.classList.remove('active');
+    navToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   });
 });
 
 /* ---------------------------------------------------------
-   CONTACT FORM (Google Apps Script — preserved)
+   SMOOTH SCROLL (for anchor links)
+   --------------------------------------------------------- */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ---------------------------------------------------------
+   CONTACT FORM (Google Apps Script)
    --------------------------------------------------------- */
 const scriptURL = 'https://script.google.com/macros/s/AKfycbw5VX2ijqS9RohM5anXG3JJirZtOy-g34C6v-b61BaSzxE_qX344bCjjshCIZnqIzBt5A/exec';
 const form = document.forms['submit-to-google-sheet'];
-const msg  = document.getElementById('msg');
+const msg = document.getElementById('msg');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(() => {
       msg.textContent = 'Message sent successfully!';
-      setTimeout(() => { msg.textContent = ''; }, 5000);
+      msg.className = 'contact__msg contact__msg--success';
       form.reset();
+      setTimeout(() => { msg.textContent = ''; msg.className = 'contact__msg'; }, 5000);
     })
-    .catch(err => console.error('Error!', err.message));
+    .catch(err => {
+      msg.textContent = 'Something went wrong. Please try again.';
+      msg.className = 'contact__msg contact__msg--error';
+      console.error('Error:', err.message);
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
+    });
 });
 </script>
 
 </body>
 </html>
-
