@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-labelledby="title description">
+  <title id="title">TaintGate</title>
+  <desc id="description">Concept diagram showing persistent data labels flowing through a policy gate before tool calls.</desc>
+  <rect width="720" height="420" fill="#eae4d7"/>
+  <g fill="none" stroke="#cec5b5" stroke-width="1">
+    <path d="M0 84H720M0 168H720M0 252H720M0 336H720M90 0V420M180 0V420M270 0V420M360 0V420M450 0V420M540 0V420M630 0V420"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#252923">
+    <text x="40" y="62" font-size="36" font-weight="700" letter-spacing="-1">TAINTGATE</text>
+    <text x="40" y="92" font-size="13" letter-spacing="2">AI AGENT SECURITY / PYTHON + MCP</text>
+  </g>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="2">
+    <rect x="40" y="150" width="180" height="124" rx="2"/>
+    <rect x="276" y="132" width="192" height="160" rx="2"/>
+    <rect x="524" y="150" width="156" height="124" rx="2"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="2">
+    <path d="M220 212H266M254 204l12 8-12 8M468 212H514M502 204l12 8-12 8"/>
+    <path d="M130 274V330H372V292" stroke-dasharray="5 5"/>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <text x="130" y="181" fill="#696255" font-size="12">DATA LABELS</text>
+    <text x="130" y="213" fill="#252923" font-size="18">Session</text>
+    <text x="130" y="242" fill="#252923" font-size="18">Memory</text>
+    <text x="372" y="165" fill="#696255" font-size="12">POLICY CHECK</text>
+    <path d="M343 184V226L372 247L401 226V184Z" fill="none" stroke="#ac3f24" stroke-width="3"/>
+    <path d="M358 211l10 10 18-22" fill="none" stroke="#ac3f24" stroke-width="3"/>
+    <text x="372" y="274" fill="#252923" font-size="16">TaintGate</text>
+    <text x="602" y="181" fill="#696255" font-size="12">TOOL CALL</text>
+    <text x="602" y="215" fill="#252923" font-size="18">Enforce</text>
+    <text x="602" y="244" fill="#ac3f24" font-size="13">ALLOW / DENY</text>
+  </g>
+  <rect x="171" y="315" width="160" height="28" fill="#eae4d7"/>
+  <text x="251" y="334" text-anchor="middle" font-family="monospace" font-size="12" fill="#53564b">LABELS PERSIST</text>
+  <path d="M40 365H680" stroke="#897e6e"/>
+  <text x="40" y="393" font-family="monospace" font-size="12" fill="#53564b">ACROSS SESSIONS. BEFORE ACTIONS.</text>
+</svg>
