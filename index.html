@@ -3,158 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rajvir Parmar — Software Engineer</title>
+  <title>Rajvir Parmar - Field Notes & Software</title>
   <meta name="description" content="Software Engineer specializing in full-stack development, distributed systems, and AI/ML. Currently building intelligent software at SOTI.">
-  <meta name="theme-color" content="#0a0a0b">
+  <meta name="theme-color" content="#f3efe5">
+
+  <!-- Monogram favicon (inline SVG, matches the nav logo) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='32'%20fill='%23ac3f24'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Georgia,serif'%20font-size='34'%20font-style='italic'%20fill='%23fffaf0'%20text-anchor='middle'%3Erp%3C/text%3E%3C/svg%3E">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/b42a2cfa4d.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="style.css">
+  <noscript>
+    <style>
+      .reveal { opacity: 1; transform: none; }
+      .nav__toggle, .nav__explore, .project-tools,
+      .projects__load-more, .beyond__discovery, .currently, .contact__form,
+      #copy-email, #engineering-sketch, .typed-cursor { display: none !important; }
+    </style>
+  </noscript>
+
+  <!-- Interactive background -->
+  <script src="background.js" defer></script>
+  <script src="interactions.js" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#hero">Skip to content</a>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<!-- ========== INTERACTIVE BACKGROUND ========== -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 
 <!-- ========== NAVIGATION ========== -->
 <nav class="nav" id="nav">
   <div class="nav__inner">
-    <a href="#hero" class="nav__logo">RP<span class="nav__logo-dot">.</span></a>
+    <a href="#hero" class="nav__logo" aria-label="Rajvir Parmar, home"><span class="nav__monogram">rp.</span><span class="nav__wordmark">RAJVIR PARMAR<br>FIELD NOTES / SOFTWARE</span></a>
     <div class="nav__links">
       <a href="#about" class="nav__link" data-section="about">About</a>
       <a href="#experience" class="nav__link" data-section="experience">Experience</a>
       <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+      <a href="#beyond" class="nav__link" data-section="beyond">Margins</a>
       <a href="#contact" class="nav__link" data-section="contact">Contact</a>
     </div>
     <a href="images/Rajvir_Parmar_Resume.pdf" class="nav__resume-btn" target="_blank" rel="noopener">Resume</a>
-    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <button class="nav__explore" data-open-explorer aria-haspopup="dialog" aria-controls="explorer">Explore <kbd>Ctrl K</kbd></button>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div class="mobile-menu" id="mobile-menu">
+<dialog class="mobile-menu" id="mobile-menu" aria-label="Navigation">
+  <form method="dialog"><button class="dialog-close" aria-label="Close navigation">&times;</button></form>
   <a href="#about" class="mobile-menu__link">About</a>
   <a href="#experience" class="mobile-menu__link">Experience</a>
   <a href="#projects" class="mobile-menu__link">Projects</a>
+  <a href="#beyond" class="mobile-menu__link">In the margins</a>
   <a href="#contact" class="mobile-menu__link">Contact</a>
   <a href="images/Rajvir_Parmar_Resume.pdf" class="mobile-menu__resume" target="_blank" rel="noopener">Resume</a>
-</div>
+</dialog>
 
+<main>
+<noscript>
+  <div class="no-script-notice">
+    <p>JavaScript is off. You can still read about me, <a href="images/Rajvir_Parmar_Resume.pdf" target="_blank" rel="noopener">open my resume</a>, <a href="https://github.com/Rajvir31" target="_blank" rel="noopener">browse my projects on GitHub</a>, or <a href="mailto:rajvirparmar32@gmail.com">email me directly</a>. Enable JavaScript for search, previews, and the contact form.</p>
+  </div>
+</noscript>
 <!-- ========== HERO ========== -->
 <section class="hero" id="hero">
   <div class="hero__container">
     <div class="hero__content">
-      <p class="hero__greeting reveal">Hi, my name is</p>
+      <p class="hero__greeting reveal"><span class="folio-mark">VOL. 01</span> A working notebook by</p>
       <h1 class="hero__name reveal">Rajvir Parmar.</h1>
-      <h2 class="hero__tagline reveal">I build <span class="typed-text" id="typed-output"></span><span class="typed-cursor">|</span></h2>
-      <p class="hero__description reveal">Software Engineer specializing in full-stack development, distributed systems, and AI/ML. Currently building intelligent software at <strong>SOTI</strong>.</p>
+      <h2 class="hero__tagline reveal" aria-label="I build scalable systems, full-stack apps, and ML pipelines."><span aria-hidden="true">I build <span class="typed-text" id="typed-output">scalable systems.</span><span class="typed-cursor">|</span></span></h2>
+      <p class="hero__description reveal">From an AI that plays ping-pong to systems built to scale. This is my corner of the internet for <strong>software, experiments, and the ideas in between.</strong></p>
       <div class="hero__actions reveal">
-        <a href="#projects" class="btn btn--primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+        <a href="#projects" class="btn btn--primary">Open the project index <span aria-hidden="true">&nearr;</span></a>
+        <a href="#contact" class="btn btn--ghost">Leave me a note</a>
       </div>
       <div class="hero__socials reveal">
-        <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+        <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+        <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
       </div>
     </div>
-    <div class="hero__photo reveal">
-      <div class="hero__photo-wrapper">
-        <img src="images/profile.jpg" alt="Rajvir Parmar" width="380" height="380" loading="eager">
-        <div class="hero__photo-ring"></div>
+    <figure class="hero__portrait reveal">
+      <span class="portrait-label">01 / SOFTWARE ENGINEER</span>
+      <div class="hero__photo">
+        <div class="hero__photo-wrapper">
+          <img src="images/profile.jpg" alt="Rajvir Parmar" width="380" height="380" loading="eager">
+          <div class="hero__photo-ring" aria-hidden="true"></div>
+        </div>
       </div>
-    </div>
+      <figcaption>
+      <div class="portrait-caption"><span>FIG. 01 / RAJVIR, OFFLINE</span><span aria-hidden="true">↗</span></div>
+      <div class="hero__current"><span class="playground-label">On the current page</span><strong>AI Software Developer at SOTI</strong><a href="#experience">The story so far &rarr;</a></div>
+      </figcaption>
+    </figure>
   </div>
   <div class="hero__scroll-hint">
-    <span>Scroll</span>
-    <div class="hero__scroll-line"></div>
+    <span>Software engineering / AI / A healthy amount of curiosity</span>
+    <a href="#about">Read on <span aria-hidden="true">&darr;</span></a>
   </div>
 </section>
 
 <!-- ========== ABOUT ========== -->
 <section class="section" id="about">
   <div class="section__container">
-    <h2 class="section__heading reveal"><span class="section__num">01.</span> About Me</h2>
+    <h2 class="section__heading reveal"><span class="section__num">01 / CONTEXT</span> A little background.</h2>
     <div class="about">
       <div class="about__text reveal">
-        <p>I'm a software engineer passionate about building products that make an impact. My journey started with curiosity about how things work under the hood, and it led me into the world of full-stack development, distributed systems, and machine learning.</p>
-        <p>I've had the privilege of working across diverse industries — from <strong>enterprise banking</strong> at Scotiabank, to <strong>grocery tech</strong> at Loblaw Digital, <strong>ed-tech</strong> at Riipen, <strong>video intelligence</strong> at Solink, and now <strong>enterprise mobility</strong> at SOTI.</p>
-        <p>Here are some technologies I've been working with recently:</p>
+        <p class="about__lead">Different problems.<br>The same curiosity.</p>
+        <p>Hey, I'm Rajvir. Right now I'm an <strong>AI Software Developer at SOTI</strong>. My work has taken me through banking at Scotiabank, grocery tech at Loblaw Digital, ed-tech at Riipen, and video intelligence at Solink.</p>
+        <p>Outside that work, the project list gets a little less predictable: financial-market models, observable microservices, a virtual pet, and a ping-pong opponent that learns.</p>
+        <p>This notebook brings those threads together. Some entries are practical; some are experiments. All of them are things I've built.</p>
+        <p>The tools I reach for most these days. Tap a highlighted technology to see it in a project:</p>
         <ul class="about__tech-list">
-          <li>React & TypeScript</li>
-          <li>Go</li>
-          <li>Python & ML</li>
+          <li><button class="tech-link" data-project-tech="React">React</button> & TypeScript</li>
+          <li><button class="tech-link" data-project-tech="Go">Go</button></li>
+          <li><button class="tech-link" data-project-tech="Python">Python & ML</button></li>
           <li>AWS & GCP</li>
-          <li>Kubernetes & Docker</li>
-          <li>PostgreSQL & Kafka</li>
+          <li>Kubernetes & <button class="tech-link" data-project-tech="Docker">Docker</button></li>
+          <li><button class="tech-link" data-project-tech="PostgreSQL">PostgreSQL</button> & Kafka</li>
         </ul>
       </div>
+      <aside class="lab-sketch reveal" id="engineering-sketch" aria-labelledby="sketch-title">
+        <div class="sketch-heading"><span class="playground-label">FIG. 02 / AN INTERACTIVE SKETCH</span><span aria-hidden="true">↙</span></div>
+        <h3 id="sketch-title">Follow the idea.</h3>
+        <p class="sketch-intro">Three small sketches from my projects. Pick a topic, then inspect a step.</p>
+        <div class="sketch-modes" role="group" aria-label="Sketch topic">
+          <button data-sketch-mode="systems" aria-pressed="true">Systems</button>
+          <button data-sketch-mode="ml" aria-pressed="false">Machine learning</button>
+          <button data-sketch-mode="games" aria-pressed="false">Games</button>
+        </div>
+        <div class="sketch-diagram" role="group" aria-label="Sketch steps">
+          <svg class="sketch-lines" viewBox="0 0 420 130" preserveAspectRatio="none" aria-hidden="true"><path d="M64 54C126 8 137 100 208 54S296 8 355 54" /><path class="sketch-signal" d="M64 54C126 8 137 100 208 54S296 8 355 54" /></svg>
+          <button data-sketch-step="0" aria-pressed="true" aria-controls="sketch-note"><span>01</span><strong>Service</strong></button>
+          <button data-sketch-step="1" aria-pressed="false" aria-controls="sketch-note"><span>02</span><strong>Data</strong></button>
+          <button data-sketch-step="2" aria-pressed="false" aria-controls="sketch-note"><span>03</span><strong>Signals</strong></button>
+        </div>
+        <div class="sketch-note" id="sketch-note" aria-live="polite"><h4>Start with a service.</h4><p>Go is part of the Microservice-App's toolkit. This project explores services alongside tracing, metrics, and load testing.</p></div>
+        <div class="sketch-actions"><button class="control-button" id="sketch-run">Run the trace &rarr;</button><button class="text-button" id="sketch-project" data-project-open="1" aria-haspopup="dialog">Open project notes &nearr;</button></div>
+        <p class="sketch-caption" id="sketch-status" role="status">A concept sketch, not a complete architecture.</p>
+      </aside>
     </div>
   </div>
 </section>
 
 <!-- ========== EXPERIENCE ========== -->
-<section class="section section--dark" id="experience">
+<section class="section section--paper" id="experience">
   <div class="section__container">
-    <h2 class="section__heading reveal"><span class="section__num">02.</span> Where I've Worked</h2>
+    <h2 class="section__heading reveal"><span class="section__num">02 / THE JOURNEY</span> Places I've contributed.</h2>
     <div class="timeline" id="timeline"></div>
+    <noscript><p>My experience details are available in <a href="images/Rajvir_Parmar_Resume.pdf">my resume</a>.</p></noscript>
   </div>
 </section>
 
 <!-- ========== PROJECTS ========== -->
 <section class="section" id="projects">
   <div class="section__container">
-    <h2 class="section__heading reveal"><span class="section__num">03.</span> Things I've Built</h2>
+    <h2 class="section__heading reveal"><span class="section__num">03 / SELECTED WORK</span> From idea to something real.</h2>
+    <p class="section__intro">A few finished thoughts, a few experiments. Open an entry for the details, or follow the code.</p>
+    <div class="project-tools">
+      <div class="project-filters" role="group" aria-label="Project category">
+        <button class="filter-chip" data-project-filter="all" aria-pressed="true">All work</button>
+        <button class="filter-chip" data-project-filter="ai" aria-pressed="false">AI / ML</button>
+        <button class="filter-chip" data-project-filter="web" aria-pressed="false">Web</button>
+        <button class="filter-chip" data-project-filter="systems" aria-pressed="false">Systems</button>
+        <button class="filter-chip" data-project-filter="games" aria-pressed="false">Games</button>
+      </div>
+      <div class="project-search-row">
+        <label class="search-field" for="project-search">Find a project
+          <input type="search" id="project-search" placeholder="Try Python, games, observability..." autocomplete="off" aria-controls="projects-grid">
+        </label>
+        <label for="project-tech">Technology
+          <select id="project-tech" aria-controls="projects-grid"><option value="">All technologies</option></select>
+        </label>
+        <label for="project-sort">Sort
+          <select id="project-sort" aria-controls="projects-grid">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </label>
+      </div>
+      <div class="project-results-row">
+        <p id="project-count" role="status"></p>
+        <button class="text-button" id="project-reset">Reset filters</button>
+        <button class="text-button" data-random-project>Surprise me</button>
+      </div>
+    </div>
     <div class="projects" id="projects-grid"></div>
+    <noscript><p>Explore the project collection on <a href="https://github.com/Rajvir31" target="_blank" rel="noopener">GitHub</a>.</p></noscript>
+    <p class="project-empty" id="project-empty" hidden>No matches this time. Try a different search or reset the filters.</p>
+    <div class="projects__load-more" id="load-more-wrapper">
+      <button class="btn btn--ghost btn--load-more" id="load-more">Load More</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BEYOND THE CODE ========== -->
+<section class="section section--paper" id="beyond">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">04 / IN THE MARGINS</span> Curiosity takes detours.</h2>
+    <p class="beyond__intro reveal">Not everything starts with a business requirement. These are a few of the ideas that made their way into my projects.</p>
+    <div class="beyond__grid" id="beyond-grid"></div>
+    <div class="beyond__discovery">
+      <p>Prefer exploring to scrolling? Pick a project at random.</p>
+      <button class="btn btn--ghost" data-random-project>Show me something you built</button>
+    </div>
+
+    <div class="currently reveal">
+      <h3 class="currently__heading"><span class="currently__pulse"></span> The notebook, at a glance</h3>
+      <ul class="currently__list" id="currently-list"></ul>
+    </div>
   </div>
 </section>
 
 <!-- ========== CONTACT ========== -->
-<section class="section section--dark" id="contact">
+<section class="section" id="contact">
   <div class="section__container section__container--narrow">
-    <p class="contact__overline reveal">04. What's Next?</p>
-    <h2 class="contact__title reveal">Get In Touch</h2>
-    <p class="contact__description reveal">I'm currently open to new opportunities and interesting projects. Whether you have a question, a potential collaboration, or just want to say hi — my inbox is always open.</p>
-    <form class="contact__form reveal" name="submit-to-google-sheet">
+    <div class="contact__intro">
+    <p class="contact__overline reveal">05 / THE NEXT PAGE</p>
+    <h2 class="contact__title reveal">Have a good<br><em>problem?</em></h2>
+    <p class="contact__description reveal">A project, an opportunity, or a wonderfully specific question. There's room for one more conversation.</p>
+    <div class="contact__email">
+      <a href="mailto:rajvirparmar32@gmail.com">rajvirparmar32@gmail.com</a>
+      <button class="control-button" id="copy-email">Copy email</button>
+      <span id="copy-status" role="status"></span>
+    </div>
+    <p class="contact__annotation" aria-hidden="true">Start anywhere. A hello works, too.</p>
+    </div>
+    <form class="contact__form reveal" name="submit-to-google-sheet" method="post">
+      <fieldset class="contact-starters">
+        <legend>Need an opening line? Start here.</legend>
+        <button type="button" class="filter-chip" data-contact-topic="collaboration">Build together</button>
+        <button type="button" class="filter-chip" data-contact-topic="opportunity">An opportunity</button>
+        <button type="button" class="filter-chip" data-contact-topic="hello">Just saying hi</button>
+      </fieldset>
       <div class="contact__form-row">
         <div class="form-group">
-          <input type="text" name="Name" id="contact-name" placeholder=" " required>
+          <input type="text" name="Name" id="contact-name" placeholder=" " autocomplete="name" required>
           <label for="contact-name">Your Name</label>
         </div>
         <div class="form-group">
-          <input type="email" name="Email" id="contact-email" placeholder=" " required>
+          <input type="email" name="Email" id="contact-email" placeholder=" " autocomplete="email" required>
           <label for="contact-email">Your Email</label>
         </div>
       </div>
       <div class="form-group">
-        <textarea name="Message" id="contact-message" rows="5" placeholder=" " required></textarea>
+        <textarea name="Message" id="contact-message" rows="5" placeholder=" " aria-describedby="message-count" required></textarea>
         <label for="contact-message">Your Message</label>
       </div>
-      <button type="submit" class="btn btn--primary btn--lg">
+      <div class="contact-feedback"><span id="form-progress">0 of 3 fields ready</span><span id="message-count">0 characters</span></div>
+      <button type="submit" class="btn btn--primary btn--lg" disabled>
         Send Message <i class="fa-solid fa-paper-plane"></i>
       </button>
-      <span class="contact__msg" id="msg"></span>
+      <span class="contact__msg" id="msg" role="status" aria-live="polite"></span>
     </form>
   </div>
 </section>
+</main>
 
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="footer__inner">
+    <p class="footer__signoff">Still curious.<br><em>Still building.</em></p>
     <div class="footer__socials">
-      <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+      <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+      <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
     </div>
-    <p class="footer__credit">Designed & Built by Rajvir Parmar</p>
+    <p class="footer__credit">Rajvir Parmar / A notebook on the web</p>
     <p class="footer__copy">&copy; 2026 All rights reserved.</p>
   </div>
 </footer>
+
+<a class="back-to-top" id="back-to-top" href="#hero" aria-label="Back to top" hidden>&uarr;</a>
+
+<dialog class="site-dialog" id="explorer" aria-labelledby="explorer-title">
+  <div class="dialog-header">
+    <h2 id="explorer-title">Where to?</h2>
+    <form method="dialog"><button class="dialog-close" aria-label="Close explorer">&times;</button></form>
+  </div>
+  <label class="sr-only" for="explorer-search">Search sections and projects</label>
+  <input type="search" id="explorer-search" placeholder="Search sections, projects, or technologies..." autocomplete="off">
+  <p class="dialog-hint">Type to search. Tab moves between controls; arrow keys browse results. Escape closes.</p>
+  <div class="explorer-settings" role="group" aria-labelledby="motion-heading">
+    <div class="explorer-settings__copy">
+      <span class="playground-label" id="motion-heading">Motion</span>
+      <p id="motion-note">Animations enabled.</p>
+    </div>
+    <button class="control-button" id="motion-toggle" aria-pressed="false" aria-describedby="motion-note">Pause motion</button>
+  </div>
+  <p id="explorer-count" class="sr-only" role="status"></p>
+  <div class="explorer-results" id="explorer-results"></div>
+</dialog>
+
+<dialog class="site-dialog project-dialog" id="project-preview" aria-labelledby="preview-title">
+  <div class="dialog-header">
+    <span class="playground-label" id="preview-meta"></span>
+    <form method="dialog"><button class="dialog-close" aria-label="Close project preview">&times;</button></form>
+  </div>
+  <img id="preview-image" alt="">
+  <div class="preview-content">
+    <h2 id="preview-title"></h2>
+    <p id="preview-description"></p>
+    <div class="project-card__tags" id="preview-tags"></div>
+    <a class="btn btn--primary" id="preview-source" target="_blank" rel="noopener">Explore source on GitHub &nearr;</a>
+  </div>
+</dialog>
 
 <!-- ========== SCRIPTS ========== -->
 <script>
@@ -165,7 +329,7 @@ const EXPERIENCES = [
   {
     title: 'AI Software Developer',
     company: 'SOTI',
-    timeframe: 'June 2026 — Present',
+    timeframe: 'June 2026 - Present',
     tags: ['React', 'TypeScript', 'Python', 'Docker', 'Kubernetes', 'PostgreSQL'],
     image: 'images/soti_images.jpg',
     resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
@@ -173,7 +337,7 @@ const EXPERIENCES = [
   {
     title: 'Software Developer Intern',
     company: 'Solink',
-    timeframe: 'Sep 2025 — May 2026',
+    timeframe: 'Sep 2025 - May 2026',
     tags: ['React', 'TypeScript', 'Go', 'AWS', 'Kafka', 'Kubernetes', 'PostgreSQL'],
     image: 'images/Solink-Logo.jpg',
     resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
@@ -181,7 +345,7 @@ const EXPERIENCES = [
   {
     title: 'Software Engineer Intern',
     company: 'Riipen',
-    timeframe: 'May 2024 — Aug 2024',
+    timeframe: 'May 2024 - Aug 2024',
     tags: ['Full-Stack', 'Responsive Design', 'Startup'],
     image: 'images/riipen_networks_inc_logo.jpg',
     resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
@@ -189,7 +353,7 @@ const EXPERIENCES = [
   {
     title: 'Software Developer Intern',
     company: 'Loblaw Digital',
-    timeframe: 'Sep 2023 — Dec 2023',
+    timeframe: 'Sep 2023 - Dec 2023',
     tags: ['Go', 'GCP', 'ETL', 'Data Pipeline'],
     image: 'images/loblaw_digital_logo.jpg',
     resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
@@ -197,7 +361,7 @@ const EXPERIENCES = [
   {
     title: 'Data Engineer Intern',
     company: 'Scotiabank',
-    timeframe: 'Jan 2023 — Apr 2023',
+    timeframe: 'Jan 2023 - Apr 2023',
     tags: ['Enterprise', 'Banking', 'Software Development'],
     image: 'images/scotiabank_gbm_logo.jpg',
     resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
@@ -205,7 +369,7 @@ const EXPERIENCES = [
   {
     title: 'Information Technology Intern',
     company: 'Humber College',
-    timeframe: 'May 2021 — Aug 2021',
+    timeframe: 'May 2021 - Aug 2021',
     tags: ['IT', 'Infrastructure', 'Support'],
     image: 'images/humber.jpg',
     resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
@@ -236,9 +400,9 @@ const PROJECTS = [
     subtitle: 'AI Workout App',
     year: '2025',
     description: 'AI-powered workout visualization app that shows your potential physique and lets you adjust training focus areas.',
-    tags: ['Swift', 'AI/ML', 'Mobile'],
+    tags: ['React Native', 'TypeScript', 'Expo', 'AI/ML', 'Mobile'],
     image: 'images/deezed-icon.png',
-    github: 'https://github.com/Rajvir31/deezed'
+    github: 'https://github.com/Rajvir31/DeezedAI'
   },
   {
     title: 'SmashTheMole',
@@ -247,7 +411,7 @@ const PROJECTS = [
     description: 'Whac-A-Mole arcade game built from scratch in C++ using the SFML graphics library with custom game loop and scoring.',
     tags: ['C++', 'SFML', 'Game Dev'],
     image: 'images/whacker.png',
-    github: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game'
+    github: 'https://github.com/Rajvir31/SMASHTHEMOLE'
   },
   {
     title: 'PetHaven',
@@ -256,7 +420,7 @@ const PROJECTS = [
     description: 'Virtual pet simulation built with JavaFX featuring real-time stat tracking for feeding, playing, and monitoring pet vitals.',
     tags: ['Java', 'JavaFX', 'OOP'],
     image: 'images/cat.png',
-    github: 'https://github.com/Rajvir31/My_Ping_Pong_Artificial_Intelligence_Game'
+    github: 'https://github.com/Rajvir31/PETHAVEN'
   },
   {
     title: 'AIPingPong',
@@ -279,6 +443,34 @@ const PROJECTS = [
 ];
 
 /* ---------------------------------------------------------
+   PROJECT NOTES
+   Keep these grounded in the projects rather than inferred hobbies.
+   --------------------------------------------------------- */
+const INTERESTS = [
+  {
+    icon: 'fa-solid fa-dumbbell',
+    title: 'What could progress look like?',
+    text: 'Deezed brings AI into workout visualization: a way to explore a potential physique and adjust training focus areas. A fitness idea, turned into a React Native app.'
+  },
+  {
+    icon: 'fa-solid fa-gamepad',
+    title: 'A little play goes a long way.',
+    text: 'An arcade game in C++, a virtual pet in JavaFX, and a ping-pong opponent trained with NEAT. Three very different ways to make code feel alive.'
+  },
+  {
+    icon: 'fa-solid fa-chart-line',
+    title: 'Looking for a signal.',
+    text: 'My capstone follows financial-market data through an XGBoost pipeline, from ingestion to evaluation and backtesting. The interesting part is the whole process, not just a prediction.'
+  }
+];
+
+const CURRENTLY = [
+  { label: 'Now', value: EXPERIENCES[0].title + ' at ' + EXPERIENCES[0].company },
+  { label: 'The thread', value: 'Full-stack software, distributed systems, and AI / ML' },
+  { label: 'In this notebook', value: PROJECTS.length + ' projects, from games to data pipelines' }
+];
+
+/* ---------------------------------------------------------
    SCROLL REVEAL (initialized early so project load-more can use it)
    --------------------------------------------------------- */
 const revealObserver = new IntersectionObserver((entries) => {
@@ -291,6 +483,53 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 /* ---------------------------------------------------------
+   ENVIRONMENT
+   --------------------------------------------------------- */
+const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+let motionPaused = false;
+const motionEnabled = () => !motionPaused && !motionQuery.matches;
+const wantsMotion = () => hoverQuery.matches && motionEnabled();
+window.SiteMotion = { enabled: motionEnabled, refresh: syncMotion };
+
+function syncMotion() {
+  document.documentElement.classList.toggle('motion-paused', !motionEnabled());
+  const button = document.getElementById('motion-toggle');
+  button.textContent = motionQuery.matches ? 'Reduced motion' : motionEnabled() ? 'Pause motion' : 'Resume motion';
+  button.setAttribute('aria-pressed', String(!motionEnabled()));
+  button.disabled = motionQuery.matches;
+  document.getElementById('motion-note').textContent = motionQuery.matches
+    ? 'Motion is off to match your device preference.'
+    : motionPaused ? 'Animations paused for this visit.' : 'Animations enabled.';
+  document.dispatchEvent(new Event('motionchange'));
+}
+document.getElementById('motion-toggle').addEventListener('click', () => {
+  motionPaused = !motionPaused;
+  syncMotion();
+});
+motionQuery.addEventListener('change', syncMotion);
+hoverQuery.addEventListener('change', () => document.dispatchEvent(new Event('motionchange')));
+window.addEventListener('focus', syncMotion);
+document.addEventListener('visibilitychange', syncMotion);
+syncMotion();
+
+function navigateToSection(id) {
+  const target = document.getElementById(id);
+  if (!target) throw new RangeError('Unknown section: ' + id);
+  if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+  target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });
+  target.scrollIntoView({ behavior: motionEnabled() ? 'smooth' : 'instant', block: 'start' });
+}
+window.addEventListener('popstate', () => {
+  const target = document.getElementById(location.hash.slice(1) || 'hero');
+  if (target) {
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  }
+});
+
+/* ---------------------------------------------------------
    RENDER EXPERIENCE TIMELINE
    --------------------------------------------------------- */
 const timeline = document.getElementById('timeline');
@@ -301,7 +540,8 @@ EXPERIENCES.forEach((exp, i) => {
   item.style.animationDelay = (i * 100) + 'ms';
   item.innerHTML = `
     <div class="timeline__dot"></div>
-    <div class="timeline__card">
+    <details class="timeline__card" ${i === 0 ? 'open' : ''}>
+      <summary>
       <div class="timeline__card-header">
         <img src="${exp.image}" alt="${exp.company}" class="timeline__logo" loading="lazy">
         <div>
@@ -310,10 +550,15 @@ EXPERIENCES.forEach((exp, i) => {
           <p class="timeline__time">${exp.timeframe}</p>
         </div>
       </div>
+      <span class="timeline__prompt">Tools & focus <span aria-hidden="true">+</span></span>
+      </summary>
+      <div class="timeline__details">
       <div class="timeline__tags">
         ${exp.tags.map(t => '<span class="tag">' + t + '</span>').join('')}
       </div>
-    </div>
+      <a class="text-button" href="${exp.resumeUrl}" target="_blank" rel="noopener">Read more in my resume &nearr;</a>
+      </div>
+    </details>
   `;
   timeline.appendChild(item);
 });
@@ -323,55 +568,169 @@ EXPERIENCES.forEach((exp, i) => {
    --------------------------------------------------------- */
 const projectsGrid = document.getElementById('projects-grid');
 const INITIAL_COUNT = 6;
+const projectSearch = document.getElementById('project-search');
+const projectTech = document.getElementById('project-tech');
+const projectSort = document.getElementById('project-sort');
+const projectCategories = {
+  ai: ['AI/ML', 'ML'],
+  web: ['React', 'Node.js'],
+  systems: ['OpenTelemetry'],
+  games: ['Game Dev', 'Pygame', 'JavaFX']
+};
+let projectCategory = 'all';
+let projectLimit = INITIAL_COUNT;
+
+[...new Set(PROJECTS.flatMap(project => project.tags))].sort().forEach(tag => {
+  projectTech.add(new Option(tag, tag));
+});
 
 function createProjectCard(proj, i) {
   const card = document.createElement('article');
   card.className = 'project-card reveal';
+  card.id = 'project-' + PROJECTS.indexOf(proj);
   card.style.animationDelay = (i * 80) + 'ms';
   card.innerHTML = `
     <div class="project-card__image">
       <img src="${proj.image}" alt="${proj.title}" loading="lazy">
       <div class="project-card__overlay">
-        <a href="${proj.github}" target="_blank" rel="noopener" class="project-card__icon-link" aria-label="View on GitHub">
+        <a href="${proj.github}" target="_blank" rel="noopener" class="project-card__icon-link" aria-label="View ${proj.title} on GitHub">
           <i class="fa-brands fa-github"></i>
         </a>
       </div>
     </div>
     <div class="project-card__body">
       <div class="project-card__meta">
-        <span class="project-card__subtitle">${proj.subtitle}</span>
+        <span class="project-card__subtitle">ENTRY ${String(PROJECTS.indexOf(proj) + 1).padStart(2, '0')} / ${proj.subtitle}</span>
         <span class="project-card__year">${proj.year}</span>
       </div>
       <h3 class="project-card__title">${proj.title}</h3>
       <p class="project-card__desc">${proj.description}</p>
       <div class="project-card__tags">
-        ${proj.tags.map(t => '<span class="tag">' + t + '</span>').join('')}
+        ${proj.tags.map(t => '<button class="tag" data-project-tech="' + t + '" aria-label="Filter projects by ' + t + '">' + t + '</button>').join('')}
+      </div>
+      <div class="project-card__actions">
+        <button class="text-button" data-project-open="${PROJECTS.indexOf(proj)}" aria-haspopup="dialog">Explore project <span aria-hidden="true">&rarr;</span></button>
+        <a href="${proj.github}" target="_blank" rel="noopener" aria-label="${proj.title} source on GitHub">Source &nearr;</a>
       </div>
     </div>
   `;
   return card;
 }
 
-PROJECTS.slice(0, INITIAL_COUNT).forEach((proj, i) => {
-  projectsGrid.appendChild(createProjectCard(proj, i));
+const projectCards = PROJECTS.map(createProjectCard);
+projectsGrid.append(...projectCards);
+
+function renderProjects() {
+  const terms = projectSearch.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const matching = PROJECTS.map((project, index) => ({ project, index })).filter(({ project }) => {
+    const text = [project.title, project.subtitle, project.description, ...project.tags].join(' ').toLowerCase();
+    return terms.every(term => text.includes(term))
+      && (!projectTech.value || project.tags.includes(projectTech.value))
+      && (projectCategory === 'all' || projectCategories[projectCategory].some(tag => project.tags.includes(tag)));
+  });
+  if (projectSort.value !== 'featured') {
+    const direction = projectSort.value === 'newest' ? -1 : 1;
+    matching.sort((a, b) => direction * (Number(a.project.year) - Number(b.project.year)));
+  }
+  projectCards.forEach(card => {
+    card.hidden = true;
+    card.classList.remove('project-card--featured');
+  });
+  matching.forEach(({ index }, position) => {
+    const card = projectCards[index];
+    card.classList.toggle('project-card--featured', position === 0);
+    projectsGrid.appendChild(card);
+    card.hidden = position >= projectLimit;
+    if (!card.hidden) revealObserver.observe(card);
+  });
+  document.querySelectorAll('[data-project-filter]').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.projectFilter === projectCategory));
+  });
+  document.getElementById('project-count').textContent =
+    `Showing ${Math.min(matching.length, projectLimit)} of ${matching.length} projects`;
+  document.getElementById('project-empty').hidden = matching.length !== 0;
+  document.getElementById('load-more-wrapper').hidden = matching.length <= projectLimit;
+}
+
+function resetProjectFilters() {
+  projectSearch.value = '';
+  projectTech.value = '';
+  projectCategory = 'all';
+  projectSort.value = 'featured';
+  projectLimit = INITIAL_COUNT;
+}
+
+function selectProjectTechnology(tag) {
+  resetProjectFilters();
+  projectTech.value = tag;
+  renderProjects();
+  navigateToSection('projects');
+  projectTech.focus({ preventScroll: true });
+}
+
+document.querySelectorAll('[data-project-filter]').forEach(button => {
+  button.addEventListener('click', () => {
+    projectCategory = button.dataset.projectFilter;
+    projectLimit = INITIAL_COUNT;
+    renderProjects();
+  });
+});
+[projectSearch, projectTech, projectSort].forEach(control => control.addEventListener('input', () => {
+  projectLimit = INITIAL_COUNT;
+  renderProjects();
+}));
+document.getElementById('project-reset').addEventListener('click', () => {
+  resetProjectFilters();
+  renderProjects();
+  projectSearch.focus();
+});
+document.getElementById('load-more').addEventListener('click', () => {
+  const hiddenCards = projectCards.filter(card => card.hidden);
+  projectLimit = PROJECTS.length;
+  renderProjects();
+  hiddenCards.find(card => !card.hidden)?.querySelector('[data-project-open]').focus({ preventScroll: true });
+});
+renderProjects();
+
+/* ---------------------------------------------------------
+   RENDER BEYOND THE CODE
+   --------------------------------------------------------- */
+const beyondGrid = document.getElementById('beyond-grid');
+
+INTERESTS.forEach((item, i) => {
+  const card = document.createElement('article');
+  card.className = 'beyond-card reveal';
+  // Stagger the reveal, then drop the delay so it never slows down hovers.
+  card.style.transitionDelay = (i * 60) + 'ms';
+  card.addEventListener('transitionend', () => { card.style.transitionDelay = ''; }, { once: true });
+  card.innerHTML = `
+    <div class="beyond-card__icon" aria-hidden="true"><i class="${item.icon}"></i><span>NOTE ${String(i + 1).padStart(2, '0')}</span></div>
+    <h3 class="beyond-card__title">${item.title}</h3>
+    <p class="beyond-card__text">${item.text}</p>
+  `;
+  const relatedProject = [2, 3, 0][i];
+  if (relatedProject !== undefined) {
+    const button = document.createElement('button');
+    button.className = 'text-button beyond-card__project';
+    button.dataset.projectOpen = relatedProject;
+    button.setAttribute('aria-haspopup', 'dialog');
+    button.textContent = 'Explore ' + PROJECTS[relatedProject].title;
+    card.appendChild(button);
+  }
+  beyondGrid.appendChild(card);
 });
 
-if (PROJECTS.length > INITIAL_COUNT) {
-  const loadMoreWrapper = document.createElement('div');
-  loadMoreWrapper.className = 'projects__load-more reveal';
-  loadMoreWrapper.innerHTML = '<button class="btn btn--ghost btn--load-more">Load More</button>';
-  projectsGrid.parentElement.appendChild(loadMoreWrapper);
-  revealObserver.observe(loadMoreWrapper);
+const currentlyList = document.getElementById('currently-list');
 
-  loadMoreWrapper.querySelector('button').addEventListener('click', () => {
-    PROJECTS.slice(INITIAL_COUNT).forEach((proj, i) => {
-      const card = createProjectCard(proj, i);
-      projectsGrid.appendChild(card);
-      revealObserver.observe(card);
-    });
-    loadMoreWrapper.remove();
-  });
-}
+CURRENTLY.forEach(entry => {
+  const li = document.createElement('li');
+  li.className = 'currently__item';
+  li.innerHTML = `
+    <span class="currently__label">${entry.label}</span>
+    <span class="currently__value">${entry.value}</span>
+  `;
+  currentlyList.appendChild(li);
+});
 
 /* ---------------------------------------------------------
    TYPING ANIMATION
@@ -385,18 +744,20 @@ const phrases = [
   'things that matter.'
 ];
 let phraseIdx = 0, charIdx = 0, deleting = false;
+let typingTimer;
 
 function typeEffect() {
+  if (!motionEnabled() || document.hidden) return;
   const current = phrases[phraseIdx];
   if (!deleting) {
     typedEl.textContent = current.substring(0, charIdx + 1);
     charIdx++;
     if (charIdx === current.length) {
       deleting = true;
-      setTimeout(typeEffect, 2000);
+      typingTimer = setTimeout(typeEffect, 2000);
       return;
     }
-    setTimeout(typeEffect, 80);
+    typingTimer = setTimeout(typeEffect, 80);
   } else {
     typedEl.textContent = current.substring(0, charIdx - 1);
     charIdx--;
@@ -404,10 +765,81 @@ function typeEffect() {
       deleting = false;
       phraseIdx = (phraseIdx + 1) % phrases.length;
     }
-    setTimeout(typeEffect, 40);
+    typingTimer = setTimeout(typeEffect, 40);
   }
 }
-typeEffect();
+function syncTyping() {
+  clearTimeout(typingTimer);
+  if (!motionEnabled()) {
+    typedEl.textContent = phrases[0];
+    phraseIdx = 0;
+    charIdx = 0;
+    deleting = false;
+  } else if (!document.hidden) {
+    typeEffect();
+  }
+}
+document.addEventListener('motionchange', syncTyping);
+document.addEventListener('visibilitychange', syncTyping);
+syncTyping();
+
+/* ---------------------------------------------------------
+   HERO PHOTO - 3D TILT
+   Pointer events live on .hero__photo, which never transforms.
+   Reading geometry from the rotating wrapper instead would feed
+   the tilt back into its own input and cause edge jitter.
+   --------------------------------------------------------- */
+const photoEl = document.querySelector('.hero__photo');
+const photoWrap = photoEl && photoEl.querySelector('.hero__photo-wrapper');
+
+if (photoEl && photoWrap) {
+  const MAX_TILT = 13;
+  let queued = null;
+  let frame = null;
+
+  const applyTilt = () => {
+    frame = null;
+    if (!queued || !wantsMotion()) return;
+
+    const r = photoEl.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+
+    const px = Math.min(1, Math.max(0, (queued.x - r.left) / r.width));
+    const py = Math.min(1, Math.max(0, (queued.y - r.top) / r.height));
+
+    photoWrap.style.setProperty('--rx', ((0.5 - py) * 2 * MAX_TILT).toFixed(2) + 'deg');
+    photoWrap.style.setProperty('--ry', ((px - 0.5) * 2 * MAX_TILT).toFixed(2) + 'deg');
+  };
+
+  photoEl.addEventListener('pointerenter', (e) => {
+    if (!wantsMotion()) return;
+    photoEl.classList.add('is-tilting');
+    queued = { x: e.clientX, y: e.clientY };
+    applyTilt();
+
+  });
+
+  photoEl.addEventListener('pointermove', (e) => {
+    if (!wantsMotion()) return;
+    queued = { x: e.clientX, y: e.clientY };
+    if (!frame) frame = requestAnimationFrame(applyTilt);
+  });
+
+  const resetPhoto = () => {
+    if (frame) {
+      cancelAnimationFrame(frame);
+      frame = null;
+    }
+    queued = null;
+    photoEl.classList.remove('is-tilting');
+    photoWrap.style.setProperty('--rx', '0deg');
+    photoWrap.style.setProperty('--ry', '0deg');
+  };
+  photoEl.addEventListener('pointerleave', resetPhoto);
+  photoEl.addEventListener('pointercancel', resetPhoto);
+  document.addEventListener('motionchange', resetPhoto);
+  window.addEventListener('blur', resetPhoto);
+}
 
 /* ---------------------------------------------------------
    OBSERVE ALL REVEAL ELEMENTS
@@ -426,15 +858,22 @@ function onScroll() {
   nav.classList.toggle('nav--scrolled', scrollY > 50);
 
   let current = '';
+  const navOffset = nav.getBoundingClientRect().height + 36;
   sections.forEach(section => {
-    const top = section.offsetTop - 120;
+    const top = section.offsetTop - navOffset;
     if (scrollY >= top) current = section.getAttribute('id');
   });
   navLinks.forEach(link => {
     link.classList.toggle('active', link.dataset.section === current);
+    if (link.dataset.section === current) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
   });
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  document.querySelector('.reading-progress').style.transform = `scaleX(${scrollable > 0 ? Math.min(1, scrollY / scrollable) : 0})`;
+  document.getElementById('back-to-top').hidden = scrollY < window.innerHeight * 0.7;
 }
 window.addEventListener('scroll', onScroll, { passive: true });
+new ResizeObserver(onScroll).observe(document.body);
 onScroll();
 
 /* ---------------------------------------------------------
@@ -444,34 +883,112 @@ const navToggle = document.getElementById('nav-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
 navToggle.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.contains('open');
-  mobileMenu.classList.toggle('open');
-  navToggle.classList.toggle('active');
-  navToggle.setAttribute('aria-expanded', !isOpen);
-  document.body.style.overflow = isOpen ? '' : 'hidden';
+  if (mobileMenu.open) mobileMenu.close();
+  else {
+    mobileMenu.showModal();
+    mobileMenu.classList.add('open');
+    navToggle.classList.add('active');
+    navToggle.setAttribute('aria-expanded', 'true');
+  }
+});
+mobileMenu.addEventListener('close', () => {
+  mobileMenu.classList.remove('open');
+  navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded', 'false');
 });
 
 mobileMenu.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    navToggle.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+    mobileMenu.close();
   });
 });
+const navInner = nav.querySelector('.nav__inner');
+function syncNavLayout() {
+  // Account for enlarged text and font loading, not just viewport breakpoints.
+  nav.classList.remove('nav--compact');
+  const compact = window.matchMedia('(max-width: 960px)').matches
+    || navInner.scrollWidth > navInner.clientWidth;
+  nav.classList.toggle('nav--compact', compact);
+  if (!compact && mobileMenu.open) mobileMenu.close();
+}
+new ResizeObserver(syncNavLayout).observe(navInner);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncNavLayout);
+syncNavLayout();
 
 /* ---------------------------------------------------------
    SMOOTH SCROLL (for anchor links)
    --------------------------------------------------------- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
+    if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      navigateToSection(target.id);
     }
   });
 });
+
+/* ---------------------------------------------------------
+   MICRO-INTERACTIONS
+   Pointer-driven flourishes: buttons lean toward the cursor,
+   cards pick up a subtle tilt. Skipped on
+   touch devices and when reduced motion is requested.
+   --------------------------------------------------------- */
+if (window.PointerEvent) {
+  document.querySelectorAll('.btn, .nav__resume-btn').forEach(el => {
+    el.classList.add('magnetic');
+    el.addEventListener('pointermove', (e) => {
+      if (!wantsMotion()) return;
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--pull-x', ((e.clientX - r.left - r.width / 2) * 0.25).toFixed(2) + 'px');
+      el.style.setProperty('--pull-y', ((e.clientY - r.top - r.height / 2) * 0.35).toFixed(2) + 'px');
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.setProperty('--pull-x', '0px');
+      el.style.setProperty('--pull-y', '0px');
+    });
+  });
+
+  // Delegated so cards added by "Load More" get the effect too.
+  let activeCard = null;
+
+  const resetCard = (card) => {
+    card.style.setProperty('--tilt-x', '0deg');
+    card.style.setProperty('--tilt-y', '0deg');
+  };
+
+  document.addEventListener('pointermove', (e) => {
+    if (!wantsMotion()) return;
+    const card = e.target instanceof Element
+      ? e.target.closest('.project-card, .beyond-card')
+      : null;
+
+    if (card !== activeCard) {
+      if (activeCard) resetCard(activeCard);
+      activeCard = card;
+    }
+    if (!card) return;
+
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width;
+    const py = (e.clientY - r.top) / r.height;
+
+    card.style.setProperty('--tilt-x', ((0.5 - py) * 5).toFixed(2) + 'deg');
+    card.style.setProperty('--tilt-y', ((px - 0.5) * 5).toFixed(2) + 'deg');
+  }, { passive: true });
+  const resetInteractions = () => {
+    if (activeCard) resetCard(activeCard);
+    activeCard = null;
+    document.querySelectorAll('.magnetic').forEach(el => {
+      el.style.removeProperty('--pull-x');
+      el.style.removeProperty('--pull-y');
+    });
+  };
+  document.addEventListener('motionchange', resetInteractions);
+  document.addEventListener('pointerleave', resetInteractions);
+  window.addEventListener('blur', resetInteractions);
+}
 
 /* ---------------------------------------------------------
    CONTACT FORM (Google Apps Script)
@@ -483,26 +1000,42 @@ const msg = document.getElementById('msg');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
+  if (btn.disabled) return;
   btn.disabled = true;
+  form.setAttribute('aria-busy', 'true');
+  msg.textContent = 'Sending your message...';
+  msg.className = 'contact__msg';
   btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
 
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(() => {
-      msg.textContent = 'Message sent successfully!';
+  const submittedFields = [...form.querySelectorAll('input, textarea')].map(field => ({ field, value: field.value }));
+  const controller = new AbortController();
+  const requestTimeout = setTimeout(() => controller.abort(), 30000);
+  fetch(scriptURL, { method: 'POST', body: new FormData(form), signal: controller.signal })
+    .then(response => {
+      if (!response.ok) throw new Error(`Message request failed (${response.status})`);
       msg.className = 'contact__msg contact__msg--success';
-      form.reset();
-      setTimeout(() => { msg.textContent = ''; msg.className = 'contact__msg'; }, 5000);
+      if (submittedFields.every(({ field, value }) => field.value === value)) {
+        form.reset();
+        msg.textContent = 'Message sent successfully!';
+      } else {
+        msg.textContent = 'Message sent. Your newer edits have been kept.';
+      }
     })
     .catch(err => {
-      msg.textContent = 'Something went wrong. Please try again.';
+      msg.textContent = controller.signal.aborted
+        ? 'The request timed out, so delivery could not be confirmed. Your draft is safe. Try again or email me directly.'
+        : 'Something went wrong. Your draft is safe. Please try again or email me directly.';
       msg.className = 'contact__msg contact__msg--error';
       console.error('Error:', err.message);
     })
     .finally(() => {
+      clearTimeout(requestTimeout);
       btn.disabled = false;
+      form.removeAttribute('aria-busy');
       btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
     });
 });
+form.querySelector('button[type="submit"]').disabled = false;
 </script>
 
 </body>
