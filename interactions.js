@@ -8,13 +8,12 @@
   const preview = document.getElementById('project-preview');
   let previewReturnTarget;
 
-  function openProject(index, returnTarget = document.activeElement) {
-    const project = PROJECTS[index];
-    if (!project) throw new RangeError('Unknown project: ' + index);
+  function openProject(id, returnTarget = document.activeElement) {
+    const project = getProject(id);
     previewReturnTarget = returnTarget;
     document.getElementById('preview-title').textContent = project.title;
     document.getElementById('preview-meta').textContent =
-      'ENTRY ' + String(index + 1).padStart(2, '0') + ' / ' + project.subtitle + ' / ' + project.year;
+      'ENTRY ' + String(PROJECTS.indexOf(project) + 1).padStart(2, '0') + ' / ' + project.subtitle + ' / ' + project.year;
     document.getElementById('preview-description').textContent = project.description;
     const image = document.getElementById('preview-image');
     image.src = project.image;
@@ -57,9 +56,9 @@
         title: destination.title, hint: destination.hint, keywords: destination.id, type: 'Section',
         run: () => navigateToSection(destination.id)
       })),
-      ...PROJECTS.map((project, index) => ({
+      ...PROJECTS.map(project => ({
         title: project.title, hint: [project.subtitle, ...project.tags].join(' / '), type: 'Project',
-        run: () => openProject(index, explorerReturnTarget)
+        run: () => openProject(project.id, explorerReturnTarget)
       }))
     ].filter(entry => terms.every(term => [entry.title, entry.hint, entry.keywords || ''].join(' ').toLowerCase().includes(term)));
     results.replaceChildren();
@@ -131,9 +130,9 @@
     const button = event.target.closest('button');
     if (!button) return;
     if (button.hasAttribute('data-open-explorer')) openExplorer(button);
-    else if (button.hasAttribute('data-project-open')) openProject(Number(button.dataset.projectOpen), button);
+    else if (button.hasAttribute('data-project-open')) openProject(button.dataset.projectOpen, button);
     else if (button.hasAttribute('data-project-tech')) selectProjectTechnology(button.dataset.projectTech);
-    else if (button.hasAttribute('data-random-project')) openProject(Math.floor(Math.random() * PROJECTS.length), button);
+    else if (button.hasAttribute('data-random-project')) openProject(PROJECTS[Math.floor(Math.random() * PROJECTS.length)].id, button);
   });
 
   // Keep Tab cycling through controls rather than leaving for browser chrome.
@@ -169,7 +168,7 @@
 
   const sketches = {
     systems: {
-      project: 1,
+      project: 'microservice-app',
       steps: [
         ['Service', 'Start with a service.', "Go is part of the Microservice-App's toolkit. This project explores services alongside tracing, metrics, and load testing."],
         ['Data', 'Give the data a home.', 'PostgreSQL is the database in this project. The full experiment also uses Docker and OpenTelemetry.'],
@@ -177,7 +176,7 @@
       ]
     },
     ml: {
-      project: 0,
+      project: 'capstone',
       steps: [
         ['Data', 'Start with market data.', 'My capstone covers a financial-market prediction pipeline, beginning with data ingestion and preparation.'],
         ['Model', 'Put a model to work.', 'The pipeline uses XGBoost, with Python, Pandas, and scikit-learn in the toolkit.'],
@@ -185,7 +184,7 @@
       ]
     },
     games: {
-      project: 5,
+      project: 'ai-ping-pong',
       steps: [
         ['Play', 'A familiar playing field.', 'AIPingPong is a ping-pong game built with Python and Pygame.'],
         ['Evolve', 'Try a different kind of training.', 'The AI opponent is trained with NEAT, a neuroevolution algorithm.'],

@@ -17,4 +17,6 @@ The visual identity uses warm paper, graphite, terracotta, editorial section hea
 
 Content lives in `index.html`: `EXPERIENCES`, `PROJECTS`, `INTERESTS`, and `CURRENTLY`. The notes in the margins are grounded in existing projects rather than inferred hobbies; the notebook overview uses the experience and project data. Project previews, filters, and quick navigation reuse these data rather than a second project list. `background.js` renders the drafting grid; `interactions.js` handles dialogs, sketches, and contact helpers.
 
+Each project has a stable `id`. Notes and sketches link by that ID, so inserting or reordering projects does not change their destinations. Put the newest featured project first in `PROJECTS`; its card, preview, search entry, and notebook count update from that data.
+
 Serve this directory with a local static HTTP server to preview it. Contact submission uses the existing Google Apps Script endpoint; intercept it during automated checks rather than sending test messages.
