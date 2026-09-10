@@ -79,13 +79,16 @@
 <section class="hero" id="hero">
   <div class="hero__container">
     <div class="hero__content">
-      <p class="hero__greeting reveal"><span class="folio-mark">VOL. 01</span> A working notebook by</p>
+      <p class="hero__greeting reveal">Hi, I'm</p>
       <h1 class="hero__name reveal">Rajvir Parmar.</h1>
-      <h2 class="hero__tagline reveal" aria-label="I build scalable systems, full-stack apps, and ML pipelines."><span aria-hidden="true">I build <span class="typed-text" id="typed-output">scalable systems.</span><span class="typed-cursor">|</span></span></h2>
-      <p class="hero__description reveal">From an AI that plays ping-pong to systems built to scale. This is my corner of the internet for <strong>software, experiments, and the ideas in between.</strong></p>
+      <h2 class="hero__tagline reveal" aria-label="I build scalable systems, full-stack apps, ML pipelines, cloud infrastructure, and things that matter.">
+        <span class="typing-measure" aria-hidden="true">I build cloud infrastructure.|</span>
+        <span class="typing-live" aria-hidden="true">I build <span class="typed-text" id="typed-output">scalable systems.</span><span class="typed-cursor">|</span></span>
+      </h2>
+      <p class="hero__description reveal">My latest project is <a class="hero__project-link" href="https://github.com/Rajvir31/TaintGate" target="_blank" rel="noopener">TaintGate</a>, a tool for tracking untrusted data across AI-agent sessions. I also build full-stack apps and games.</p>
       <div class="hero__actions reveal">
-        <a href="#projects" class="btn btn--primary">Open the project index <span aria-hidden="true">&nearr;</span></a>
-        <a href="#contact" class="btn btn--ghost">Leave me a note</a>
+        <a href="#projects" class="btn btn--primary">View projects <span aria-hidden="true">&nearr;</span></a>
+        <a href="#contact" class="hero__contact-link">Get in touch</a>
       </div>
       <div class="hero__socials reveal">
         <a href="https://www.linkedin.com/in/rajvir-parmar-844b7321b/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
@@ -102,14 +105,10 @@
         </div>
       </div>
       <figcaption>
-      <div class="portrait-caption"><span>FIG. 01 / RAJVIR, OFFLINE</span><span aria-hidden="true">↗</span></div>
-      <div class="hero__current"><span class="playground-label">On the current page</span><strong>AI Software Developer at SOTI</strong><a href="#experience">The story so far &rarr;</a></div>
+        <div class="portrait-caption"><span>FIG. 01 / RAJVIR, OFFLINE</span><span aria-hidden="true">&nearr;</span></div>
+        <div class="hero__current"><span class="playground-label">On the current page</span><strong>AI Software Developer at SOTI</strong><a href="#experience">The story so far &rarr;</a></div>
       </figcaption>
     </figure>
-  </div>
-  <div class="hero__scroll-hint">
-    <span>Software engineering / AI / A healthy amount of curiosity</span>
-    <a href="#about">Read on <span aria-hidden="true">&darr;</span></a>
   </div>
 </section>
 
@@ -465,6 +464,12 @@ function getProject(id) {
   return project;
 }
 
+const latestProjectLink = document.querySelector('.hero__project-link');
+latestProjectLink.textContent = PROJECTS[0].title;
+latestProjectLink.href = PROJECTS[0].github;
+latestProjectLink.dataset.projectOpen = PROJECTS[0].id;
+latestProjectLink.setAttribute('aria-haspopup', 'dialog');
+
 /* ---------------------------------------------------------
    PROJECT NOTES
    Keep these grounded in the projects rather than inferred hobbies.
@@ -769,44 +774,50 @@ const phrases = [
   'cloud infrastructure.',
   'things that matter.'
 ];
-let phraseIdx = 0, charIdx = 0, deleting = false;
-let typingTimer;
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+let typingTimer = null;
+let isPrinting = false;
 
 function typeEffect() {
-  if (!motionEnabled() || document.hidden) return;
-  const current = phrases[phraseIdx];
-  if (!deleting) {
-    typedEl.textContent = current.substring(0, charIdx + 1);
-    charIdx++;
-    if (charIdx === current.length) {
-      deleting = true;
-      typingTimer = setTimeout(typeEffect, 2000);
-      return;
-    }
-    typingTimer = setTimeout(typeEffect, 80);
-  } else {
-    typedEl.textContent = current.substring(0, charIdx - 1);
-    charIdx--;
-    if (charIdx === 0) {
-      deleting = false;
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-    }
-    typingTimer = setTimeout(typeEffect, 40);
+  typingTimer = null;
+  if (!motionEnabled() || isPrinting) {
+    syncTyping();
+    return;
   }
+  if (document.hidden) return;
+
+  const phrase = phrases[phraseIndex];
+  charIndex += deleting ? -1 : 1;
+  typedEl.textContent = phrase.slice(0, charIndex);
+  let delay = deleting ? 40 : 80;
+  if (charIndex === phrase.length) {
+    deleting = true;
+    delay = 2000;
+  } else if (charIndex === 0) {
+    deleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    delay = 250;
+  }
+  typingTimer = setTimeout(typeEffect, delay);
 }
+
 function syncTyping() {
   clearTimeout(typingTimer);
-  if (!motionEnabled()) {
+  typingTimer = null;
+  if (!motionEnabled() || isPrinting) {
     typedEl.textContent = phrases[0];
-    phraseIdx = 0;
-    charIdx = 0;
+    phraseIndex = 0;
+    charIndex = 0;
     deleting = false;
   } else if (!document.hidden) {
     typeEffect();
   }
 }
 document.addEventListener('motionchange', syncTyping);
-document.addEventListener('visibilitychange', syncTyping);
+window.addEventListener('beforeprint', () => { isPrinting = true; syncTyping(); });
+window.addEventListener('afterprint', () => { isPrinting = false; syncTyping(); });
 syncTyping();
 
 /* ---------------------------------------------------------
