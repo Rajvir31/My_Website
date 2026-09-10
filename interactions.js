@@ -127,12 +127,16 @@
 
   document.addEventListener('click', event => {
     if (!(event.target instanceof Element)) return;
-    const button = event.target.closest('button');
-    if (!button) return;
-    if (button.hasAttribute('data-open-explorer')) openExplorer(button);
-    else if (button.hasAttribute('data-project-open')) openProject(button.dataset.projectOpen, button);
-    else if (button.hasAttribute('data-project-tech')) selectProjectTechnology(button.dataset.projectTech);
-    else if (button.hasAttribute('data-random-project')) openProject(PROJECTS[Math.floor(Math.random() * PROJECTS.length)].id, button);
+    const control = event.target.closest('button, a[data-project-open]');
+    if (!control) return;
+    if (control.matches('a[data-project-open]')) {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+    }
+    if (control.hasAttribute('data-open-explorer')) openExplorer(control);
+    else if (control.hasAttribute('data-project-open')) openProject(control.dataset.projectOpen, control);
+    else if (control.hasAttribute('data-project-tech')) selectProjectTechnology(control.dataset.projectTech);
+    else if (control.hasAttribute('data-random-project')) openProject(PROJECTS[Math.floor(Math.random() * PROJECTS.length)].id, control);
   });
 
   // Keep Tab cycling through controls rather than leaving for browser chrome.
