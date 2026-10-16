@@ -42,9 +42,8 @@
   const destinations = [
     { id: 'hero', title: 'Back to the beginning', hint: 'Meet Rajvir' },
     { id: 'about', title: 'About me', hint: 'My background and toolkit' },
-    { id: 'experience', title: 'Experience', hint: 'SOTI, Solink, Riipen, Loblaw Digital, Scotiabank, Humber' },
+    { id: 'experience', title: 'Experience', hint: 'SOTI, Solink, Riipen, Loblaw Digital, Scotiabank, Humber, plus education and certifications' },
     { id: 'projects', title: 'Browse my projects', hint: 'Search, filter, and explore the source' },
-    { id: 'beyond', title: 'In the margins', hint: 'Beyond the code: ideas, interests, and side projects' },
     { id: 'contact', title: 'Get in touch', hint: 'Send a message or copy my email' }
   ];
   let explorerReturnTarget;

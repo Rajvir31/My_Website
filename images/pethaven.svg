@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-labelledby="title description">
+  <title id="title">PetHaven</title>
+  <desc id="description">Concept diagram showing care actions for a virtual pet feeding into its live vital stats.</desc>
+  <rect width="720" height="420" fill="#eae4d7"/>
+  <g fill="none" stroke="#cec5b5" stroke-width="1">
+    <path d="M0 84H720M0 168H720M0 252H720M0 336H720M90 0V420M180 0V420M270 0V420M360 0V420M450 0V420M540 0V420M630 0V420"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#252923">
+    <text x="40" y="62" font-size="36" font-weight="700" letter-spacing="-1">PETHAVEN</text>
+    <text x="40" y="92" font-size="13" letter-spacing="2">VIRTUAL PET GAME / JAVA + JAVAFX</text>
+  </g>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="2">
+    <rect x="40" y="136" width="156" height="164" rx="2"/>
+    <rect x="252" y="124" width="216" height="188" rx="2"/>
+    <rect x="524" y="136" width="156" height="164" rx="2"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="2">
+    <rect x="58" y="174" width="120" height="28" rx="14"/>
+    <rect x="58" y="212" width="120" height="28" rx="14"/>
+    <rect x="58" y="250" width="120" height="28" rx="14"/>
+    <path d="M196 218H242M230 210l12 8-12 8M468 218H514M502 210l12 8-12 8"/>
+    <path d="M602 300V336H118V300" stroke-dasharray="5 5"/>
+  </g>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="2">
+    <path d="M332 206L338 168L358 190Z"/>
+    <path d="M388 206L382 168L362 190Z"/>
+    <circle cx="360" cy="222" r="36"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="2">
+    <path d="M342 216q6-7 12 0M366 216q6-7 12 0"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="1.5">
+    <path d="M360 233q-5 6-10 2M360 233q5 6 10 2"/>
+    <path d="M314 224h20M314 236l20-4M406 224h-20M406 236l-20-4"/>
+  </g>
+  <path d="M356 228h8l-4 5z" fill="#ac3f24"/>
+  <path d="M406 180c-10-7-14-12-10-17 3-4 8-3 10 1 2-4 7-5 10-1 4 5 0 10-10 17z" fill="#ac3f24"/>
+  <g fill="#eae4d7" stroke="#252923" stroke-width="1">
+    <rect x="540" y="191" width="124" height="8"/>
+    <rect x="540" y="219" width="124" height="8"/>
+    <rect x="540" y="247" width="124" height="8"/>
+    <rect x="540" y="275" width="124" height="8"/>
+  </g>
+  <rect x="540" y="191" width="108" height="8" fill="#252923"/>
+  <rect x="540" y="219" width="116" height="8" fill="#252923"/>
+  <rect x="540" y="247" width="40" height="8" fill="#ac3f24"/>
+  <rect x="540" y="275" width="84" height="8" fill="#252923"/>
+  <g font-family="monospace" fill="#252923" font-size="11">
+    <text x="540" y="186">HEALTH</text>
+    <text x="540" y="214">HAPPINESS</text>
+    <text x="540" y="242">HUNGER</text>
+    <text x="540" y="270">ENERGY</text>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <text x="118" y="162" fill="#696255" font-size="12">CARE</text>
+    <text x="118" y="193" fill="#252923" font-size="15">Feed</text>
+    <text x="118" y="231" fill="#252923" font-size="15">Play</text>
+    <text x="118" y="269" fill="#252923" font-size="15">Exercise</text>
+    <text x="360" y="152" fill="#696255" font-size="12">YOUR PET</text>
+    <text x="360" y="290" fill="#ac3f24" font-size="13">MOOD: HAPPY</text>
+    <text x="602" y="162" fill="#696255" font-size="12">VITALS</text>
+  </g>
+  <rect x="295" y="322" width="130" height="28" fill="#eae4d7"/>
+  <text x="360" y="341" text-anchor="middle" font-family="monospace" font-size="12" fill="#53564b">REAL-TIME STATS</text>
+  <path d="M40 365H680" stroke="#897e6e"/>
+  <text x="40" y="393" font-family="monospace" font-size="12" fill="#53564b">FEED IT. PLAY WITH IT. WATCH THE VITALS.</text>
+</svg>

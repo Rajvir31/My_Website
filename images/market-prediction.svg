@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-labelledby="title description">
+  <title id="title">Predicting Financial Markets</title>
+  <desc id="description">Concept diagram of an ML pipeline turning GDELT events and S&amp;P 500 data into features, an XGBoost model, and a backtest.</desc>
+  <rect width="720" height="420" fill="#eae4d7"/>
+  <g fill="none" stroke="#cec5b5" stroke-width="1">
+    <path d="M0 84H720M0 168H720M0 252H720M0 336H720M90 0V420M180 0V420M270 0V420M360 0V420M450 0V420M540 0V420M630 0V420"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#252923">
+    <text x="40" y="62" font-size="36" font-weight="700" letter-spacing="-1">MARKET PREDICTION</text>
+    <text x="40" y="92" font-size="13" letter-spacing="2">CAPSTONE THESIS / PYTHON + XGBOOST</text>
+  </g>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="2">
+    <rect x="40" y="144" width="136" height="142" rx="2"/>
+    <rect x="208" y="144" width="136" height="142" rx="2"/>
+    <rect x="376" y="124" width="136" height="182" rx="2"/>
+    <rect x="544" y="144" width="136" height="142" rx="2"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="2">
+    <path d="M176 215H200M188 207l12 8-12 8M344 215H368M356 207l12 8-12 8M512 215H536M524 207l12 8-12 8"/>
+    <path d="M612 286V330H444V306" stroke-dasharray="5 5"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="1.5">
+    <rect x="240" y="190" width="72" height="48"/>
+    <path d="M240 206H312M240 222H312M264 190V238M288 190V238"/>
+    <path d="M566 252V194M566 252H662"/>
+  </g>
+  <g fill="none" stroke="#ac3f24" stroke-width="2.5">
+    <path d="M444 180L414 214M444 180L474 214M414 214L400 246M414 214L428 246M474 214L460 246M474 214L488 246"/>
+    <circle cx="444" cy="180" r="7" fill="#fffcf5"/>
+    <circle cx="414" cy="214" r="6" fill="#fffcf5"/>
+    <circle cx="474" cy="214" r="6" fill="#fffcf5"/>
+    <path d="M570 244L588 232L604 238L622 216L640 222L658 200"/>
+  </g>
+  <g fill="#ac3f24">
+    <rect x="395" y="246" width="10" height="10"/>
+    <rect x="423" y="246" width="10" height="10"/>
+    <rect x="455" y="246" width="10" height="10"/>
+    <rect x="483" y="246" width="10" height="10"/>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <text x="108" y="175" fill="#696255" font-size="12">DATA</text>
+    <text x="108" y="213" fill="#252923" font-size="18">GDELT</text>
+    <text x="108" y="243" fill="#252923" font-size="18">S&amp;P 500</text>
+    <text x="276" y="175" fill="#696255" font-size="12">FEATURES</text>
+    <text x="276" y="268" fill="#252923" font-size="16">Pandas</text>
+    <text x="444" y="155" fill="#696255" font-size="12">MODEL</text>
+    <text x="444" y="288" fill="#252923" font-size="16">XGBoost</text>
+    <text x="612" y="175" fill="#696255" font-size="12">BACKTEST</text>
+    <text x="612" y="274" fill="#252923" font-size="15">Evaluate</text>
+  </g>
+  <rect x="463" y="317" width="130" height="28" fill="#eae4d7"/>
+  <text x="528" y="336" text-anchor="middle" font-family="monospace" font-size="12" fill="#53564b">TUNE + RETRAIN</text>
+  <path d="M40 365H680" stroke="#897e6e"/>
+  <text x="40" y="393" font-family="monospace" font-size="12" fill="#53564b">GLOBAL EVENTS IN. MARKET DIRECTION OUT.</text>
+</svg>

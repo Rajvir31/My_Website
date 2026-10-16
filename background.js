@@ -30,7 +30,6 @@
     { id: 'about', color: [222, 250, 228], skew: 0.09, waveX: 74, waveY: 38, phase: 0.8, depth: 0.16 },
     { id: 'experience', color: [222, 244, 255], skew: -0.15, waveX: 34, waveY: 100, phase: 1.6, depth: 0.3 },
     { id: 'projects', color: [255, 244, 216], skew: 0.18, waveX: 120, waveY: 62, phase: 2.4, depth: -0.22 },
-    { id: 'beyond', color: [211, 251, 246], skew: -0.12, waveX: 66, waveY: 114, phase: 3.2, depth: 0.2 },
     { id: 'contact', color: [243, 239, 229], skew: 0, waveX: 0, waveY: 0, phase: 4, depth: 0 }
   ].map(scene => {
     const element = document.getElementById(scene.id);

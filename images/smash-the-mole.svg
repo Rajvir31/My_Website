@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-labelledby="title description">
+  <title id="title">SmashTheMole</title>
+  <desc id="description">Concept sketch of a Whac-A-Mole board with a mole, a bomb, and a hammer cursor, driven by an input, update, and render game loop.</desc>
+  <rect width="720" height="420" fill="#eae4d7"/>
+  <g fill="none" stroke="#cec5b5" stroke-width="1">
+    <path d="M0 84H720M0 168H720M0 252H720M0 336H720M90 0V420M180 0V420M270 0V420M360 0V420M450 0V420M540 0V420M630 0V420"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#252923">
+    <text x="40" y="62" font-size="36" font-weight="700" letter-spacing="-1">SMASHTHEMOLE</text>
+    <text x="40" y="92" font-size="13" letter-spacing="2">GAME DEVELOPMENT / C++ + SFML</text>
+  </g>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="2">
+    <rect x="40" y="118" width="300" height="190" rx="2"/>
+    <rect x="404" y="122" width="180" height="48" rx="2"/>
+    <rect x="404" y="190" width="180" height="48" rx="2"/>
+    <rect x="404" y="258" width="180" height="48" rx="2"/>
+  </g>
+  <path d="M40 156H340" stroke="#cec5b5"/>
+  <g fill="#53564b">
+    <ellipse cx="90" cy="206" rx="30" ry="8"/>
+    <ellipse cx="190" cy="206" rx="30" ry="8"/>
+    <ellipse cx="290" cy="206" rx="30" ry="8"/>
+    <ellipse cx="90" cy="278" rx="30" ry="8"/>
+    <ellipse cx="190" cy="278" rx="30" ry="8"/>
+    <ellipse cx="290" cy="278" rx="30" ry="8"/>
+  </g>
+  <circle cx="290" cy="190" r="12" fill="#252923"/>
+  <path d="M297 181q6-9 13-7" fill="none" stroke="#252923" stroke-width="2"/>
+  <path d="M314 166V178M308 172H320" stroke="#ac3f24" stroke-width="2"/>
+  <path d="M168 278V258a22 22 0 0 1 44 0V278Z" fill="#fffcf5" stroke="#ac3f24" stroke-width="2.5"/>
+  <path d="M160 278a30 8 0 0 0 60 0Z" fill="#53564b"/>
+  <circle cx="182" cy="254" r="2.5" fill="#252923"/>
+  <circle cx="198" cy="254" r="2.5" fill="#252923"/>
+  <circle cx="190" cy="263" r="3" fill="#ac3f24"/>
+  <path d="M156 244l-10-6M152 256h-12" stroke="#ac3f24" stroke-width="2"/>
+  <g transform="translate(234 230) rotate(35)">
+    <rect x="-3" y="-52" width="6" height="40" fill="#252923"/>
+    <rect x="-20" y="-12" width="40" height="24" rx="3" fill="#fffcf5" stroke="#252923" stroke-width="2"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="2">
+    <path d="M340 214H392M380 206l12 8-12 8"/>
+    <path d="M494 170V186M488 178l6 8 6-8M494 238V254M488 246l6 8 6-8"/>
+    <path d="M584 282H632V146H588" stroke-dasharray="5 5"/>
+    <path d="M598 140l-10 6 10 6"/>
+  </g>
+  <g font-family="monospace" fill="#252923" font-size="13">
+    <text x="56" y="144">SCORE 0120</text>
+    <text x="324" y="144" text-anchor="end">TIME 0:24</text>
+  </g>
+  <g font-family="monospace" text-anchor="middle">
+    <text x="494" y="145" fill="#252923" font-size="16">Input</text>
+    <text x="494" y="162" fill="#696255" font-size="11">mouse + whacker</text>
+    <text x="494" y="213" fill="#252923" font-size="16">Update</text>
+    <text x="494" y="230" fill="#696255" font-size="11">targets, score, timer</text>
+    <text x="494" y="281" fill="#252923" font-size="16">Render</text>
+    <text x="494" y="298" fill="#696255" font-size="11">SFML window</text>
+    <text x="648" y="214" fill="#53564b" font-size="12" transform="rotate(90 648 214)">EACH FRAME</text>
+  </g>
+  <path d="M40 365H680" stroke="#897e6e"/>
+  <text x="40" y="393" font-family="monospace" font-size="12" fill="#53564b">MOLES, BOMBS, A TIMER, AND ONE CUSTOM CURSOR.</text>
+</svg>

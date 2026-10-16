@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420" role="img" aria-labelledby="title description">
+  <title id="title">InstaClone</title>
+  <desc id="description">Concept diagram of a React social feed talking to an Express API backed by Sanity as the content store.</desc>
+  <rect width="720" height="420" fill="#eae4d7"/>
+  <g fill="none" stroke="#cec5b5" stroke-width="1">
+    <path d="M0 84H720M0 168H720M0 252H720M0 336H720M90 0V420M180 0V420M270 0V420M360 0V420M450 0V420M540 0V420M630 0V420"/>
+  </g>
+  <g font-family="Arial, sans-serif" fill="#252923">
+    <text x="40" y="62" font-size="36" font-weight="700" letter-spacing="-1">INSTACLONE</text>
+    <text x="40" y="92" font-size="13" letter-spacing="2">FULL-STACK SOCIAL APP / REACT + SANITY</text>
+  </g>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="2">
+    <rect x="48" y="116" width="140" height="196" rx="12"/>
+    <rect x="258" y="150" width="200" height="128" rx="2"/>
+    <rect x="526" y="136" width="154" height="156" rx="2"/>
+  </g>
+  <g fill="none" stroke="#252923" stroke-width="2">
+    <path d="M102 126H134"/>
+    <path d="M188 214H248M236 206l12 8-12 8M458 214H516M504 206l12 8-12 8"/>
+    <path d="M603 292V336H118V312" stroke-dasharray="5 5"/>
+    <path d="M86 164H140"/>
+  </g>
+  <circle cx="72" cy="164" r="8" fill="#eae4d7" stroke="#252923" stroke-width="1.5"/>
+  <rect x="64" y="178" width="108" height="70" fill="#eae4d7" stroke="#252923" stroke-width="1.5"/>
+  <g fill="none" stroke="#252923" stroke-width="1.5">
+    <path d="M70 242L96 210L114 230L128 216L166 242"/>
+    <circle cx="150" cy="196" r="7"/>
+    <path d="M102 273a7 7 0 1 0-6-3l-2 5z"/>
+  </g>
+  <path d="M76 274c-8-6-11-10-8-14 2-3 6-3 8 1 2-4 6-4 8-1 3 4 0 8-8 14z" fill="#ac3f24"/>
+  <path d="M64 288H160M64 300H132" stroke="#897e6e" stroke-width="2"/>
+  <g fill="#fffcf5" stroke="#252923" stroke-width="1.5">
+    <rect x="591" y="176" width="44" height="52"/>
+    <rect x="579" y="186" width="44" height="52"/>
+  </g>
+  <path d="M587 200H615M587 210H615M587 220H605" stroke="#ac3f24" stroke-width="2"/>
+  <g font-family="monospace" text-anchor="middle">
+    <text x="118" y="146" fill="#696255" font-size="12">FEED</text>
+    <text x="358" y="178" fill="#696255" font-size="12">API</text>
+    <text x="358" y="214" fill="#252923" font-size="18">Express</text>
+    <text x="358" y="244" fill="#696255" font-size="14">Node.js</text>
+    <text x="603" y="162" fill="#696255" font-size="12">CONTENT + DB</text>
+    <text x="603" y="270" fill="#252923" font-size="18">Sanity</text>
+  </g>
+  <rect x="295" y="322" width="130" height="28" fill="#eae4d7"/>
+  <text x="360" y="341" text-anchor="middle" font-family="monospace" font-size="12" fill="#53564b">POSTS + MEDIA</text>
+  <path d="M40 365H680" stroke="#897e6e"/>
+  <text x="40" y="393" font-family="monospace" font-size="12" fill="#53564b">CREATE A POST. STORE IT. SCROLL THE FEED.</text>
+</svg>
