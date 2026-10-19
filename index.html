@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rajvir Parmar - My Portfolio</title>
-  <meta name="description" content="Rajvir Parmar, Software Developer at SOTI. Full-stack development, distributed systems, and ML projects.">
+  <meta name="description" content="Rajvir Parmar, Software Engineer, AI at SOTI. Full-stack development, distributed systems, and ML projects.">
   <meta name="theme-color" content="#f3efe5">
 
   <!-- Monogram favicon (inline SVG, matches the nav logo) -->
@@ -96,7 +96,7 @@
       </div>
     </div>
     <figure class="hero__portrait reveal">
-      <span class="portrait-label">01 / SOFTWARE DEVELOPER</span>
+      <span class="portrait-label">01 / SOFTWARE ENGINEER</span>
       <div class="hero__photo">
         <div class="hero__photo-wrapper">
           <img src="images/profile.jpg" alt="Rajvir Parmar" width="380" height="380" loading="eager">
@@ -159,7 +159,6 @@
   <div class="section__container">
     <h2 class="section__heading reveal"><span class="section__num">02 / THE JOURNEY</span> Places I've contributed.</h2>
     <div class="timeline" id="timeline"></div>
-    <noscript><p>My experience details are available in <a href="images/Rajvir_Parmar_Resume.pdf">my resume</a>.</p></noscript>
 
     <div class="credentials reveal">
       <h3 class="credentials__heading"><span class="section__num">EDUCATION &amp; CERTIFICATIONS</span> Always learning.</h3>
@@ -168,7 +167,7 @@
           <span class="playground-label">Education</span>
           <h4 class="credential__name">Western University</h4>
           <p class="credential__detail">B.Sc., Honors Specialization in Computer Science</p>
-          <p class="credential__meta"><span>Graduated Jun 2026</span><span class="credential__badge">Dean's List 2024 &ndash; 2026</span></p>
+          <p class="credential__meta"><span>Graduated 2025</span><span class="credential__badge">Dean's List Scholar</span></p>
         </article>
         <article class="credential">
           <span class="playground-label">Programs &amp; certifications</span>
@@ -326,52 +325,42 @@
    --------------------------------------------------------- */
 const EXPERIENCES = [
   {
-    title: 'Software Developer',
+    title: 'Software Engineer, AI',
     company: 'SOTI',
     timeframe: 'Jun 2026 - Present',
     tags: ['C#', '.NET', 'SQL Server', 'REST APIs', 'Integration Testing', 'MobiControl'],
     image: 'images/soti_images.jpg',
-    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
+    resumeUrl: ''
   },
   {
-    title: 'Software Developer Intern',
+    title: 'Software Engineer',
     company: 'Solink',
-    timeframe: 'Sep 2025 - May 2026',
+    timeframe: 'May 2025 - May 2026',
     tags: ['C++', 'Linux', 'Telemetry', 'React', 'TypeScript', 'Vite'],
-    image: 'images/Solink-Logo.jpg',
-    resumeUrl: ''
+    image: 'images/Solink-Logo.jpg'
+  },
+  
+  {
+    title: 'Software Engineer Intern',
+    company: 'Loblaw Digital',
+    timeframe: 'Sep 2023 - May 2024',
+    tags: ['Scala', 'Python', 'Pub/Sub', 'Dataflow', 'BigQuery', 'GitLab CI'],
+    image: 'images/loblaw_digital_logo.jpg',
+    
   },
   {
     title: 'Software Engineer Intern',
-    company: 'Riipen',
-    timeframe: 'May 2024 - Aug 2024',
-    tags: ['Full-Stack', 'Responsive Design', 'Startup'],
-    image: 'images/riipen_networks_inc_logo.jpg',
-    resumeUrl: ''
-  },
-  {
-    title: 'Software Developer Intern',
-    company: 'Loblaw Digital',
-    timeframe: 'Sep 2023 - Dec 2023',
-    tags: ['Scala', 'Python', 'Pub/Sub', 'Dataflow', 'BigQuery', 'GitLab CI'],
-    image: 'images/loblaw_digital_logo.jpg',
-    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
-  },
-  {
-    title: 'Data Engineer Intern',
     company: 'Scotiabank',
-    timeframe: 'Jan 2023 - Apr 2023',
+    timeframe: 'Jan 2023 - Dec 2023',
     tags: ['Python', 'SQL', 'Splunk', 'Docker', 'CI/CD'],
-    image: 'images/scotiabank_gbm_logo.jpg',
-    resumeUrl: 'images/Rajvir_Parmar_Resume.pdf'
+    image: 'images/scotiabank_gbm_logo.jpg'
   },
   {
-    title: 'Information Technology Intern',
+    title: 'Software Engineer Intern',
     company: 'Humber College',
-    timeframe: 'May 2021 - Aug 2021',
-    tags: ['IT', 'Infrastructure', 'Support'],
-    image: 'images/humber.jpg',
-    resumeUrl: ''
+    timeframe: 'May 2021 - Dec 2021',
+    tags: ['Infrastructure'],
+    image: 'images/humber.jpg'
   }
 ];
 
@@ -395,17 +384,6 @@ const PROJECTS = [
     tags: ['Python', 'XGBoost', 'Pandas', 'scikit-learn', 'ML'],
     image: 'images/market-prediction.svg',
     github: 'https://github.com/Rajvir31/Capstone-Project-Thesis'
-  },
-  {
-    id: 'deezed',
-    title: 'Deezed',
-    subtitle: 'AI Workout App',
-    year: '2025',
-    description: 'AI-powered workout visualization app that shows your potential physique and lets you adjust training focus areas.',
-    tags: ['React Native', 'TypeScript', 'Expo', 'AI/ML', 'Mobile'],
-    image: 'images/deezed.svg',
-    github: 'https://github.com/Rajvir31/DeezedAI'
-    
   },
   {
     id: 'microservice-app',
