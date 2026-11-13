@@ -49,7 +49,6 @@
       <a href="#projects" class="nav__link" data-section="projects">Projects</a>
       <a href="#contact" class="nav__link" data-section="contact">Contact</a>
     </div>
-    <a href="images/Rajvir_Parmar_Resume.pdf" class="nav__resume-btn" target="_blank" rel="noopener">Resume</a>
     <button class="nav__explore" data-open-explorer aria-haspopup="dialog" aria-controls="explorer">Explore <kbd>Ctrl K</kbd></button>
     <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
       <span></span><span></span><span></span>
@@ -64,13 +63,12 @@
   <a href="#experience" class="mobile-menu__link">Experience</a>
   <a href="#projects" class="mobile-menu__link">Projects</a>
   <a href="#contact" class="mobile-menu__link">Contact</a>
-  <a href="images/Rajvir_Parmar_Resume.pdf" class="mobile-menu__resume" target="_blank" rel="noopener">Resume</a>
 </dialog>
 
 <main>
 <noscript>
   <div class="no-script-notice">
-    <p>JavaScript is off. You can still read about me, <a href="images/Rajvir_Parmar_Resume.pdf" target="_blank" rel="noopener">open my resume</a>, <a href="https://github.com/Rajvir31" target="_blank" rel="noopener">browse my projects on GitHub</a>, or <a href="mailto:rajvirparmar32@gmail.com">email me directly</a>. Enable JavaScript for search, previews, and the contact form.</p>
+    <p>JavaScript is off. You can still read about me, <a href="https://github.com/Rajvir31" target="_blank" rel="noopener">browse my projects on GitHub</a>, or <a href="mailto:rajvirparmar32@gmail.com">email me directly</a>. Enable JavaScript for search, previews, and the contact form.</p>
   </div>
 </noscript>
 <!-- ========== HERO ========== -->
@@ -329,8 +327,7 @@ const EXPERIENCES = [
     company: 'SOTI Inc.',
     timeframe: 'Jun 2026 - Present',
     tags: ['C#', '.NET', 'SQL Server', 'REST APIs', 'Integration Testing', 'MobiControl'],
-    image: 'images/soti_images.jpg',
-    resumeUrl: ''
+    image: 'images/soti_images.jpg'
   },
   {
     title: 'Software Engineer',
@@ -535,7 +532,6 @@ EXPERIENCES.forEach((exp, i) => {
       <div class="timeline__tags">
         ${exp.tags.map(t => '<span class="tag">' + t + '</span>').join('')}
       </div>
-      ${exp.resumeUrl ? '<a class="text-button" href="' + exp.resumeUrl + '" target="_blank" rel="noopener">Read more in my resume &nearr;</a>' : ''}
       </div>
     </details>
   `;
@@ -911,7 +907,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    touch devices and when reduced motion is requested.
    --------------------------------------------------------- */
 if (window.PointerEvent) {
-  document.querySelectorAll('.btn, .nav__resume-btn').forEach(el => {
+  document.querySelectorAll('.btn').forEach(el => {
     el.classList.add('magnetic');
     el.addEventListener('pointermove', (e) => {
       if (!wantsMotion()) return;
