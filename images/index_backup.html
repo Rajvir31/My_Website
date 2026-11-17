@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajvir Parmar - Portfolio</title>
+  <meta name="description" content="Rajvir Parmar, Software Engineer, AI at SOTI. Full-stack development, distributed systems, and ML projects.">
+  <meta name="theme-color" content="#f3efe5">
+
+  <!-- Monogram favicon (inline SVG, matches the nav logo) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='32'%20fill='%23ac3f24'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Georgia,serif'%20font-size='34'%20font-style='italic'%20fill='%23fffaf0'%20text-anchor='middle'%3Erp%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/b42a2cfa4d.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+  <noscript>
+    <style>
+      .reveal { opacity: 1; transform: none; }
+      .nav__toggle, .nav__explore, .project-tools,
+      .projects__load-more, .contact__form,
+      #copy-email, #engineering-sketch, .typed-cursor { display: none !important; }
+    </style>
+  </noscript>
+
+  <!-- Interactive background -->
+  <script src="background.js" defer></script>
+  <script src="interactions.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#hero">Skip to content</a>
+<div class="reading-progress" aria-hidden="true"></div>
+
+<!-- ========== INTERACTIVE BACKGROUND ========== -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo" aria-label="Rajvir Parmar, home"><span class="nav__monogram">rp.</span><span class="nav__wordmark">RAJVIR PARMAR<br>FIELD NOTES / SOFTWARE</span></a>
+    <div class="nav__links">
+      <a href="#about" class="nav__link" data-section="about">About</a>
+      <a href="#experience" class="nav__link" data-section="experience">Experience</a>
+      <a href="#projects" class="nav__link" data-section="projects">Projects</a>
+      <a href="#contact" class="nav__link" data-section="contact">Contact</a>
+    </div>
+    <button class="nav__explore" data-open-explorer aria-haspopup="dialog" aria-controls="explorer">Explore <kbd>Ctrl K</kbd></button>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<dialog class="mobile-menu" id="mobile-menu" aria-label="Navigation">
+  <form method="dialog"><button class="dialog-close" aria-label="Close navigation">&times;</button></form>
+  <a href="#about" class="mobile-menu__link">About</a>
+  <a href="#experience" class="mobile-menu__link">Experience</a>
+  <a href="#projects" class="mobile-menu__link">Projects</a>
+  <a href="#contact" class="mobile-menu__link">Contact</a>
+</dialog>
+
+<main>
+<noscript>
+  <div class="no-script-notice">
+    <p>JavaScript is off. You can still read about me, <a href="https://github.com/Rajvir31" target="_blank" rel="noopener">browse my projects on GitHub</a>, or <a href="mailto:rajvirparmar32@gmail.com">email me directly</a>. Enable JavaScript for search, previews, and the contact form.</p>
+  </div>
+</noscript>
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero__container">
+    <div class="hero__content">
+      <p class="hero__greeting reveal">Hi, I'm</p>
+      <h1 class="hero__name reveal">Rajvir Parmar.</h1>
+      <p class="hero__role reveal"><span class="hero__role-status" aria-hidden="true"></span><span>Software Developer at <strong>SOTI</strong></span></p>
+      <h2 class="hero__tagline reveal" aria-label="I build scalable systems, full-stack apps, ML pipelines, cloud infrastructure, and things that matter.">
+        <span class="typing-measure" aria-hidden="true">I build cloud infrastructure.|</span>
+        <span class="typing-live" aria-hidden="true">I build <span class="typed-text" id="typed-output">scalable systems.</span><span class="typed-cursor">|</span></span>
+      </h2>
+      <p class="hero__description reveal">I build APIs and backend services with C#/.NET, Python, and TypeScript. On the side, I make projects like <a class="hero__project-link" href="https://github.com/Rajvir31/TaintGate" target="_blank" rel="noopener">TaintGate</a>, plus full-stack apps and games.</p>
+      <div class="hero__actions reveal">
+        <a href="#projects" class="btn btn--primary">View projects <span aria-hidden="true">&nearr;</span></a>
+        <a href="#contact" class="hero__contact-link">Get in touch</a>
+      </div>
+      <div class="hero__socials reveal">
+        <a href="https://www.linkedin.com/in/rajvirparmar31/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+        <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+        <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
+      </div>
+    </div>
+    <figure class="hero__portrait reveal">
+      <span class="portrait-label">01 / SOFTWARE ENGINEER</span>
+      <div class="hero__photo">
+        <div class="hero__photo-wrapper">
+          <img src="images/profile.jpg" alt="Rajvir Parmar" width="380" height="380" loading="eager">
+          <div class="hero__photo-ring" aria-hidden="true"></div>
+        </div>
+      </div>
+      <figcaption>
+        <div class="portrait-caption"><span>FIG. 01 / RAJVIR, OFFLINE</span><span aria-hidden="true">&nearr;</span></div>
+        <div class="hero__current"><span class="playground-label">Before SOTI</span><strong>Solink, Loblaw Digital, Scotiabank, Humber</strong><a href="#experience">The story so far &rarr;</a></div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section" id="about">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">01 / CONTEXT</span> A little background.</h2>
+    <div class="about">
+      <div class="about__text reveal">
+        <p class="about__lead">Different problems.<br>The same curiosity.</p>
+        <p>Hey, I'm Rajvir. Right now I'm a <strong>Software Engineer at SOTI</strong>. My work has taken me through banking at Scotiabank, grocery tech at Loblaw Digital, ed-tech at Riipen, and video intelligence at Solink.</p>
+        <p>Outside that work, the project list gets a little less predictable: financial-market models, observable microservices, a virtual pet, and a ping-pong opponent that learns.</p>
+        <p>This notebook brings those threads together. Some entries are practical; some are experiments. All of them are things I've built.</p>
+        <p>The tools I reach for most these days. Tap a highlighted technology to see it in a project:</p>
+        <ul class="about__tech-list">
+          <li><button class="tech-link" data-project-tech="React">React</button> & TypeScript</li>
+          <li><button class="tech-link" data-project-tech="Go">Go</button></li>
+          <li><button class="tech-link" data-project-tech="Python">Python & ML</button></li>
+          <li>AWS & GCP</li>
+          <li>Kubernetes & <button class="tech-link" data-project-tech="Docker">Docker</button></li>
+          <li><button class="tech-link" data-project-tech="PostgreSQL">PostgreSQL</button> & Kafka</li>
+        </ul>
+      </div>
+      <aside class="lab-sketch reveal" id="engineering-sketch" aria-labelledby="sketch-title">
+        <div class="sketch-heading"><span class="playground-label">FIG. 02 / AN INTERACTIVE SKETCH</span><span aria-hidden="true">↙</span></div>
+        <h3 id="sketch-title">Follow the idea.</h3>
+        <p class="sketch-intro">Three small sketches from my projects. Pick a topic, then inspect a step.</p>
+        <div class="sketch-modes" role="group" aria-label="Sketch topic">
+          <button data-sketch-mode="systems" aria-pressed="true">Systems</button>
+          <button data-sketch-mode="ml" aria-pressed="false">Machine learning</button>
+          <button data-sketch-mode="games" aria-pressed="false">Games</button>
+        </div>
+        <div class="sketch-diagram" role="group" aria-label="Sketch steps">
+          <svg class="sketch-lines" viewBox="0 0 420 130" preserveAspectRatio="none" aria-hidden="true"><path d="M64 54C126 8 137 100 208 54S296 8 355 54" /><path class="sketch-signal" d="M64 54C126 8 137 100 208 54S296 8 355 54" /></svg>
+          <button data-sketch-step="0" aria-pressed="true" aria-controls="sketch-note"><span>01</span><strong>Service</strong></button>
+          <button data-sketch-step="1" aria-pressed="false" aria-controls="sketch-note"><span>02</span><strong>Data</strong></button>
+          <button data-sketch-step="2" aria-pressed="false" aria-controls="sketch-note"><span>03</span><strong>Signals</strong></button>
+        </div>
+        <div class="sketch-note" id="sketch-note" aria-live="polite"><h4>Start with a service.</h4><p>Go is part of the Microservice-App's toolkit. This project explores services alongside tracing, metrics, and load testing.</p></div>
+        <div class="sketch-actions"><button class="control-button" id="sketch-run">Run the trace &rarr;</button><button class="text-button" id="sketch-project" data-project-open="microservice-app" aria-haspopup="dialog">Open project notes &nearr;</button></div>
+        <p class="sketch-caption" id="sketch-status" role="status">A concept sketch, not a complete architecture.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ========== EXPERIENCE ========== -->
+<section class="section section--paper" id="experience">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">02 / THE JOURNEY</span> Places I've contributed.</h2>
+    <div class="timeline" id="timeline"></div>
+
+    <div class="credentials reveal">
+      <h3 class="credentials__heading"><span class="section__num">EDUCATION &amp; CERTIFICATIONS</span> Always learning.</h3>
+      <div class="credentials__grid">
+        <article class="credential credential--degree">
+          <span class="playground-label">Education</span>
+          <h4 class="credential__name">Western University</h4>
+          <p class="credential__detail">B.Sc., Honors Specialization in Computer Science</p>
+          <p class="credential__meta"><span>Graduated</span><span class="credential__badge">Dean's List Scholar</span></p>
+        </article>
+        <article class="credential">
+          <span class="playground-label">Programs &amp; certifications</span>
+          <ul class="credential__list">
+            <li><strong>XCS224N: Natural Language Processing with Deep Learning</strong><span>Stanford Online / Completed Jun 2026</span></li>
+            <li><strong>AWS Certified Solutions Architect &ndash; Associate</strong><span>Amazon Web Services / Mar 2026</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section class="section" id="projects">
+  <div class="section__container">
+    <h2 class="section__heading reveal"><span class="section__num">03 / SELECTED WORK</span> From idea to something real.</h2>
+    <p class="section__intro">A few finished thoughts, a few experiments. Open an entry for the details, or follow the code.</p>
+    <div class="project-tools">
+      <div class="project-filters" role="group" aria-label="Project category">
+        <button class="filter-chip" data-project-filter="all" aria-pressed="true">All work</button>
+        <button class="filter-chip" data-project-filter="ai" aria-pressed="false">AI / ML</button>
+        <button class="filter-chip" data-project-filter="web" aria-pressed="false">Web</button>
+        <button class="filter-chip" data-project-filter="systems" aria-pressed="false">Systems</button>
+        <button class="filter-chip" data-project-filter="games" aria-pressed="false">Games</button>
+      </div>
+      <div class="project-search-row">
+        <label class="search-field" for="project-search">Find a project
+          <input type="search" id="project-search" placeholder="Try Python, games, observability..." autocomplete="off" aria-controls="projects-grid">
+        </label>
+        <label for="project-tech">Technology
+          <select id="project-tech" aria-controls="projects-grid"><option value="">All technologies</option></select>
+        </label>
+        <label for="project-sort">Sort
+          <select id="project-sort" aria-controls="projects-grid">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </label>
+      </div>
+      <div class="project-results-row">
+        <p id="project-count" role="status"></p>
+        <button class="text-button" id="project-reset">Reset filters</button>
+        <button class="text-button" data-random-project>Surprise me</button>
+      </div>
+    </div>
+    <div class="projects" id="projects-grid"></div>
+    <noscript><p>Explore the project collection on <a href="https://github.com/Rajvir31" target="_blank" rel="noopener">GitHub</a>.</p></noscript>
+    <p class="project-empty" id="project-empty" hidden>No matches this time. Try a different search or reset the filters.</p>
+    <div class="projects__load-more" id="load-more-wrapper">
+      <button class="btn btn--ghost btn--load-more" id="load-more">Load More</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section" id="contact">
+  <div class="section__container section__container--narrow">
+    <div class="contact__intro">
+    <p class="contact__overline reveal">04 / THE NEXT PAGE</p>
+    <h2 class="contact__title reveal">Have a good<br><em>problem?</em></h2>
+    <p class="contact__description reveal">A project, an opportunity, or a wonderfully specific question. There's room for one more conversation.</p>
+    <div class="contact__email">
+      <a href="mailto:rajvirparmar32@gmail.com">rajvirparmar32@gmail.com</a>
+      <button class="control-button" id="copy-email">Copy email</button>
+      <span id="copy-status" role="status"></span>
+    </div>
+    <p class="contact__annotation" aria-hidden="true">Start anywhere. A hello works, too.</p>
+    </div>
+    <form class="contact__form reveal" name="submit-to-google-sheet" method="post">
+      <fieldset class="contact-starters">
+        <legend>Need an opening line? Start here.</legend>
+        <button type="button" class="filter-chip" data-contact-topic="collaboration">Build together</button>
+        <button type="button" class="filter-chip" data-contact-topic="opportunity">An opportunity</button>
+        <button type="button" class="filter-chip" data-contact-topic="hello">Just saying hi</button>
+      </fieldset>
+      <div class="contact__form-row">
+        <div class="form-group">
+          <input type="text" name="Name" id="contact-name" placeholder=" " autocomplete="name" required>
+          <label for="contact-name">Your Name</label>
+        </div>
+        <div class="form-group">
+          <input type="email" name="Email" id="contact-email" placeholder=" " autocomplete="email" required>
+          <label for="contact-email">Your Email</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea name="Message" id="contact-message" rows="5" placeholder=" " aria-describedby="message-count" required></textarea>
+        <label for="contact-message">Your Message</label>
+      </div>
+      <div class="contact-feedback"><span id="form-progress">0 of 3 fields ready</span><span id="message-count">0 characters</span></div>
+      <button type="submit" class="btn btn--primary btn--lg" disabled>
+        Send Message <i class="fa-solid fa-paper-plane"></i>
+      </button>
+      <span class="contact__msg" id="msg" role="status" aria-live="polite"></span>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__signoff">Still curious.<br><em>Still building.</em></p>
+    <div class="footer__socials">
+      <a href="https://www.linkedin.com/in/rajvirparmar31/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span>LinkedIn</span></a>
+      <a href="https://github.com/Rajvir31" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+      <a href="mailto:rajvirparmar32@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i><span>Email</span></a>
+    </div>
+    <p class="footer__credit">Rajvir Parmar / A notebook on the web</p>
+    <p class="footer__copy">&copy; 2026 All rights reserved.</p>
+  </div>
+</footer>
+
+<a class="back-to-top" id="back-to-top" href="#hero" aria-label="Back to top" hidden>&uarr;</a>
+
+<dialog class="site-dialog" id="explorer" aria-labelledby="explorer-title">
+  <div class="dialog-header">
+    <h2 id="explorer-title">Where to?</h2>
+    <form method="dialog"><button class="dialog-close" aria-label="Close explorer">&times;</button></form>
+  </div>
+  <label class="sr-only" for="explorer-search">Search sections and projects</label>
+  <input type="search" id="explorer-search" placeholder="Search sections, projects, or technologies..." autocomplete="off">
+  <p class="dialog-hint">Type to search. Tab moves between controls; arrow keys browse results. Escape closes.</p>
+  <div class="explorer-settings" role="group" aria-labelledby="motion-heading">
+    <div class="explorer-settings__copy">
+      <span class="playground-label" id="motion-heading">Motion</span>
+      <p id="motion-note">Animations enabled.</p>
+    </div>
+    <button class="control-button" id="motion-toggle" aria-pressed="false" aria-describedby="motion-note">Pause motion</button>
+  </div>
+  <p id="explorer-count" class="sr-only" role="status"></p>
+  <div class="explorer-results" id="explorer-results"></div>
+</dialog>
+
+<dialog class="site-dialog project-dialog" id="project-preview" aria-labelledby="preview-title">
+  <div class="dialog-header">
+    <span class="playground-label" id="preview-meta"></span>
+    <form method="dialog"><button class="dialog-close" aria-label="Close project preview">&times;</button></form>
+  </div>
+  <img id="preview-image" alt="">
+  <div class="preview-content">
+    <h2 id="preview-title"></h2>
+    <p id="preview-description"></p>
+    <div class="project-card__tags" id="preview-tags"></div>
+    <a class="btn btn--primary" id="preview-source" target="_blank" rel="noopener">Explore source on GitHub &nearr;</a>
+  </div>
+</dialog>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+/* ---------------------------------------------------------
+   DATA
+   --------------------------------------------------------- */
+const EXPERIENCES = [
+  {
+    title: 'Software Engineer, AI',
+    company: 'SOTI Inc.',
+    timeframe: 'Jun 2026 - Present',
+    tags: ['C#', '.NET', 'SQL Server', 'REST APIs', 'Integration Testing', 'MobiControl'],
+    image: 'images/soti_images.jpg'
+  },
+  {
+    title: 'Software Engineer',
+    company: 'Solink Corp.',
+    timeframe: 'September 2025 - May 2026',
+    tags: ['C++', 'Linux', 'Telemetry', 'React', 'TypeScript', 'Vite'],
+    image: 'images/Solink-Logo.jpg'
+  },
+  
+  {
+    title: 'Data Engineer Intern',
+    company: 'Loblaw Companies Ltd.',
+    timeframe: 'September 2023 - December 2023',
+    tags: ['Scala', 'Python', 'Pub/Sub', 'Dataflow', 'BigQuery', 'GitLab CI'],
+    image: 'images/loblaw_digital_logo.jpg',
+    
+  },
+  {
+    title: 'Data Engineer Intern',
+    company: 'Scotiabank',
+    timeframe: 'January 2023 - May 2023',
+    tags: ['Python', 'SQL', 'Splunk', 'Docker', 'CI/CD'],
+    image: 'images/scotiabank_gbm_logo.jpg'
+  },
+  {
+    title: 'Technical Intern',
+    company: 'Humber College',
+    timeframe: 'May 2021 - August 2021',
+    tags: ['Infrastructure'],
+    image: 'images/humber.jpg'
+  }
+];
+
+const PROJECTS = [
+  {
+    id: 'taintgate',
+    title: 'TaintGate',
+    subtitle: 'AI Agent Security',
+    year: '2026',
+    description: 'Built a Python MCP proxy that carries taint labels across persistent memory, sessions, and sub-agents, enforcing tool-call policies and recording provenance for agent actions.',
+    tags: ['Python', 'MCP', 'AI/ML', 'Security'],
+    image: 'images/taintgate.svg',
+    github: 'https://github.com/Rajvir31/TaintGate'
+  },
+  {
+    id: 'capstone',
+    title: 'Predicting Financial Markets Using ML & Big Data',
+    subtitle: 'Capstone Thesis',
+    year: '2025',
+    description: 'Designed a full ML pipeline for financial market prediction using XGBoost, from data ingestion through model evaluation and backtesting.',
+    tags: ['Python', 'XGBoost', 'Pandas', 'scikit-learn', 'ML'],
+    image: 'images/market-prediction.svg',
+    github: 'https://github.com/Rajvir31/Capstone-Project-Thesis'
+  },
+  {
+    id: 'microservice-app',
+    title: 'Microservice-App',
+    subtitle: 'Distributed Systems Lab',
+    year: '2024',
+    description: 'Full observability microservice application with tracing, metrics, and load testing.',
+    tags: ['Go', 'PostgreSQL', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Docker'],
+    image: 'images/microservice-app.svg',
+    github: 'https://github.com/Rajvir31/Microservice-App'
+  },
+  {
+    id: 'smash-the-mole',
+    title: 'SmashTheMole',
+    subtitle: 'Game Development',
+    year: '2024',
+    description: 'Whac-A-Mole arcade game built from scratch in C++ using the SFML graphics library with custom game loop and scoring.',
+    tags: ['C++', 'SFML', 'Game Dev'],
+    image: 'images/smash-the-mole.svg',
+    github: 'https://github.com/Rajvir31/SMASHTHEMOLE'
+  },
+  {
+    id: 'pethaven',
+    title: 'PetHaven',
+    subtitle: 'Virtual Pet Game',
+    year: '2023',
+    description: 'Virtual pet simulation built with JavaFX featuring real-time stat tracking for feeding, playing, and monitoring pet vitals.',
+    tags: ['Java', 'JavaFX', 'OOP'],
+    image: 'images/pethaven.svg',
+    github: 'https://github.com/Rajvir31/PETHAVEN'
+  },
+  {
+    id: 'ai-ping-pong',
+    title: 'AIPingPong',
+    subtitle: 'AI Game Agent',
+    year: '2023',
+    description: 'Ping pong game with AI opponent trained using NEAT neuroevolution algorithm.',
+    tags: ['Python', 'NEAT', 'Pygame', 'AI/ML'],
+    image: 'images/ai-ping-pong.svg',
+    github: 'https://github.com/Rajvir31/AIPINGPONG'
+  },
+  {
+    id: 'instaclone',
+    title: 'InstaClone',
+    subtitle: 'Full-Stack Social App',
+    year: '2023',
+    description: 'Full-stack Instagram clone with social feed, post creation, and content management using Sanity CMS.',
+    tags: ['React', 'Express', 'Sanity CMS', 'Node.js'],
+    image: 'images/instaclone.svg',
+    github: 'https://github.com/Rajvir31/INSTACLONE'
+  }
+];
+
+function getProject(id) {
+  const project = PROJECTS.find(item => item.id === id);
+  if (!project) throw new RangeError('Unknown project: ' + id);
+  return project;
+}
+
+const latestProjectLink = document.querySelector('.hero__project-link');
+latestProjectLink.textContent = PROJECTS[0].title;
+latestProjectLink.href = PROJECTS[0].github;
+latestProjectLink.dataset.projectOpen = PROJECTS[0].id;
+latestProjectLink.setAttribute('aria-haspopup', 'dialog');
+
+/* ---------------------------------------------------------
+   SCROLL REVEAL (initialized early so project load-more can use it)
+   --------------------------------------------------------- */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+/* ---------------------------------------------------------
+   ENVIRONMENT
+   --------------------------------------------------------- */
+const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+let motionPaused = false;
+const motionEnabled = () => !motionPaused && !motionQuery.matches;
+const wantsMotion = () => hoverQuery.matches && motionEnabled();
+window.SiteMotion = { enabled: motionEnabled, refresh: syncMotion };
+
+function syncMotion() {
+  document.documentElement.classList.toggle('motion-paused', !motionEnabled());
+  const button = document.getElementById('motion-toggle');
+  button.textContent = motionQuery.matches ? 'Reduced motion' : motionEnabled() ? 'Pause motion' : 'Resume motion';
+  button.setAttribute('aria-pressed', String(!motionEnabled()));
+  button.disabled = motionQuery.matches;
+  document.getElementById('motion-note').textContent = motionQuery.matches
+    ? 'Motion is off to match your device preference.'
+    : motionPaused ? 'Animations paused for this visit.' : 'Animations enabled.';
+  document.dispatchEvent(new Event('motionchange'));
+}
+document.getElementById('motion-toggle').addEventListener('click', () => {
+  motionPaused = !motionPaused;
+  syncMotion();
+});
+motionQuery.addEventListener('change', syncMotion);
+hoverQuery.addEventListener('change', () => document.dispatchEvent(new Event('motionchange')));
+window.addEventListener('focus', syncMotion);
+document.addEventListener('visibilitychange', syncMotion);
+syncMotion();
+
+function navigateToSection(id) {
+  const target = document.getElementById(id);
+  if (!target) throw new RangeError('Unknown section: ' + id);
+  if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+  target.setAttribute('tabindex', '-1');
+  target.focus({ preventScroll: true });
+  target.scrollIntoView({ behavior: motionEnabled() ? 'smooth' : 'instant', block: 'start' });
+}
+window.addEventListener('popstate', () => {
+  const target = document.getElementById(location.hash.slice(1) || 'hero');
+  if (target) {
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+  }
+});
+
+/* ---------------------------------------------------------
+   RENDER EXPERIENCE TIMELINE
+   --------------------------------------------------------- */
+const timeline = document.getElementById('timeline');
+
+EXPERIENCES.forEach((exp, i) => {
+  const item = document.createElement('div');
+  item.className = 'timeline__item reveal';
+  item.style.animationDelay = (i * 100) + 'ms';
+  item.innerHTML = `
+    <div class="timeline__dot"></div>
+    <details class="timeline__card" ${i === 0 ? 'open' : ''}>
+      <summary>
+      <div class="timeline__card-header">
+        <img src="${exp.image}" alt="${exp.company}" class="timeline__logo" loading="lazy">
+        <div>
+          <h3 class="timeline__title">${exp.title}</h3>
+          <p class="timeline__company">${exp.company}</p>
+          <p class="timeline__time">${exp.timeframe}</p>
+        </div>
+      </div>
+      <span class="timeline__prompt">Tools & focus <span aria-hidden="true">+</span></span>
+      </summary>
+      <div class="timeline__details">
+      <div class="timeline__tags">
+        ${exp.tags.map(t => '<span class="tag">' + t + '</span>').join('')}
+      </div>
+      </div>
+    </details>
+  `;
+  timeline.appendChild(item);
+});
+
+/* ---------------------------------------------------------
+   RENDER PROJECT CARDS
+   --------------------------------------------------------- */
+const projectsGrid = document.getElementById('projects-grid');
+// Visible card counts before each "Load More": 1 featured, then a row of 2, then everything.
+const PROJECT_STAGES = [1, 3];
+const projectSearch = document.getElementById('project-search');
+const projectTech = document.getElementById('project-tech');
+const projectSort = document.getElementById('project-sort');
+const projectCategories = {
+  ai: ['AI/ML', 'ML'],
+  web: ['React', 'Node.js'],
+  systems: ['OpenTelemetry', 'MCP'],
+  games: ['Game Dev', 'Pygame', 'JavaFX']
+};
+let projectCategory = 'all';
+let projectStage = 0;
+const projectLimit = () => PROJECT_STAGES[projectStage] ?? Infinity;
+const tabletQuery = window.matchMedia('(max-width: 960px)');
+
+[...new Set(PROJECTS.flatMap(project => project.tags))].sort().forEach(tag => {
+  projectTech.add(new Option(tag, tag));
+});
+
+function createProjectCard(proj, i) {
+  const card = document.createElement('article');
+  card.className = 'project-card reveal';
+  card.id = 'project-' + proj.id;
+  card.style.animationDelay = (i * 80) + 'ms';
+  card.innerHTML = `
+    <div class="project-card__image">
+      <img src="${proj.image}" alt="${proj.title}" loading="lazy">
+      <div class="project-card__overlay">
+        <a href="${proj.github}" target="_blank" rel="noopener" class="project-card__icon-link" aria-label="View ${proj.title} on GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="project-card__body">
+      <div class="project-card__meta">
+        <span class="project-card__subtitle">ENTRY ${String(PROJECTS.indexOf(proj) + 1).padStart(2, '0')} / ${proj.subtitle}</span>
+        <span class="project-card__year">${proj.year}</span>
+      </div>
+      <h3 class="project-card__title">${proj.title}</h3>
+      <p class="project-card__desc">${proj.description}</p>
+      <div class="project-card__tags">
+        ${proj.tags.map(t => '<button class="tag" data-project-tech="' + t + '" aria-label="Filter projects by ' + t + '">' + t + '</button>').join('')}
+      </div>
+      <div class="project-card__actions">
+        <button class="text-button" data-project-open="${proj.id}" aria-haspopup="dialog">Explore project <span aria-hidden="true">&rarr;</span></button>
+        <a href="${proj.github}" target="_blank" rel="noopener" aria-label="${proj.title} source on GitHub">Source &nearr;</a>
+      </div>
+    </div>
+  `;
+  return card;
+}
+
+const projectCards = PROJECTS.map(createProjectCard);
+projectsGrid.append(...projectCards);
+
+// Row sizes: 1 full-width, then 2, then rows of 3 (2 on tablets); a short final row stretches to fill.
+function projectSpans(count) {
+  const spans = count ? ['full'] : [];
+  const second = Math.min(2, count - 1);
+  for (let i = 0; i < second; i++) spans.push(second === 2 ? 'half' : 'full');
+  const rest = Math.max(0, count - 3);
+  const perRow = tabletQuery.matches ? 2 : 3;
+  const remainder = rest % perRow;
+  const regular = perRow === 3 ? 'third' : 'half';
+  let tail = [];
+  if (remainder === 2) tail = ['half', 'half'];
+  else if (remainder === 1 && rest > perRow && perRow === 3) tail = ['half', 'half', 'half', 'half'];
+  else if (remainder === 1) tail = ['full'];
+  for (let i = 0; i < rest - tail.length; i++) spans.push(regular);
+  return spans.concat(tail);
+}
+
+function layoutProjects() {
+  const visible = [...projectsGrid.children].filter(card => !card.hidden);
+  const spans = projectSpans(visible.length);
+  visible.forEach((card, i) => { card.dataset.span = spans[i]; });
+}
+tabletQuery.addEventListener('change', layoutProjects);
+
+function renderProjects() {
+  const terms = projectSearch.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const matching = PROJECTS.map((project, index) => ({ project, index })).filter(({ project }) => {
+    const text = [project.title, project.subtitle, project.description, ...project.tags].join(' ').toLowerCase();
+    return terms.every(term => text.includes(term))
+      && (!projectTech.value || project.tags.includes(projectTech.value))
+      && (projectCategory === 'all' || projectCategories[projectCategory].some(tag => project.tags.includes(tag)));
+  });
+  if (projectSort.value !== 'featured') {
+    const direction = projectSort.value === 'newest' ? -1 : 1;
+    matching.sort((a, b) => direction * (Number(a.project.year) - Number(b.project.year)));
+  }
+  projectCards.forEach(card => {
+    card.hidden = true;
+    card.classList.remove('project-card--featured');
+    delete card.dataset.span;
+  });
+  const limit = projectLimit();
+  matching.forEach(({ index }, position) => {
+    const card = projectCards[index];
+    card.classList.toggle('project-card--featured', position === 0);
+    projectsGrid.appendChild(card);
+    card.hidden = position >= limit;
+    if (!card.hidden) revealObserver.observe(card);
+  });
+  layoutProjects();
+  document.querySelectorAll('[data-project-filter]').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.projectFilter === projectCategory));
+  });
+  document.getElementById('project-count').textContent =
+    `Showing ${Math.min(matching.length, limit)} of ${matching.length} projects`;
+  document.getElementById('project-empty').hidden = matching.length !== 0;
+  document.getElementById('load-more-wrapper').hidden = matching.length <= limit;
+}
+
+function resetProjectFilters() {
+  projectSearch.value = '';
+  projectTech.value = '';
+  projectCategory = 'all';
+  projectSort.value = 'featured';
+  projectStage = 0;
+}
+
+function selectProjectTechnology(tag) {
+  resetProjectFilters();
+  projectTech.value = tag;
+  renderProjects();
+  navigateToSection('projects');
+  projectTech.focus({ preventScroll: true });
+}
+
+document.querySelectorAll('[data-project-filter]').forEach(button => {
+  button.addEventListener('click', () => {
+    projectCategory = button.dataset.projectFilter;
+    projectStage = 0;
+    renderProjects();
+  });
+});
+[projectSearch, projectTech, projectSort].forEach(control => control.addEventListener('input', () => {
+  projectStage = 0;
+  renderProjects();
+}));
+document.getElementById('project-reset').addEventListener('click', () => {
+  resetProjectFilters();
+  renderProjects();
+  projectSearch.focus();
+});
+document.getElementById('load-more').addEventListener('click', () => {
+  const hiddenCards = projectCards.filter(card => card.hidden);
+  projectStage++;
+  renderProjects();
+  hiddenCards.find(card => !card.hidden)?.querySelector('[data-project-open]').focus({ preventScroll: true });
+});
+renderProjects();
+
+/* ---------------------------------------------------------
+   TYPING ANIMATION
+   --------------------------------------------------------- */
+const typedEl = document.getElementById('typed-output');
+const phrases = [
+  'scalable systems.',
+  'full-stack apps.',
+  'ML pipelines.',
+  'cloud infrastructure.',
+  'things that matter.'
+];
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+let typingTimer = null;
+let isPrinting = false;
+
+function typeEffect() {
+  typingTimer = null;
+  if (!motionEnabled() || isPrinting) {
+    syncTyping();
+    return;
+  }
+  if (document.hidden) return;
+
+  const phrase = phrases[phraseIndex];
+  charIndex += deleting ? -1 : 1;
+  typedEl.textContent = phrase.slice(0, charIndex);
+  let delay = deleting ? 40 : 80;
+  if (charIndex === phrase.length) {
+    deleting = true;
+    delay = 2000;
+  } else if (charIndex === 0) {
+    deleting = false;
+    phraseIndex = (phraseIndex + 1) % phrases.length;
+    delay = 250;
+  }
+  typingTimer = setTimeout(typeEffect, delay);
+}
+
+function syncTyping() {
+  clearTimeout(typingTimer);
+  typingTimer = null;
+  if (!motionEnabled() || isPrinting) {
+    typedEl.textContent = phrases[0];
+    phraseIndex = 0;
+    charIndex = 0;
+    deleting = false;
+  } else if (!document.hidden) {
+    typeEffect();
+  }
+}
+document.addEventListener('motionchange', syncTyping);
+window.addEventListener('beforeprint', () => { isPrinting = true; syncTyping(); });
+window.addEventListener('afterprint', () => { isPrinting = false; syncTyping(); });
+syncTyping();
+
+/* ---------------------------------------------------------
+   HERO PHOTO - 3D TILT
+   Pointer events live on .hero__photo, which never transforms.
+   Reading geometry from the rotating wrapper instead would feed
+   the tilt back into its own input and cause edge jitter.
+   --------------------------------------------------------- */
+const photoEl = document.querySelector('.hero__photo');
+const photoWrap = photoEl && photoEl.querySelector('.hero__photo-wrapper');
+
+if (photoEl && photoWrap) {
+  const MAX_TILT = 13;
+  let queued = null;
+  let frame = null;
+
+  const applyTilt = () => {
+    frame = null;
+    if (!queued || !wantsMotion()) return;
+
+    const r = photoEl.getBoundingClientRect();
+    if (!r.width || !r.height) return;
+
+    const px = Math.min(1, Math.max(0, (queued.x - r.left) / r.width));
+    const py = Math.min(1, Math.max(0, (queued.y - r.top) / r.height));
+
+    photoWrap.style.setProperty('--rx', ((0.5 - py) * 2 * MAX_TILT).toFixed(2) + 'deg');
+    photoWrap.style.setProperty('--ry', ((px - 0.5) * 2 * MAX_TILT).toFixed(2) + 'deg');
+  };
+
+  photoEl.addEventListener('pointerenter', (e) => {
+    if (!wantsMotion()) return;
+    photoEl.classList.add('is-tilting');
+    queued = { x: e.clientX, y: e.clientY };
+    applyTilt();
+
+  });
+
+  photoEl.addEventListener('pointermove', (e) => {
+    if (!wantsMotion()) return;
+    queued = { x: e.clientX, y: e.clientY };
+    if (!frame) frame = requestAnimationFrame(applyTilt);
+  });
+
+  const resetPhoto = () => {
+    if (frame) {
+      cancelAnimationFrame(frame);
+      frame = null;
+    }
+    queued = null;
+    photoEl.classList.remove('is-tilting');
+    photoWrap.style.setProperty('--rx', '0deg');
+    photoWrap.style.setProperty('--ry', '0deg');
+  };
+  photoEl.addEventListener('pointerleave', resetPhoto);
+  photoEl.addEventListener('pointercancel', resetPhoto);
+  document.addEventListener('motionchange', resetPhoto);
+  window.addEventListener('blur', resetPhoto);
+}
+
+/* ---------------------------------------------------------
+   OBSERVE ALL REVEAL ELEMENTS
+   --------------------------------------------------------- */
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* ---------------------------------------------------------
+   NAV SCROLL EFFECT & SCROLL SPY
+   --------------------------------------------------------- */
+const nav = document.getElementById('nav');
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav__link');
+
+function onScroll() {
+  const scrollY = window.scrollY;
+  nav.classList.toggle('nav--scrolled', scrollY > 50);
+
+  let current = '';
+  const navOffset = nav.getBoundingClientRect().height + 36;
+  sections.forEach(section => {
+    const top = section.offsetTop - navOffset;
+    if (scrollY >= top) current = section.getAttribute('id');
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.dataset.section === current);
+    if (link.dataset.section === current) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  document.querySelector('.reading-progress').style.transform = `scaleX(${scrollable > 0 ? Math.min(1, scrollY / scrollable) : 0})`;
+  document.getElementById('back-to-top').hidden = scrollY < window.innerHeight * 0.7;
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+new ResizeObserver(onScroll).observe(document.body);
+onScroll();
+
+/* ---------------------------------------------------------
+   MOBILE MENU
+   --------------------------------------------------------- */
+const navToggle = document.getElementById('nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+navToggle.addEventListener('click', () => {
+  if (mobileMenu.open) mobileMenu.close();
+  else {
+    mobileMenu.showModal();
+    mobileMenu.classList.add('open');
+    navToggle.classList.add('active');
+    navToggle.setAttribute('aria-expanded', 'true');
+  }
+});
+mobileMenu.addEventListener('close', () => {
+  mobileMenu.classList.remove('open');
+  navToggle.classList.remove('active');
+  navToggle.setAttribute('aria-expanded', 'false');
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.close();
+  });
+});
+const navInner = nav.querySelector('.nav__inner');
+function syncNavLayout() {
+  // Account for enlarged text and font loading, not just viewport breakpoints.
+  nav.classList.remove('nav--compact');
+  const compact = window.matchMedia('(max-width: 960px)').matches
+    || navInner.scrollWidth > navInner.clientWidth;
+  nav.classList.toggle('nav--compact', compact);
+  if (!compact && mobileMenu.open) mobileMenu.close();
+}
+new ResizeObserver(syncNavLayout).observe(navInner);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(syncNavLayout);
+syncNavLayout();
+
+/* ---------------------------------------------------------
+   SMOOTH SCROLL (for anchor links)
+   --------------------------------------------------------- */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      navigateToSection(target.id);
+    }
+  });
+});
+
+/* ---------------------------------------------------------
+   MICRO-INTERACTIONS
+   Pointer-driven flourishes: buttons lean toward the cursor,
+   cards pick up a subtle tilt. Skipped on
+   touch devices and when reduced motion is requested.
+   --------------------------------------------------------- */
+if (window.PointerEvent) {
+  document.querySelectorAll('.btn').forEach(el => {
+    el.classList.add('magnetic');
+    el.addEventListener('pointermove', (e) => {
+      if (!wantsMotion()) return;
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--pull-x', ((e.clientX - r.left - r.width / 2) * 0.25).toFixed(2) + 'px');
+      el.style.setProperty('--pull-y', ((e.clientY - r.top - r.height / 2) * 0.35).toFixed(2) + 'px');
+    });
+    el.addEventListener('pointerleave', () => {
+      el.style.setProperty('--pull-x', '0px');
+      el.style.setProperty('--pull-y', '0px');
+    });
+  });
+
+  // Delegated so cards added by "Load More" get the effect too.
+  let activeCard = null;
+
+  const resetCard = (card) => {
+    card.style.setProperty('--tilt-x', '0deg');
+    card.style.setProperty('--tilt-y', '0deg');
+  };
+
+  document.addEventListener('pointermove', (e) => {
+    if (!wantsMotion()) return;
+    const card = e.target instanceof Element
+      ? e.target.closest('.project-card')
+      : null;
+
+    if (card !== activeCard) {
+      if (activeCard) resetCard(activeCard);
+      activeCard = card;
+    }
+    if (!card) return;
+
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width;
+    const py = (e.clientY - r.top) / r.height;
+
+    card.style.setProperty('--tilt-x', ((0.5 - py) * 5).toFixed(2) + 'deg');
+    card.style.setProperty('--tilt-y', ((px - 0.5) * 5).toFixed(2) + 'deg');
+  }, { passive: true });
+  const resetInteractions = () => {
+    if (activeCard) resetCard(activeCard);
+    activeCard = null;
+    document.querySelectorAll('.magnetic').forEach(el => {
+      el.style.removeProperty('--pull-x');
+      el.style.removeProperty('--pull-y');
+    });
+  };
+  document.addEventListener('motionchange', resetInteractions);
+  document.addEventListener('pointerleave', resetInteractions);
+  window.addEventListener('blur', resetInteractions);
+}
+
+/* ---------------------------------------------------------
+   CONTACT FORM (Google Apps Script)
+   --------------------------------------------------------- */
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw5VX2ijqS9RohM5anXG3JJirZtOy-g34C6v-b61BaSzxE_qX344bCjjshCIZnqIzBt5A/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById('msg');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('button[type="submit"]');
+  if (btn.disabled) return;
+  btn.disabled = true;
+  form.setAttribute('aria-busy', 'true');
+  msg.textContent = 'Sending your message...';
+  msg.className = 'contact__msg';
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+  const submittedFields = [...form.querySelectorAll('input, textarea')].map(field => ({ field, value: field.value }));
+  const controller = new AbortController();
+  const requestTimeout = setTimeout(() => controller.abort(), 30000);
+  fetch(scriptURL, { method: 'POST', body: new FormData(form), signal: controller.signal })
+    .then(response => {
+      if (!response.ok) throw new Error(`Message request failed (${response.status})`);
+      msg.className = 'contact__msg contact__msg--success';
+      if (submittedFields.every(({ field, value }) => field.value === value)) {
+        form.reset();
+        msg.textContent = 'Message sent successfully!';
+      } else {
+        msg.textContent = 'Message sent. Your newer edits have been kept.';
+      }
+    })
+    .catch(err => {
+      msg.textContent = controller.signal.aborted
+        ? 'The request timed out, so delivery could not be confirmed. Your draft is safe. Try again or email me directly.'
+        : 'Something went wrong. Your draft is safe. Please try again or email me directly.';
+      msg.className = 'contact__msg contact__msg--error';
+      console.error('Error:', err.message);
+    })
+    .finally(() => {
+      clearTimeout(requestTimeout);
+      btn.disabled = false;
+      form.removeAttribute('aria-busy');
+      btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
+    });
+});
+form.querySelector('button[type="submit"]').disabled = false;
+</script>
+
+</body>
+</html>
